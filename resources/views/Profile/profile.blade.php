@@ -65,6 +65,5 @@
 
 
             <script src="{{url('js/profile_script.js')}}"></script>
-            <script src="{{url('js/profile_vanilla-tilt.js')}}"></script>
         </body>
 </html>

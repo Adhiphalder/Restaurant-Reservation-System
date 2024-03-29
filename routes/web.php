@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\booking;
-use App\Http\Controllers\mriganka;
-
-
+use App\Http\Controllers\CustomerController;
 
 
 /*
@@ -18,42 +15,8 @@ use App\Http\Controllers\mriganka;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/profile',[CustomerController::class, 'profile']);
 
-Route::get('/customer', function () {
-    return view('Admin.customer');
-});
+Route::get('/bookhis',[CustomerController::class, 'booking_history']);
 
-Route::get('/admenu', function () {
-    return view('Admin.admenu');
-});
-
-Route::get('/reservation', function () {
-    return view('Admin.reservation');
-});
-
-Route::get('/table', function () {
-    return view('Admin.table');
-});
-
-Route::get('/pay', function () {
-    return view('payment_booking.payment');
-});
-
-Route::get('/profile', function () {
-    return view('profile.profile');
-});
-
-Route::get('/bookhis', function () {
-    return view('profile.booking_history');
-});
-
-Route::get('/booking',[booking::class, 'booking']);
-
-Route::get('/menu', mriganka::class);

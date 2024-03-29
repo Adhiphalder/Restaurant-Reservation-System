@@ -65,10 +65,10 @@
                 <div class="signup">
                   <form>
                     <label for="chk" aria-hidden="true">Sign up</label>
-                    <input type="text" name="txt" placeholder="First name" required="">
-                    <input type="text" name="txt" placeholder="Last name" required="">
+                    <input type="text" name="txt" placeholder="Name" required="">
                     <input type="tel" name="phn" placeholder="Contact no" required="">
                     <input type="email" name="email" placeholder="Email" required="">
+                    <input type="text" name="address" placeholder="Address" required="">
                     <input type="password" name="pswd" placeholder="Password" required="">
                     <button>Sign up</button>
                   </form>
