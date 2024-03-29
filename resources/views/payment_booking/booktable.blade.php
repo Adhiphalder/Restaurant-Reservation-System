@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>Book Table</title>
     <link rel="stylesheet" href="{{ url('/css/booktable.css') }}">
     <link rel="icon" href="images/favicon.svg">
 </head> 
