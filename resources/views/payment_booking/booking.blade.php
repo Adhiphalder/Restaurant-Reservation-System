@@ -24,18 +24,18 @@
                         <label for="time">Booking Time</label>
                         <select name="time" id="time" required>
                             <option value="none">Select Time Slot</option>
-                            <option value="first">10.00 - 11.00</option>
-                            <option value="second">11.00 - 12.00</option>
-                            <option value="third">12.00 - 13.00</option>
-                            <option value="fourth">13.00 - 14.00</option>
-                            <option value="fifth">14.00 - 15.00</option>
-                            <option value="sixth">15.00 - 16.00</option>
-                            <option value="seventh">16.00 - 17.00</option>
-                            <option value="eightth">17.00 - 18.00</option>
-                            <option value="ninth">18.00 - 19.00</option>
-                            <option value="tenth">19.00 - 20.00</option>
-                            <option value="eleventh">20.00 - 21.00</option>
-                            <option value="twelvelth">21.00 - 22.00</option>
+                            <option value="first">10.00 - 12.00</option>
+                            <option value="second">11.00 - 13.00</option>
+                            <option value="third">12.00 - 14.00</option>
+                            <option value="fourth">13.00 - 15.00</option>
+                            <option value="fifth">14.00 - 16.00</option>
+                            <option value="sixth">15.00 - 17.00</option>
+                            <option value="seventh">16.00 - 18.00</option>
+                            <option value="eightth">17.00 - 19.00</option>
+                            <option value="ninth">18.00 - 20.00</option>
+                            <option value="tenth">19.00 - 21.00</option>
+                            <option value="eleventh">20.00 - 22.00</option>
+                            <option value="twelvelth">21.00 - 23.00</option>
                         </select>
                     </div>
 

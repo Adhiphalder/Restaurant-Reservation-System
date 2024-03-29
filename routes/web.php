@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PaymentController;
+
 
 
 /*
@@ -20,3 +22,12 @@ Route::get('/profile',[CustomerController::class, 'profile']);
 
 Route::get('/bookhis',[CustomerController::class, 'booking_history']);
 
+Route::get('/menu',[CustomerController::class,'menu']);
+
+Route::get('/booking',[CustomerController::class,'booking']);
+
+Route::get('/booktable',[CustomerController::class,'booktable']);
+
+// Payment
+
+Route::get('/payment',[PaymentController::class,'payment']);

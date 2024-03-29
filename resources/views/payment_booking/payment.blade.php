@@ -37,13 +37,18 @@
                         </div>
 
                         <div class="left_first_top_book_div">
+                            <div>Total Guest No.</div>
+                            <div>12</div>
+                        </div>
+
+                        <div class="left_first_top_book_div">
                             <div>Seat No.</div>
-                            <div>2 seater</div>
+                            <div>6 seater</div>
                         </div>
 
                         <div class="left_first_top_book_div">
                             <div>Table No.</div>
-                            <div>011</div>
+                            <div>011 , 012</div>
                         </div>
                     </div>
 
