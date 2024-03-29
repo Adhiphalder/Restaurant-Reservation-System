@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Lora', serif;
+} 
+
+body{
+    background-color: #161718f5;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(/Major_Project/booking/Images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main{
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    background-color: #161718d9;
+    border-radius: 19px;
+    /* padding: 9px 28px; */
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    max-width: 550px;
+    margin-left: 15px;
+}
+
+
+.left img{
+    max-width: 500px;
+    max-height: 95%;
+    border-radius: 7px;
+}
+
+
+ 
+
+.right{
+    width: 470px;
+    display: flex;
+    align-items: center;
+    margin-left: 27px;
+}
+
+.form{
+    width: 100%;
+}
+
+label{
+    font-size: 17px;
+}
+
+.input{
+    background: none;
+    border: none;
+    border: 1.7px solid grey;
+    height: 33px;
+    width: 240px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px;
+}
+input{
+    color-scheme: dark;
+}
+
+#time{
+    background: #161718d9;
+    border: none;
+    border: 1.7px solid grey;
+    height: 33px;
+    width: 256px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px;
+}
+ 
+#gnum{
+    background: #161718d9;
+    border: none;
+    border: 1.7px solid grey;
+    height: 33px;
+    width: 256px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px; 
+}
+
+select{
+    color-scheme: dark;
+}
+
+.form_div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#submit{
+    display: none;
+}
+
+.form_div_sub{
+    display: flex;
+    justify-content: center;
+}
+
+.submitbtn {
+    background: none;
+    border: none;
+    border: .7px solid #e4c590;
+    color: #e4c590;
+    height: 39px;
+    width: 300px;
+    font-weight: 500;
+    margin-top: 7px;
+    font-size: 17px;
+    transition: 0.7s ease-out;
+    border-radius: 3px;
+}
+
+.submitbtn:hover {
+    background-color: #e4c590;
+    color: black;
+}

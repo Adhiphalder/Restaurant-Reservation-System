@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Lora', serif;
+}
+
+
+body{
+    background-color: #161718f5;
+    background-image: url(/Major_Project/booking/Images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    background-color: #161718e0;
+    display: flex;
+    border-radius: 19px;
+    width: 75vw;
+    height: 80vh;
+
+}
+
+.left{
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.left img{
+    max-width: 500px;
+    max-height: 100%;
+    margin-left: 19px;
+    
+}
+
+
+.right{
+    height: 100%;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+label{
+    font-size: 17px;
+    margin-right: 19px;
+}
+
+#table_no {
+    width: 190px;
+    height: 33px;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #161718f5;
+    padding-left: 5px;
+}
+
+.form_opt{
+    display: flex;
+    align-items: center;
+}
+
+#submit{
+    display: none;
+}
+
+.btn{
+    background: none;
+    border: none;
+    border: .7px solid #e4c590;
+    color: #e4c590;
+    height: 39px;
+    width: 200px;
+    transition: 0.7s ease-out;
+    border-radius: 3px;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+.btn:hover {
+    background-color: #e4c590;
+    color: black;
+}

@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #161718;
+    color: white;
+    font-family: 'Lora', serif;
+}
+  
+ 
+.main{
+    width: 90vw;
+    margin: auto;
+}
+
+.main_top{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: .7px solid grey;
+    padding-left: 19px;
+    padding-right: 25px;
+}
+
+#main_top1{
+    border-bottom: 5px solid #e4c590;
+    color: #e4c590;
+}
+
+.main_top span{
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+    transition: 0.17s ease-in;
+    cursor: pointer;
+}
+
+.main_top span:hover{
+    border-bottom: 5px solid #e4c590;
+    color: #e4c590;
+}
+
+
+
+
+
+
+
+
+
+
+
+.menu_inside {
+    display: flex;
+    width: 500px;
+    border: .7px solid grey;
+    border-radius: 7px;
+    padding: 17px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+
+.menu_inside>img {
+    width: 169px;
+    height: 113px;
+    border-radius: 15px;
+    margin-right: 17px;
+    z-index: 1;
+}
+
+.menu_inside>div>img {
+    width: 20px;
+    height: auto;
+    margin-top: 6px;
+}
+
+.menu_inside>div {
+    line-height: 25px;
+}
+
+.menu_inside div span{
+    position: absolute;
+    margin-left: 231px;
+    font-size: 20px;
+    color: #e4c590;
+}
+
+.menu_inside>div :nth-child(1) {
+    font-size: 18px;
+    color: #e4c590;
+}
+
+.menu_inside>div :nth-child(2) {
+    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+.menu_inside>div :nth-child(3){
+    margin-top: 3px;
+}
+
+.submenu_mutton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 12px;
+    margin-bottom: 35px;
+}
+
+.submenu_chicken{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 12px;
+    margin-bottom: 35px;
+}
+
+.submenu_veg{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 22px;
+    margin-bottom: 35px;
+}
+
+.submenu h3{
+    margin-left: 17px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #e4c590;
+}
+
+.submenu h2 , h2{
+    margin-left: 17px;
+    font-weight: 400;
+    font-size: 30px;
+    color: #e4c590;
+}
+
+.starter > h2{
+
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+/* Main Course */
+
+.b_mutton{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-bottom: 25px;
+}
+
+.b_chicken{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.egg{
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.b_veg{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;    
+}
+
+/* .n_veg_gravy :nth-child(1){
+    margin-bottom: 15px;
+} */
+
+.nvg_mutton{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.nvg_chicken{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.v_gravy{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.bread{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.others{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 31px;
+    margin-top: 17px;
+    margin-bottom: 25px;
+}
+
+.b_h2{
+    font-size: 24px;
+    margin-top: 12px;
+    margin-bottom: 17px;
+}
+
+.br_chi{
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590;
+}
+
+.bar_egg{
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590;  
+}
+
+.bar_veg{
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590;  
+}
+
+.nvgmutton{
+    font-size: 24px;
+    margin-left: 17px;
+    margin-top: 11px;
+    font-weight: 400;
+    color: #e4c590; 
+}
+
+.nvgchicken{
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590; 
+}
+
+.vgr{
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590;
+}
+
+.mn_bread{
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590;
+}
+
+.oth{ 
+    font-size: 24px;
+    margin-left: 17px;
+    font-weight: 400;
+    color: #e4c590;
+}
+
+
+.dessert{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 31px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    
+}
+
+.starter_main{
+    position: absolute;
+    top: 100px;
+}
+
+.main_course_main{
+    display: none;
+    transition: 1.6s ease-in;
+    position: absolute;
+    top: 100px;
+} 
+
+.desert_main{
+    display: none;
+}
