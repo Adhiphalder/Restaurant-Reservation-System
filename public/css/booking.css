@@ -83,6 +83,17 @@ input{
     padding-right: 7px;
     border-radius: 5px;
 }
+
+#guest_no{
+    background: #161718d9;
+    border: none;
+    border: 1.7px solid grey;
+    height: 33px;
+    width: 240px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px; 
+}
  
 #gnum{
     background: #161718d9;

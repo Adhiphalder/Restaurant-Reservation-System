@@ -40,6 +40,11 @@
                     </div>
 
                     <div class="form_div">
+                        <label for="guest_no">Guest No.</label>
+                        <input type="number" name="guest_no" id="guest_no" placeholder="Guest No." required>
+                    </div>
+
+                    <div class="form_div">
                         <label for="gnum">Seat No.</label>
                         <select name="gnum" id="gnum" required>
                             <option value="none">Select seats</option>
