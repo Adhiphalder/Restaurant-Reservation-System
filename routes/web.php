@@ -7,6 +7,9 @@ use App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\PaymentController;
 
+use App\Http\Controllers\LoginController;
+
+
 
 
 
@@ -24,6 +27,8 @@ use App\Http\Controllers\PaymentController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login',[LoginController::class, 'login']);
 
 Route::get('/profile',[CustomerController::class, 'profile']);
 
@@ -44,7 +49,6 @@ Route::get('/booking',[CustomerController::class,'booking']);
 
 Route::get('/booktable',[CustomerController::class,'booktable']);
 
-// Payment
 
 Route::get('/payment',[PaymentController::class,'payment']);
 
