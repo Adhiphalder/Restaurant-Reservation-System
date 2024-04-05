@@ -24,6 +24,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
 
+
+    <!-- 
+    - bootstrap link
+  -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- 
     - custom css link
   -->
@@ -47,7 +53,13 @@
   -->
 
   <footer class="footer section has-bg-image text-center"
-    style="background-image: url('images/login/footer-bg2 copy.jpg')">
+  style="background-image: url('images/login/footer-bg2 copy.jpg')">
+
+        @if(Session::has('success'))
+          <div class="alert alert-success" role="alert">
+              {{ Session::get('success') }}
+          </div>
+        @endif 
     <div class="container">
 
       <div class="footer-top grid-list">
@@ -63,25 +75,67 @@
               <input type="checkbox" id="chk" aria-hidden="true">
           
                 <div class="signup">
-                  <form>
+                  <form action="{{url('/')}}/login" method="post">
+                    @csrf
                     <label for="chk" aria-hidden="true">Sign up</label>
-                    <input type="text" name="txt" placeholder="Name" required="">
-                    <input type="tel" name="phn" placeholder="Contact no" required="">
-                    <input type="email" name="email" placeholder="Email" required="">
-                    <input type="text" name="address" placeholder="Address" required="">
-                    <input type="password" name="pswd" placeholder="Password" required="">
+
+                    <input type="text" name="name" placeholder="Name" value="{{old("name")}}">
+                    <span class="text-danger">
+                      @error('name')
+                          {{$message}}
+                      @enderror
+                    </span>
+
+                    <input type="email" name="email" placeholder="Email" value="{{old("email")}}" >
+                    <span class="text-danger">
+                      @error('email')
+                      {{$message}}
+                      @enderror
+                    </span>
+                    
+                    <input type="tel" name="contact" placeholder="Contact no"  value="{{old("contact")}}">
+                    <span class="text-danger">
+                      @error('contact')
+                          {{$message}}
+                      @enderror
+                    </span>
+                    
+                    <input type="text" name="address" placeholder="Address" value="{{old("address")}}" >
+                    <span class="text-danger">
+                      @error('address')
+                          {{$message}}
+                      @enderror
+                    </span>
+
+                    <input type="password" name="password" placeholder="Password" >
+                    <span class="text-danger">
+                      @error('password')
+                          {{$message}}
+                      @enderror
+                    </span>
                     <button>Sign up</button>
                   </form>
                   <p>By Signing in or creating an account you are agreeing to our <span><a href="#"> Terms & Conditions</a></span> </p>
                 </div>
           
                 <div class="login">
-                  <form>
+                  <form {{ route('login') }} method="post">
+                    @csrf
                     <label for="chk" aria-hidden="true">Login</label> <br>
-                    <input type="password" name="pswd" placeholder="Password" required="">  
-                    <input type="email" name="email" placeholder="Email" required=""> 
+
+                    @if(Session::has('error'))
+                      <div class="alert alert-danger" role="alert">
+                          {{ Session::get('error') }}
+                      </div>
+                  @endif
+            
+                    <input type="email" name="email" placeholder="Email"  value="{{ old('email') }}" required=""> 
+
+                    <input type="password" name="password" placeholder="Password" required="">  
                     <button>Login</button>
                   </form>
+
+
                 </div>
             </div>
         </div>
@@ -98,6 +152,7 @@
 
   </footer>
  
+
 
   <!-- 
     - custom js link

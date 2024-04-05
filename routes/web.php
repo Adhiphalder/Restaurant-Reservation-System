@@ -9,6 +9,8 @@ use App\Http\Controllers\PaymentController;
 
 use App\Http\Controllers\LoginController;
 
+use App\Models\Customer;
+
 
 
 
@@ -28,7 +30,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login',[LoginController::class, 'login']);
+//LOGIN 
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+
 
 Route::get('/profile',[CustomerController::class, 'profile']);
 
@@ -43,7 +50,7 @@ Route::get('/reservation',[AdminController::class, 'reservation']);
 
 Route::get('/table',[AdminController::class, 'table']);
 
-Route::get('/menu',[CustomerController::class,'menu']);
+Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 
 Route::get('/booking',[CustomerController::class,'booking']);
 
