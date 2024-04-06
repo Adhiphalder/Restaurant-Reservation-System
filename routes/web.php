@@ -30,10 +30,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//LOGIN 
+
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
+
+Route::post('/signup', [LoginController::class, 'signUp'])->name('signup');
 
 
 

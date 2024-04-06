@@ -75,7 +75,7 @@
               <input type="checkbox" id="chk" aria-hidden="true">
           
                 <div class="signup">
-                  <form action="{{url('/')}}/login" method="post">
+                  <form action="{{ route('signup') }}" method="post">
                     @csrf
                     <label for="chk" aria-hidden="true">Sign up</label>
 
@@ -113,13 +113,13 @@
                           {{$message}}
                       @enderror
                     </span>
-                    <button>Sign up</button>
+                    <button type="submit">Sign up</button>
                   </form>
                   <p>By Signing in or creating an account you are agreeing to our <span><a href="#"> Terms & Conditions</a></span> </p>
                 </div>
           
                 <div class="login">
-                  <form {{ route('login') }} method="post">
+                  <form action= "{{ route('login') }}" method="post">
                     @csrf
                     <label for="chk" aria-hidden="true">Login</label> <br>
 
@@ -132,7 +132,7 @@
                     <input type="email" name="email" placeholder="Email"  value="{{ old('email') }}" required=""> 
 
                     <input type="password" name="password" placeholder="Password" required="">  
-                    <button>Login</button>
+                    <button type="submit" >Login</button>
                   </form>
 
 
@@ -146,9 +146,9 @@
       
     </div>
 
-    <p class="copyright">
-      &copy; 2024 FoodHub. All Rights Reserved | Crafted by
-    </p>
+    <p1 class="copyright">
+      &copy; 2024 FoodHub. All Rights Reserved | Crafted by Adhip Halder
+    </p1>
 
   </footer>
  
