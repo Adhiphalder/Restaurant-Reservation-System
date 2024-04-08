@@ -60,18 +60,17 @@
                         <table style="width:100%">
                                 <div> <hr> <br>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Contact</th>
                                         <th>Date</th>
                                         <th>Time</th>
+                                        <th>Guest No.</th>
                                         <th>Action</th>
                                     </tr>
                                 </div>
+                                @foreach($booking as $book)
                                 <tr>
-                                <td>Adhip Halder</td>
-                                <td>944541321384</td>
-                                <td>12/03/2024</td>
-                                <td>11:30</td>
+                                <td>{{ $book->date }}</td>
+                                <td>{{ $book->time }}</td>
+                                <td>{{ $book->guest_no }}</td>
                                 <td class="button-container">
                                     <button class="edit">Edit</button>
                                     <button class="button">
@@ -90,29 +89,7 @@
                                     </button>
                                 </td>
                                 </tr>
-                                <tr>
-                                <td>Sanket Adhikary</td>
-                                <td>944541321384</td>
-                                <td>13/03/2024</td>
-                                <td>12:30</td>
-                                <td class="button-container">
-                                    <button class="edit">Edit</button>
-                                    <button class="button">
-                                        <div class="trash">
-                                            <div class="top">
-                                                <div class="paper"></div>
-                                            </div>
-                                            <div class="box"></div>
-                                            <div class="check">
-                                                <svg viewBox="0 0 8 6">
-                                                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <span>Delete</span>
-                                    </button>
-                                </td>
-                                </tr>
+                                @endforeach
                           </table>
 
                         <div class="pagination">
