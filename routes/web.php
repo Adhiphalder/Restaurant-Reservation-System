@@ -62,4 +62,19 @@ Route::get('/booking',[CustomerController::class,'booking']);
 Route::get('/booktable',[CustomerController::class,'booktable']);
 
 
-Route::get('/payment',[PaymentController::class,'payment']);
+// Route::get('/payment',[PaymentController::class,'payment']);
+
+
+
+
+
+
+Route::get('/index',[PaymentController::class,'index']);
+Route::post('/indexpost',[PaymentController::class,'post']);
+
+Route::get('/indexone',[PaymentController::class,'indexone']);
+Route::post('/indexonepost',[PaymentController::class,'postone']);
+
+
+Route::get('/payment',[PaymentController::class,'view']);
+Route::post('/payment',[PaymentController::class,'pay']);
