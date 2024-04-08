@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Lora', serif;
+}
+
+body{
+    background-image: url("../images/paymentsuc/vintage-old-rustic-cutlery-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_part{
+    width: 750px;
+    height: 450px;
+    background-color: rgb(21 21 21 / 73%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 21px;
+}
+
+.main_part_img{
+    width: 105px;
+    background-color: white;
+    border-radius: 75px;
+}
+
+.main_part h2{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.main_part_para{
+    font-size: 17px;
+}
+
+.main_part_sec{
+    padding-top: 11px;
+}
+
+.main_part button{
+    width: 250px;
+    height: 50px;
+    background: none;
+    border: none;
+    border: .7px solid #e4c590;
+    color: #e4c590;
+    transition: 0.5s ease-out;
+    border-radius: 3px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.main_part button:hover {
+    background-color: #e4c590;
+    color: black;
+}
