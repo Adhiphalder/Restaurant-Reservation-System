@@ -67,6 +67,7 @@ Route::get('/booktable',[CustomerController::class,'booktable']);
 
 
 
+Route::get('/successful',[PaymentController::class,'successful']);
 
 
 Route::get('/index',[PaymentController::class,'index']);

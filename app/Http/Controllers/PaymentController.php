@@ -10,6 +10,10 @@ use App\Models\Payment;
 
 class PaymentController extends Controller
 {
+    public function successful(){
+        return view('payment_booking.paymentsuc');
+    }
+
     public function indexone(){
         return view('payment_booking.customer');
     }
@@ -56,7 +60,7 @@ class PaymentController extends Controller
         $pay = new Payment;
         $pay->paymethod = $payment['p_method'];
         $pay->save();
-        return redirect('/indexone');
+        return redirect('/successful');
     }
 
     public function view(){
