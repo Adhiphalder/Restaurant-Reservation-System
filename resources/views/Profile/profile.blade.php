@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -20,8 +20,20 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
         
         <title>FoodHub</title>
-    </head>
-        <body>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+</head>
+<body>
 
             
             <!-- 
@@ -55,10 +67,28 @@
                 </div>
                 <div class="glow-item">
                     <div class="card shadow-animate" data-tilt>
-                        <img src="images/profile/profile.png">
-                        <h2>Sanket Adhikary</h2>
-                        <p>Address: Singur, Hooghly</p>
-                        <a href="#" class="btn">Edit </a>
+                    <h1>My Profile</h1><br>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($customers as $customer)
+                            <tr>
+                                <td>{{ $customer->name }}</td>
+                                <td>{{ $customer->contact }}</td>
+                                <td>{{ $customer->email }}</td>
+                                <td>{{ $customer->address }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <a href="#" class="btn">Edit </a>
                     </div>
                 </div>
             </div>
