@@ -14,10 +14,11 @@
         </div> 
         <div class="right">
             <div class="form">
-                <form action="get">
+                <form method="POST" action="{{url('/')}}/booking">
+                    @csrf
                     <div class="form_div">
                         <label for="date">Booking Date</label>
-                        <input type="date" name="" id="date" class="input" required>
+                        <input type="date" name="date" id="date" class="input" required>
                     </div>
 
                     <div class="form_div">
