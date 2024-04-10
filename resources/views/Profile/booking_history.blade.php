@@ -44,7 +44,7 @@
                         <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
                         <label class="for-dropdown" for="dropdown"> <i class="fa-solid fa-bars"></i> </label> 
                         <div class="section-dropdown"> 
-                            <a href="#">Booking History <i class="uil uil-arrow-right"></i></a>
+                            <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
                             <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
                             <div class="section-dropdown-sub"></div>
                             <a href="{{url('profile')}}">Profile <i class="uil uil-arrow-right"></i></a>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="glow-item">
                     <div class="card shadow-animate" data-tilt>
-                        <h2>Booking History</h2> <br> <br>
+                        <h2>My Bookings</h2> <br> <br>
 
                         <table style="width:100%">
                                 <div> <hr> <br>
@@ -85,7 +85,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <span>Delete</span>
+                                        <span>Cancel</span>
                                     </button>
                                 </td>
                                 </tr>
