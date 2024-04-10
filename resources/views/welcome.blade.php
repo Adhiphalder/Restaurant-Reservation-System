@@ -29,6 +29,12 @@
   -->
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+    <!-- 
+    - custom link
+  -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- 
     -images
   -->
@@ -186,11 +192,56 @@
 
       </nav>
 
-      <a href="{{asset('login')}}" class="btn btn-secondary">
+      {{-- <a href="{{asset('signup')}}" class="btn btn-secondary">
         <span class="text text-1">Login/SignUp</span>
 
         <span class="text text-2" aria-hidden="true">Login/SignUp</span>
-      </a>
+      </a> --}}
+
+
+      {{-- @if(session('name'))
+          <a href="#" class="btn btn-secondary">
+              <span class="text text-1">{{ session('name') }}</span>
+              <span class="text text-2" aria-hidden="true">{{ session('name') }}</span>
+          </a>
+      @else
+          <a href="{{ asset('signup') }}" class="btn btn-secondary">
+              <span class="text text-1">Login/SignUp</span>
+              <span class="text text-2" aria-hidden="true">Login/SignUp</span>
+          </a>
+      @endif
+       --}}
+
+       @if(session('customer'))
+          <form action="{{ route('logout') }}" method="post">
+              @csrf
+              <button type="submit" class="btn btn-secondary">
+                  <span class="text text-1">{{ session('customer') }}</span>
+                  <span class="text text-2" aria-hidden="true">{{ session('customer') }}</span>
+              </button>
+          </form>
+      @else
+          {{-- <a href="{{ route('signup') }}" class="btn btn-secondary">
+              <span class="text text-1">Login/SignUp</span>
+              <span class="text text-2" aria-hidden="true">Login/SignUp</span>
+            </a> --}}
+            
+            <div class="menu1">
+              <div class="sec-center"> 	
+                      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+                      <label class="for-dropdown" for="dropdown"> <i class="fa-solid fa-bars"></i> </label> 
+                      <div class="section-dropdown"> 
+                          <a href="{{ route('signup') }}">SIgnup <i class="uil uil-arrow-right"></i></a>
+                          <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
+                          <div class="section-dropdown-sub"></div>
+                          <a href="{{ route('signup') }}">Login <i class="uil uil-arrow-right"></i></a>
+
+                      </div>
+                </div>
+            </div>
+      @endif
+
+
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <span class="line line-1"></span>

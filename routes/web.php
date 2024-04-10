@@ -36,8 +36,15 @@ Route::get('/', function () {
 
 //LOGIN 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store']);
+
+Route::get('/signup', [LoginController::class, 'index'])->name('signup');
+Route::post('/signup', [LoginController::class, 'signUp']);
+
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
 
 
 
