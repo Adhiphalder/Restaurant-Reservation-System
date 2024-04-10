@@ -94,6 +94,10 @@ input{
     padding-right: 7px;
     border-radius: 5px; 
 }
+
+#guest_no::placeholder{
+    color: white;
+}
  
 #gnum{
     background: #161718d9;

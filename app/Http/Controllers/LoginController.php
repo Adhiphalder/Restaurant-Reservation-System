@@ -7,39 +7,18 @@ use App\Models\Customer;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Crypt;
+
+use Illuminate\Support\Facades\Hash;
+
 class LoginController extends Controller
 {
-    // Display the login form
+    // // Display the login form
     public function index()
     {
         return view('login');
     }
 
-    // Handle user login
-    public function store(Request $request)
-    {
-        // Logic for handling login goes here
-
-        // Validate the request data
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        // Attempt to authenticate the user
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            // Authentication successful
-            return redirect()->intended('/welcome');
-        }
-
-        // Authentication failed
-        Session::flash('error', 'Invalid credentials');
-        return redirect()->back();
-    }
-
-    // Handle user registration (sign up)
     public function signUp(Request $request)
     {
         $request->validate([
@@ -59,7 +38,33 @@ class LoginController extends Controller
         $customer->save();
 
         Session::flash('success', 'Sign up successful!');
+        $request->session()->put('name', $request->input('name'));
+
+            // Flash success message
+    Session::flash('success', 'Sign up successful!');
 
         return redirect()->back();
+
+
     }
+
+    public function login(Request $request){
+
+        $customer = Customer::where("email", $request->input('email'))->first();
+
+        if ($customer && Hash::check($request->input('password'), $customer->password)) {
+            $request->session()->put('customer', $customer->name);
+            return redirect('/');
+        } else {
+            // Handle invalid login attempt
+            return redirect()->back()->with('error', 'Invalid email or password');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('customer');
+        return redirect()->route('login')->with('success', 'Logged out successfully.');
+    }
+
 }

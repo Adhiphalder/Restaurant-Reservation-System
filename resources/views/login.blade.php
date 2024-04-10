@@ -127,7 +127,7 @@
                       <div class="alert alert-danger" role="alert">
                           {{ Session::get('error') }}
                       </div>
-                  @endif
+                    @endif
             
                     <input type="email" name="email" placeholder="Email"  value="{{ old('email') }}" required=""> 
 
