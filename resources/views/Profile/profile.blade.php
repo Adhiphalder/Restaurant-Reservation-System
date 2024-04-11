@@ -64,11 +64,11 @@
                         <img src="images/profile/profile.png">
 
                         @if(session('customer'))
-                    <h2>{{ session('customer')->name }}</h2>
-                    <p>Email Id : {{ session('customer')->email }}</p>
-                    <p>Contact : {{ session('customer')->contact }}</p>
-                    <p>Address : {{ session('customer')->address }}</p>
-                @endif
+                        <h2>{{ session('customer')->name }}</h2>
+                        <p>Email Id : {{ session('customer')->email }}</p>
+                        <p>Contact : {{ session('customer')->contact }}</p>
+                        <p>Address : {{ session('customer')->address }}</p>
+                        @endif
                         <a href="#" class="btn">Edit </a>
                     </div>
                 </div>
