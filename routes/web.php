@@ -62,14 +62,7 @@ Route::get('/table',[AdminController::class, 'table']);
 
 Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 
-// Route::get('/booking',[CustomerController::class,'booking']);
-
 Route::get('/booktable',[CustomerController::class,'booktable']);
-
-
-// Route::get('/payment',[PaymentController::class,'payment']);
-
-
 
 
 Route::get('/booking',[CustomerController::class,'booking']);
