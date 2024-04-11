@@ -37,7 +37,7 @@
             
             <div class="container">
                 <div class="logo">
-                    <a href="#"><img src="images/FoodHub.png" alt=""></a>
+                    <a href="{{url('/')}}"><img src="images/FoodHub.png" alt=""></a>
                 </div>
                 <div class="menu">
                     <div class="sec-center"> 	
@@ -47,7 +47,14 @@
                             <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
                             <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
                             <div class="section-dropdown-sub"></div>
-                            <a href="#">Logout <i class="uil uil-arrow-right"></i></a>
+                            {{-- <a href="">Logout <i class="uil uil-arrow-right"></i></a> --}}
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                                <button type="submit">Logout</button>
+                            </form>
+                            
+                            <!-- Add a button or link to trigger the logout form -->
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                         </div>
                     </div>
@@ -55,13 +62,14 @@
                 <div class="glow-item">
                     <div class="card shadow-animate" data-tilt>
                         <img src="images/profile/profile.png">
-                    @foreach($customers as $customer)
-                        <h2>{{ $customer->name }}</h2>
-                        <p>Contact : {{ $customer->contact }}</p>
-                        <p>Email Id : {{ $customer->email }}</p>
-                        <p>Address : {{ $customer->address }}</p>
-                    @endforeach
-                    <a href="#" class="btn">Edit </a>
+
+                        @if(session('customer'))
+                    <h2>{{ session('customer')->name }}</h2>
+                    <p>Email Id : {{ session('customer')->email }}</p>
+                    <p>Contact : {{ session('customer')->contact }}</p>
+                    <p>Address : {{ session('customer')->address }}</p>
+                @endif
+                        <a href="#" class="btn">Edit </a>
                     </div>
                 </div>
             </div>

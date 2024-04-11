@@ -18,7 +18,6 @@ use App\Models\Bookhistory;
 
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,9 +31,10 @@ use App\Models\Bookhistory;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-//LOGIN 
+
+    //LOGIN 
 
 
 Route::get('/signup', [LoginController::class, 'index'])->name('signup');
@@ -43,7 +43,6 @@ Route::post('/signup', [LoginController::class, 'signUp']);
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 
 
 

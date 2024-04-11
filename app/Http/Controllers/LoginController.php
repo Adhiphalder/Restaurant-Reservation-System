@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    // // Display the login form
     public function index()
     {
         return view('login');
@@ -21,6 +20,7 @@ class LoginController extends Controller
 
     public function signUp(Request $request)
     {
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:customers',
@@ -28,7 +28,7 @@ class LoginController extends Controller
             'contact' => 'required',
             'address' => 'required'
         ]);
-
+    
         $customer = new Customer;
         $customer->name = $request->name;
         $customer->email = $request->email;
@@ -36,44 +36,41 @@ class LoginController extends Controller
         $customer->contact = $request->contact;
         $customer->password = bcrypt($request->password);
         $customer->save();
+    
+        $request->session()->put('customer', $customer);
+    
+        Session::flash('success', 'Sign up successful!');
 
-        // Session::flash('success', 'Sign up successful!');
-        // $request->session()->put('name', $request->input('name'));
-
-        // Session::flash('success', 'Sign up successful!');
-
-        // return redirect()->back();
-        
-
-            // Store customer name in session
-            $request->session()->put('customer', $request->name);
-
-            // Flash success message
-            Session::flash('success', 'Sign up successful!');
-
-            // Redirect to welcome page
-            return redirect('/');
-
-
+        return redirect('/');
     }
 
     public function login(Request $request){
 
+
         $customer = Customer::where("email", $request->input('email'))->first();
 
         if ($customer && Hash::check($request->input('password'), $customer->password)) {
-            $request->session()->put('customer', $customer->name);
+
+            $request->session()->put('customer', $customer);
             return redirect('/');
         } else {
-            // Handle invalid login attempt
+
             return redirect()->back()->with('error', 'Invalid email or password');
         }
     }
 
     public function logout(Request $request)
     {
-        $request->session()->forget('customer');
-        return redirect()->back()->with('success', 'Logged out successfully.');
+
+  
+    $request->session()->forget('customer');
+
+    // Logout user
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect()->route('home')->with('success', 'Logged out successfully.');
     }
 
 }

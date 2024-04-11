@@ -202,7 +202,7 @@
               <div class="menu1">
                 <div class="sec-center"> 	
                     <input class="dropdown1" type="checkbox" id="dropdown1" name="dropdown1"/>
-                    <label class="for-dropdown1" for="dropdown1"> <span>{{ session('customer') }}</span></label> 
+                    <label class="for-dropdown1" for="dropdown1"> <span>{{ session('customer')->name }}</span></label> 
                     <div class="section-dropdown1"> 
                         <a href="{{ route('mybookings') }}">My Bookings <i class="uil uil-arrow-right"></i></a>
                         <input class="dropdown1-sub" type="checkbox" id="dropdown1-sub" name="dropdown1-sub"/>
