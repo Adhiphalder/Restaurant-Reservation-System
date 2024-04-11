@@ -44,8 +44,6 @@
                         <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
                         <label class="for-dropdown" for="dropdown"> <i class="fa-solid fa-bars"></i> </label> 
                         <div class="section-dropdown"> 
-                            {{-- <a href="#">Booking History <i class="uil uil-arrow-right"></i></a> --}}
-                            <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
                             <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
                             <div class="section-dropdown-sub"></div>
                             <a href="{{url('profile')}}">Profile <i class="uil uil-arrow-right"></i></a>

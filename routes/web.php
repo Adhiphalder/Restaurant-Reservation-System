@@ -47,7 +47,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
-
 Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 

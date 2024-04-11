@@ -47,7 +47,6 @@
                             <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
                             <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
                             <div class="section-dropdown-sub"></div>
-                            <a href="{{url('profile')}}">Profile <i class="uil uil-arrow-right"></i></a>
                             <a href="#">Logout <i class="uil uil-arrow-right"></i></a>
 
                         </div>
