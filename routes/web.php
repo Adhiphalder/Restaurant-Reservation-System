@@ -48,10 +48,10 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/profile',[CustomerController::class, 'profile']);
+Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 
-Route::get('/bookhis',[BookhisController::class, 'booking_history']);
+Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
 
 
 Route::get('/admenu',[AdminController::class, 'admenu']);

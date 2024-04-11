@@ -37,13 +37,22 @@ class LoginController extends Controller
         $customer->password = bcrypt($request->password);
         $customer->save();
 
-        Session::flash('success', 'Sign up successful!');
-        $request->session()->put('name', $request->input('name'));
+        // Session::flash('success', 'Sign up successful!');
+        // $request->session()->put('name', $request->input('name'));
+
+        // Session::flash('success', 'Sign up successful!');
+
+        // return redirect()->back();
+        
+
+            // Store customer name in session
+            $request->session()->put('customer', $request->name);
 
             // Flash success message
-    Session::flash('success', 'Sign up successful!');
+            Session::flash('success', 'Sign up successful!');
 
-        return redirect()->back();
+            // Redirect to welcome page
+            return redirect('/');
 
 
     }
@@ -64,7 +73,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $request->session()->forget('customer');
-        return redirect()->route('login')->with('success', 'Logged out successfully.');
+        return redirect()->back()->with('success', 'Logged out successfully.');
     }
 
 }

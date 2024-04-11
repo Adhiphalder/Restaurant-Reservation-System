@@ -191,40 +191,42 @@
         </div>
 
       </nav>
-
-      {{-- <a href="{{asset('signup')}}" class="btn btn-secondary">
-        <span class="text text-1">Login/SignUp</span>
-
-        <span class="text text-2" aria-hidden="true">Login/SignUp</span>
-      </a> --}}
-
-
-      {{-- @if(session('name'))
-          <a href="#" class="btn btn-secondary">
-              <span class="text text-1">{{ session('name') }}</span>
-              <span class="text text-2" aria-hidden="true">{{ session('name') }}</span>
-          </a>
-      @else
-          <a href="{{ asset('signup') }}" class="btn btn-secondary">
-              <span class="text text-1">Login/SignUp</span>
-              <span class="text text-2" aria-hidden="true">Login/SignUp</span>
-          </a>
-      @endif
-       --}}
-
        @if(session('customer'))
           <form action="{{ route('logout') }}" method="post">
               @csrf
-              <button type="submit" class="btn btn-secondary">
+              {{-- <button type="submit" class="btn btn-secondary">
                   <span class="text text-1">{{ session('customer') }}</span>
                   <span class="text text-2" aria-hidden="true">{{ session('customer') }}</span>
-              </button>
+              </button> --}}
+
+              <div class="menu1">
+                <div class="sec-center"> 	
+                    <input class="dropdown1" type="checkbox" id="dropdown1" name="dropdown1"/>
+                    <label class="for-dropdown1" for="dropdown1"> <span>{{ session('customer') }}</span></label> 
+                    <div class="section-dropdown1"> 
+                        <a href="{{ route('mybookings') }}">My Bookings <i class="uil uil-arrow-right"></i></a>
+                        <input class="dropdown1-sub" type="checkbox" id="dropdown1-sub" name="dropdown1-sub"/>
+                        <div class="section-dropdown1-sub"></div>
+                        <a href="profile">Profille <i class="uil uil-arrow-right"></i></a>
+                        {{-- <a href="logout">Logout <i class="uil uil-arrow-right"></i></a> --}}
+                        <form action="{{ route('logout') }}" method="post">
+                          @csrf
+
+                          {{-- <a href=""><button type="submit">Logout <i class="uil uil-arrow-right"></i></button></a> --}}
+                          <button type="submit" class="logout-btn">Logout <i class="uil uil-arrow-right"></i></button>
+                      </form>
+
+                    </div>
+                </div>
+            </div>
+
           </form>
       @else
           {{-- <a href="{{ route('signup') }}" class="btn btn-secondary">
               <span class="text text-1">Login/SignUp</span>
               <span class="text text-2" aria-hidden="true">Login/SignUp</span>
             </a> --}}
+
             
             <div class="menu1">
               <div class="sec-center"> 	
@@ -239,6 +241,7 @@
                       </div>
                 </div>
             </div>
+
       @endif
 
 

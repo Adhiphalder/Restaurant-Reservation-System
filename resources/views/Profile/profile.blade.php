@@ -20,18 +20,6 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
         
         <title>FoodHub</title>
-        <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-
-            th, td {
-                padding: 8px;
-                text-align: left;
-                border-bottom: 1px solid #ddd;
-            }
-        </style>
 </head>
 <body>
 
@@ -56,10 +44,10 @@
                         <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
                         <label class="for-dropdown" for="dropdown"> <i class="fa-solid fa-bars"></i> </label> 
                         <div class="section-dropdown"> 
-                            <a href="{{url('bookhis')}}">Booking History <i class="uil uil-arrow-right"></i></a>
+                            <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
                             <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
                             <div class="section-dropdown-sub"></div>
-                            <a href="#">Profile <i class="uil uil-arrow-right"></i></a>
+                            <a href="{{url('profile')}}">Profile <i class="uil uil-arrow-right"></i></a>
                             <a href="#">Logout <i class="uil uil-arrow-right"></i></a>
 
                         </div>
@@ -67,32 +55,17 @@
                 </div>
                 <div class="glow-item">
                     <div class="card shadow-animate" data-tilt>
-                    <h1>My Profile</h1><br>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Contact</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($customers as $customer)
-                            <tr>
-                                <td>{{ $customer->name }}</td>
-                                <td>{{ $customer->contact }}</td>
-                                <td>{{ $customer->email }}</td>
-                                <td>{{ $customer->address }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                        <img src="images/profile/profile.png">
+                    @foreach($customers as $customer)
+                        <h2>{{ $customer->name }}</h2>
+                        <p>Contact : {{ $customer->contact }}</p>
+                        <p>Email Id : {{ $customer->email }}</p>
+                        <p>Address : {{ $customer->address }}</p>
+                    @endforeach
                     <a href="#" class="btn">Edit </a>
                     </div>
                 </div>
             </div>
-
 
             <script src="{{url('js/profile_script.js')}}"></script>
         </body>
