@@ -62,11 +62,20 @@ Route::get('/table',[AdminController::class, 'table']);
 
 Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 
-Route::get('/booktable',[CustomerController::class,'booktable']);
+// Route::get('/booktable',[CustomerController::class,'booktable']);
+
+Route::get('/booktable', function () {
+    return view('payment_booking.booktable');
+});
 
 
-Route::get('/booking',[CustomerController::class,'booking']);
-Route::post('/booking',[CustomerController::class,'view']);
+// Route::get('/booking',[CustomerController::class,'booking']);
+Route::get('/booking', function () {
+    return view('payment_booking.booking');
+});
+
+
+// Route::post('/booking',[CustomerController::class,'view']);
 
 
 

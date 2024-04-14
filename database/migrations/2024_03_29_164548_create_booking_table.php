@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('booking', function (Blueprint $table) {
             $table->id('booking_id');
-            // $table->integer('table_id');
+            // $table->unsignedBigInteger('table_id')->nullable();
+            // $table->foreign('table_id')->references('table_id')->on('tables');
+
             $table->unsignedBigInteger('customer_id')->nullable();
             $table->foreign('customer_id')->references('customer_id')->on('customers');
-            // $table->integer('payment_id');
-            // $table->string('customer_name');
             $table->date('date');
             $table->enum('time',["first","second","third","fourth","fifth","sixth","seventh","eightth","ninth","tenth","eleventh","twelvelth"])->nullable();
             $table->integer('guest_no');
