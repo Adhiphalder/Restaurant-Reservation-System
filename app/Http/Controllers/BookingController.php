@@ -61,4 +61,8 @@ class BookingController extends Controller
         return redirect()->back()->with('success', 'Booking created successfully!');
 
     }
+
+    public function table_view(){
+        return view('payment_booking.booktable');
+    }
 }

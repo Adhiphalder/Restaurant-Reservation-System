@@ -37,7 +37,7 @@
             
             <div class="container">
                 <div class="logo">
-                    <a href="#"><img src="images/FoodHub.png" alt=""></a>
+                    <a href="{{url('/')}}"><img src="images/FoodHub.png" alt=""></a>
                 </div>
                 <div class="menu">
                     <div class="sec-center"> 	
@@ -104,6 +104,10 @@
                                 <li class="next"><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
                             </ul>
                         </div>
+                        <p1 class="copyright">
+                            &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
+                            target="_blank" class="link">Sanket Adhikary</a>
+                        </p1>
                     </div>
                 </div>
             </div>
