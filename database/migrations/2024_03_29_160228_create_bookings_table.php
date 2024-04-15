@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('booking', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id('booking_id');
-            // $table->unsignedBigInteger('table_id')->nullable();
-            // $table->foreign('table_id')->references('table_id')->on('tables');
-
+            $table->unsignedBigInteger('table_id')->nullable();
+            $table->foreign('table_id')->references('table_id')->on('tables');
             $table->unsignedBigInteger('customer_id')->nullable();
             $table->foreign('customer_id')->references('customer_id')->on('customers');
             $table->date('date');
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('booking');
+        Schema::dropIfExists('bookings');
     }
 };

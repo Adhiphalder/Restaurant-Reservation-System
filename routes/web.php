@@ -11,9 +11,14 @@ use App\Http\Controllers\LoginController;
 
 use App\Http\Controllers\BookhisController;
 
+use App\Http\Controllers\BookingController;
+
+
 use App\Models\Customer;
 
 use App\Models\Bookhistory;
+
+use App\Models\Booking;
 
 
 
@@ -62,6 +67,8 @@ Route::get('/table',[AdminController::class, 'table']);
 
 Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 
+
+
 // Route::get('/booktable',[CustomerController::class,'booktable']);
 
 Route::get('/booktable', function () {
@@ -69,13 +76,19 @@ Route::get('/booktable', function () {
 });
 
 
-// Route::get('/booking',[CustomerController::class,'booking']);
-Route::get('/booking', function () {
-    return view('payment_booking.booking');
-});
 
 
-// Route::post('/booking',[CustomerController::class,'view']);
+Route::get('/booking',[BookingController::class,'view']);
+
+Route::post('/booking',[BookingController::class,'booking']);
+
+
+
+// Route::get('/booking', function () {
+//     return view('payment_booking.booking');
+// });
+
+
 
 
 
