@@ -71,8 +71,12 @@
                         @endif
                         <a href="#" class="btn">Edit </a>
                     </div>
+                    <p1 class="copyright">
+                        &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
+                        target="_blank" class="link">Sanket Adhikary</a>
+                    </p1>
                 </div>
-            </div>
+
 
             <script src="{{url('js/profile_script.js')}}"></script>
         </body>

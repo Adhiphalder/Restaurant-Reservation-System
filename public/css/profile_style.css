@@ -341,7 +341,7 @@
 .dark-light:checked ~ .sec-center .section-dropdown a {
   color: #102770;
 }
-a:hover {
+.menu a:hover {
   color: #102770;
   background-color: #ffeba7;
 }
@@ -520,6 +520,10 @@ a .uil {
   .card.shadow-animate {
     box-shadow: 0px 0px 10px 0px #E4C590;
     animation: shadows 2.5s infinite;
+    margin-bottom: 50px;
+  }
+  .card.shadow-animate a:hover{
+    background-color: #ffeba7;
   }
   
   @keyframes shadows {
@@ -561,4 +565,15 @@ a .uil {
   height: 60px;
   width: 100%px;
   display: flex;
+}
+
+.copyright {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
+}
+
+.copyright .link {
+  display: inline;
+  color: var(--gold-crayola);
+  text-decoration: underline;
 }
