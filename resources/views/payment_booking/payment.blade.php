@@ -15,44 +15,41 @@
             <a href=""><img src="img/logo.png" alt=""></a>
         </div>
     </nav>
-    <main>
-        @foreach ($forms as $form)   
+    <main>  
         <div class="body">
             <div class="left">
                 <div class="left_first_top">
                     <h2>Booking Summary</h2>
                     <div class="left_first_top_book">
 
-                            @foreach ($formdatas as $formdata)                         
-                                <div class="left_first_top_book_div">
-                                    <div>Name</div>
-                                    <div>{{$formdata->name}}</div>
-                                </div>
-                            @endforeach                   
+                            <div class="left_first_top_book_div">
+                                <div>Name</div>
+                                <div>Adhip Halder</div>
+                            </div>
 
                             <div class="left_first_top_book_div">
                                 <div>Booking Date</div>
-                                <div>{{$form->date}}</div>
+                                <div>16.04.2024</div>
                             </div>
 
                             <div class="left_first_top_book_div">
                                 <div>Booking Time Slot</div>
-                                <div>{{$form->time}}</div>
+                                <div>10.00 - 12.00</div>
                             </div>
 
                             <div class="left_first_top_book_div">
                                 <div>Total Guest No.</div>
-                                <div>{{$form->guest}}</div>
+                                <div>2</div>
                             </div>
 
                             <div class="left_first_top_book_div">
                                 <div>Seat No.</div>
-                                <div>{{$form->seat}}</div>
+                                <div>2 Seater</div>
                             </div>
 
                             <div class="left_first_top_book_div">
                                 <div>Table No.</div>
-                                <div>{{$form->table}}</div>
+                                <div>021</div>
                             </div>
                         </div>
 
@@ -119,7 +116,6 @@
                     </div>
                 </div>
             </div>
-            @endforeach  
     </main>
 
 

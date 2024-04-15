@@ -69,12 +69,9 @@ Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 
 
 
-// Route::get('/booktable',[CustomerController::class,'booktable']);
-
 Route::get('/booktable', function () {
     return view('payment_booking.booktable');
 });
-
 
 
 
@@ -82,25 +79,14 @@ Route::get('/booking',[BookingController::class,'view']);
 
 Route::post('/booking',[BookingController::class,'booking']);
 
-
-
-// Route::get('/booking', function () {
-//     return view('payment_booking.booking');
-// });
-
-
-
-
-
-Route::get('/successful',[PaymentController::class,'successful']);
-
-
-Route::get('/index',[PaymentController::class,'index']);
-Route::post('/indexpost',[PaymentController::class,'post']);
-
-Route::get('/indexone',[PaymentController::class,'indexone']);
-Route::post('/indexonepost',[PaymentController::class,'postone']);
-
+/*
+|--------------------------------------------------------------------------
+| Payment
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/payment',[PaymentController::class,'view']);
-Route::post('/payment',[PaymentController::class,'pay']);
+Route::post('/payment',[PaymentController::class,'payment']);
+
+
+Route::get('/paysuccess',[PaymentController::class,'pay_successful']);
