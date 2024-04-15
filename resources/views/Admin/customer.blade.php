@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo"><img src="images/FoodHub.png"></a>
+            <a href="/" class="logo"><img src="{{asset('images/FoodHub.png')}}"></a>
             <input type="text" placeholder="Search..." id="searchInput">
 
             <div class="menu">
@@ -43,11 +43,11 @@
             <span></span>
             <ul id="menu">
                 <div class="active">
-                    <a href="#"><li>Customers</li></a>
+                    <a><li>Customers</li></a>
                 </div>
-                <a href="#"><li>Menus</li></a>
-                <a href="#"><li>Tables</li></a>
-                <a href="#"><li>Reservations</li></a>
+                <a href="/admin/menu"><li>Menus</li></a>
+                <a href="/admin/table"><li>Tables</li></a>
+                <a href="/admin/reservation"><li>Reservations</li></a>
             </ul>
             </div>
         </nav>
@@ -132,19 +132,17 @@
                     <thead>
                         <tr>
                             <th>Customer ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
+                            <th>Name</th>
                             <th> Contact No</th>
                             <th> Email</th>
                             <th>Address</th>
-                            <th> Password</th>
+                            {{-- <th> Password</th> --}}
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    {{-- <tbody>
     
                             <tr>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -169,6 +167,36 @@
                                     </button>
                                 </td>
                             </tr>
+                    </tbody> --}}
+
+                    <tbody>
+                        @foreach($customers as $customer)
+                            <tr>
+                                <td>{{ $customer->customer_id }}</td>
+                                <td>{{ $customer->name }}</td>
+                                <td>{{ $customer->contact }}</td>
+                                <td>{{ $customer->email }}</td>
+                                <td>{{ $customer->address }}</td>
+                                {{-- <td>{{ $customer->password }}</td> --}}
+                                <td class="button-container">
+                                    <button class="edit">Edit</button>
+                                    <button class="button">
+                                        <div class="trash">
+                                            <div class="top">
+                                                <div class="paper"></div>
+                                            </div>
+                                            <div class="box"></div>
+                                            <div class="check">
+                                                <svg viewBox="0 0 8 6">
+                                                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

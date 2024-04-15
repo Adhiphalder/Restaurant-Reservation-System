@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('customer_id')->references('customer_id')->on('customerms');
             $table->unsignedBigInteger('booking_id')->nullable();
             // $table->foreign('booking_id')->references('booking_id')->on('forms')->onUpdate('cascade');
-            $table->foreign('booking_id')->references('booking_id')->on('bookings');
+            $table->foreign('booking_id')->references('booking_id')->on('booking');
             $table->integer('ammount')->default(200);
             $table->enum('paymethod',["upi","card"])->nullable();
             $table->timestamp('current_time');
