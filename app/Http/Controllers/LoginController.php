@@ -27,8 +27,8 @@ class LoginController extends Controller
             'password' => 'required',
             'contact' => 'required',
             'address' => 'required'
-        ]);
-    
+        ]); 
+     
         $customer = new Customer;
         $customer->name = $request->name;
         $customer->email = $request->email;
