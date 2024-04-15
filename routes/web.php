@@ -93,6 +93,8 @@ Route::get('/booking',[BookingController::class,'view']);
 
 Route::post('/booking',[BookingController::class,'booking']);
 
+Route::get('/booktable',[BookingController::class,'table_view']);
+
 /*
 |--------------------------------------------------------------------------
 | Payment
@@ -103,4 +105,4 @@ Route::get('/payment',[PaymentController::class,'view']);
 Route::post('/payment',[PaymentController::class,'payment']);
 
 
-Route::get('/paysuccess',[PaymentController::class,'pay_successful']);
+Route::get('/pay/successful',[PaymentController::class,'pay_successful']);
