@@ -323,7 +323,7 @@ label{
     border: none;
     border: 1.7px solid grey;
     height: 33px;
-    width: 240px;
+    width: 256px;
     padding-left: 7px;
     padding-right: 7px;
     border-radius: 5px;
@@ -348,7 +348,7 @@ input{
     border: none;
     border: 1.7px solid grey;
     height: 33px;
-    width: 240px;
+    width: 256px;
     padding-left: 7px;
     padding-right: 7px;
     border-radius: 5px; 
@@ -405,6 +405,7 @@ select{
     font-size: 17px;
     transition: 0.7s ease-out;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .submitbtn:hover {
