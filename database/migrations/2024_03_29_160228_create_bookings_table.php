@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id('booking_id');
             $table->unsignedBigInteger('table_id')->nullable();
-            $table->foreign('table_id')->references('table_id')->on('tables');
+            $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
             $table->unsignedBigInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('customer_id')->on('customers');
+            $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
             $table->date('date');
             $table->enum('time',["first","second","third","fourth","fifth","sixth","seventh","eightth","ninth","tenth","eleventh","twelvelth"])->nullable();
             $table->integer('guest_no');
