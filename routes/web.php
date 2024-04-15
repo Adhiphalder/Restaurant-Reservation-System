@@ -13,7 +13,6 @@ use App\Http\Controllers\BookhisController;
 
 use App\Http\Controllers\BookingController;
 
-
 use App\Models\Customer;
 
 use App\Models\Bookhistory;

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Booking;
 
-
+use Illuminate\Support\Facades\Session;
 
 class BookingController extends Controller
 {
@@ -17,13 +17,48 @@ class BookingController extends Controller
 
     public function booking(Request $request){
 
-        $booking = new Booking;
+        // $booking = new Booking;
 
-        $booking->date = $request['date'];
-        $booking->time = $request['time'];
-        $booking->guest_no = $request['guest_no'];
-        $booking->seat_no = $request['gnum'];
+        // $booking->date = $request['date'];
+        // $booking->time = $request['time'];
+        // $booking->guest_no = $request['guest_no'];
+        // $booking->seat_no = $request['gnum'];
+        // $booking->save();
+        // // return redirect('/');
+
+        // return redirect()->back()->with('success', 'Booking created successfully!');
+
+
+        $request->validate([
+            'date' => 'required|date',
+            'time' => 'required',
+            'guest_no' => 'required|integer|min:1',
+            'gnum' => 'required',
+        ]);
+        
+
+        $customer = Session::get('customer');
+        
+        if (!$customer) {
+            return redirect()->back()->with('error', 'Customer data not found in session.');
+        }
+        
+        $customerId = $customer->customer_id; 
+        
+
+        $booking = new Booking;
+            
+        $booking->customer_id = $customerId;
+        $booking->date = $request->input('date');
+        $booking->time = $request->input('time');
+        $booking->guest_no = $request->input('guest_no');
+        $booking->seat_no = $request->input('gnum');
+            
+
         $booking->save();
-        return redirect('/');
+        
+
+        return redirect()->back()->with('success', 'Booking created successfully!');
+
     }
 }

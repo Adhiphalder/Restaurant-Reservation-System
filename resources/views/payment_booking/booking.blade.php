@@ -16,6 +16,12 @@
             <div class="form">
                 <form method="POST" action="{{url('/')}}/booking">
                     @csrf
+        
+                    {{-- <h4>Customer ID : {{ session('customer_id') }}</h4> <br>  --}}
+
+                    @if(session('customer'))
+                    <h4>Customer ID : {{ session('customer')->customer_id }}</h4> <br>
+                    @endif
                     <div class="form_div">
                         <label for="date">Booking Date</label>
                         <input type="date" name="date" id="date" class="input" required>

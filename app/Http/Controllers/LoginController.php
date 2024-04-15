@@ -42,6 +42,7 @@ class LoginController extends Controller
         Session::flash('success', 'Sign up successful!');
 
         return redirect('/');
+
     }
 
     public function login(Request $request){
@@ -52,11 +53,13 @@ class LoginController extends Controller
         if ($customer && Hash::check($request->input('password'), $customer->password)) {
 
             $request->session()->put('customer', $customer);
+            // $request->session()->put('customer_id', $customer->id);
             return redirect('/');
         } else {
 
             return redirect()->back()->with('error', 'Invalid email or password');
         }
+        
     }
 
     public function logout(Request $request)
@@ -71,6 +74,7 @@ class LoginController extends Controller
     $request->session()->regenerateToken();
 
     return redirect()->route('home')->with('success', 'Logged out successfully.');
+
     }
 
 }
