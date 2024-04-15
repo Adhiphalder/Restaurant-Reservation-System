@@ -43,17 +43,18 @@
             <div class="left">
                 <div class="left_first_top">
                     <h2>Booking Summary</h2>
-                    <div class="left_first_top_book">
+                    {{-- <div class="left_first_top_book"> --}}
 
-                            <div class="left_first_top_book_div">
+                            {{-- <div class="left_first_top_book_div">
                                 <div>Name</div>
                                 <div>Adhip Halder</div>
                             </div>
 
                             <div class="left_first_top_book_div">
                                 <div>Booking Date</div>
-                                <div>16.04.2024</div>
-                            </div>
+                                <div>10.04.2024</div>
+                            </div> 
+                            
 
                             <div class="left_first_top_book_div">
                                 <div>Booking Time Slot</div>
@@ -74,7 +75,51 @@
                                 <div>Table No.</div>
                                 <div>021</div>
                             </div>
+                        </div> --}}
+
+
+                    <div class="left_first_top_book">
+                            @if(session('customer'))
+                                <div class="left_first_top_book_div">
+                                    <div>Name</div>
+                                    <div>{{ session('customer')->name }}</div>
+                                </div>
+                            @endif
+                        
+                            @if(session('booking_date'))
+                                <div class="left_first_top_book_div">
+                                    <div>Booking Date</div>
+                                    <div>{{ session('booking_date') }}</div>
+                                </div>
+                            @endif
+                        
+                            @if(session('booking_time'))
+                                <div class="left_first_top_book_div">
+                                    <div>Booking Time Slot</div>
+                                    <div>{{ session('booking_time') }}</div>
+                                </div>
+                            @endif
+                        
+                            @if(session('guest_no'))
+                                <div class="left_first_top_book_div">
+                                    <div>Total Guest No.</div>
+                                    <div>{{ session('guest_no') }}</div>
+                                </div>
+                            @endif
+                        
+                            @if(session('seat_no'))
+                                <div class="left_first_top_book_div">
+                                    <div>Seat No.</div>
+                                    <div>{{ session('seat_no') }}</div>
+                                </div>
+                            @endif
+
+                            <div class="left_first_top_book_div">
+                                <div>Table No.</div>
+                                <div>021</div>
+                            </div>
                         </div>
+                        
 
                         <button id="pcedtocout">Proceed to Checkout</button>
 
@@ -120,7 +165,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
+            </div>
                 <div class="right">
                     <h2>Price Details</h2>
                     <div class="right_top">

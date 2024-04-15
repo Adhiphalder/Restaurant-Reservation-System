@@ -37,6 +37,7 @@ class BookingController extends Controller
         ]);
         
 
+
         $customer = Session::get('customer');
         
         if (!$customer) {
@@ -47,18 +48,22 @@ class BookingController extends Controller
         
 
         $booking = new Booking;
-            
         $booking->customer_id = $customerId;
         $booking->date = $request->input('date');
         $booking->time = $request->input('time');
         $booking->guest_no = $request->input('guest_no');
         $booking->seat_no = $request->input('gnum');
-            
-
         $booking->save();
         
 
-        return redirect()->back()->with('success', 'Booking created successfully!');
+        Session::put('booking_date', $request->input('date'));
+        Session::put('booking_time', $request->input('time'));
+        Session::put('guest_no', $request->input('guest_no'));
+        Session::put('seat_no', $request->input('gnum'));
+
+        // return redirect()->back()->with('success', 'Booking created successfully!');
+    return redirect()->route('home')->with('success', 'Booking created successfully');
+
 
     }
 
