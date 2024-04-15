@@ -342,7 +342,7 @@
 .dark-light:checked ~ .sec-center .section-dropdown a {
   color: #102770;
 }
-a:hover {
+.menu a:hover {
   color: #102770;
   background-color: #ffeba7;
 }
@@ -518,6 +518,7 @@ a .uil {
   .card.shadow-animate {
   box-shadow: 0px 0px 10px 0px #E4C590;
   animation: shadows 2.5s infinite;
+  margin-bottom: 80px;
   }
   
   @keyframes shadows {
@@ -584,6 +585,7 @@ hr{
   margin-top: 25px;
   display: flex;
   justify-content: center; /* Center the pagination */
+  margin-bottom: 40px;
 }
 
 .pagination i {
@@ -615,7 +617,7 @@ li {
   margin: 0 15px; /* Adjust the margin */
 }
 
-a {
+.pagination a {
   display: block;
   text-decoration: none;
   /* color: #FFFFFF; */
@@ -929,4 +931,15 @@ tbody button.edit:hover {
 }
 *:before, *:after {
   box-sizing: inherit;
+}
+
+.copyright {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
+}
+
+.copyright .link {
+  display: inline;
+  color: var(--gold-crayola);
+  text-decoration: underline;
 }
