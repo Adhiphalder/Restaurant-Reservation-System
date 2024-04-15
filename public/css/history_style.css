@@ -183,7 +183,7 @@
 
 .menu{
   position: absolute;
-  top: 40px;
+  top: 23px;
   right: 65px;
 }
 
@@ -441,8 +441,8 @@ a .uil {
     transition: all 250ms linear;
 }
 
-.logo img {
-	height: 26px;
+.logo a img {
+	height: 48px;
 	width: auto;
 	display: block;
   transition: all 200ms linear;
