@@ -42,7 +42,7 @@
 
 
         <div class="main_part">
-            <img src="images/payment_successful/done.png" alt="" class="main_part_img">
+            <img src="/images/payment_successful/done.png" alt="" class="main_part_img">
             <h2>Thank You</h2>
             <div class="main_part_para">
                 <p>Your payment for 2 guest at 08.04.2024 on 17.00 is successfully done.</p>

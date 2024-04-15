@@ -13,6 +13,8 @@ use App\Http\Controllers\BookhisController;
 
 use App\Http\Controllers\BookingController;
 
+use App\Http\Controllers\MenuController;
+
 use App\Models\Customer;
 
 use App\Models\Bookhistory;
@@ -80,6 +82,10 @@ Route::get('/admin/table',[AdminController::class, 'table'])->name('admin.table'
 
 
 Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
+
+Route::get('/addmenu',[MenuController::class,'view']);
+
+Route::post('/addmenu',[MenuController::class,'show']);
 
 
 /*-------------------*\
