@@ -26,4 +26,8 @@ class BookingController extends Controller
         $booking->save();
         return redirect('/');
     }
+
+    public function table_view(){
+        return view('payment_booking.booktable');
+    }
 }
