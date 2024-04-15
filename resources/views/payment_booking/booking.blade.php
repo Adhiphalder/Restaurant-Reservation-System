@@ -38,18 +38,17 @@
     </nav>
     <div class="main">
         <div class="left">
-            <img src="/images/booking/1.jpg" alt="">
+            <img src="/images/booking/1.jpeg" alt="">
         </div> 
         <div class="right">
             <div class="form">
                 <form method="POST" action="{{url('/')}}/booking">
                     @csrf
-        
-                    {{-- <h4>Customer ID : {{ session('customer_id') }}</h4> <br>  --}}
+    
 
-                    @if(session('customer'))
+                    {{-- @if(session('customer'))
                     <h4>Customer ID : {{ session('customer')->customer_id }}</h4> <br>
-                    @endif
+                    @endif --}}
                     <div class="form_div">
                         <label for="date">Booking Date</label>
                         <input type="date" name="date" id="date" class="input" required>

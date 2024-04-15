@@ -94,11 +94,9 @@ Route::post('/booking',[BookingController::class,'booking']);
 
 Route::get('/booktable',[BookingController::class,'table_view']);
 
-/*
-|--------------------------------------------------------------------------
-| Payment
-|--------------------------------------------------------------------------
-*/
+/*-------------------*\
+  #PAYMENT
+\*------------------*/
 
 Route::get('/payment',[PaymentController::class,'view']);
 Route::post('/payment',[PaymentController::class,'payment']);

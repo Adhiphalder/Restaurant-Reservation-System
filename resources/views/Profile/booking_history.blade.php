@@ -66,11 +66,11 @@
                                         <th>Action</th>
                                     </tr>
                                 </div>
-                                @foreach($booking as $book)
+
                                 <tr>
-                                <td>{{ $book->date }}</td>
-                                <td>{{ $book->time }}</td>
-                                <td>{{ $book->guest_no }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td class="button-container">
                                     <button class="edit">Edit</button>
                                     <button class="button">
@@ -90,7 +90,7 @@
                                     </button>
                                 </td>
                                 </tr>
-                                @endforeach
+
                           </table>
 
                         <div class="pagination">

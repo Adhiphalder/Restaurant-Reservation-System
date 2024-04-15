@@ -38,7 +38,7 @@
     </nav>
      <div class="main">
         <div class="left">
-            <img src="/images/booktable/3.jpg" alt="">
+            <img src="/images/booktable/3.jpeg" alt="">
         </div>
         <div class="right">
             <div class="form">
