@@ -62,10 +62,9 @@ Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
 
-/*---------------------------------*\
+/*---------------*\
   #ADMIN
-\*---------------------------------*/
-
+\*----------------*/
 
 
 Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
@@ -93,7 +92,6 @@ Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 Route::get('/booktable', function () {
     return view('payment_booking.booktable');
 });
-
 
 Route::get('/booking',[BookingController::class,'view']);
 
