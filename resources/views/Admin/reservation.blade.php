@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo"><img src="images/FoodHub.png"></a>
+            <a href="/" class="logo"><img src="{{asset('images/FoodHub.png')}}"></a>
             <input type="text" placeholder="Search..." id="searchInput">
 
             <div class="menu">
@@ -42,9 +42,9 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <a href="#"><li>Customers</li></a>
-                <a href="#"><li>Menus</li></a>
-                <a href="#"><li>Tables</li></a>
+                <a href="/admin/customer"><li>Customers</li></a>
+                <a href="/admin/menu"><li>Menus</li></a>
+                <a href="/admin/table"><li>Tables</li></a>
                 <div class="active">
                     <a href="#"><li>Reservations</li></a>
                 </div>
@@ -131,17 +131,19 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Customer ID</th>
                             <th>Booking ID</th>
+                            <th>Customer ID</th>
                             <th>Table No</th>
                             <th>Time Slot</th>
                             <th> Contact No</th>
+                            <th> Booking On</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
     
                             <tr>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
