@@ -38,40 +38,54 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+/*---------------------------------*\
+  #LOGIN & SIGNUP
+\*---------------------------------*/
 
-    //LOGIN 
 
 
 Route::get('/signup', [LoginController::class, 'index'])->name('signup');
+
 Route::post('/signup', [LoginController::class, 'signUp']);
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+/*---------------------------------------------*\
+  #PROFILE & MYBOOKINGS
+\*---------------------------------------------*/
+
 
 
 Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
-
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
 
+/*---------------*\
+  #ADMIN
+\*----------------*/
 
-Route::get('/admenu',[AdminController::class, 'admenu']);
 
-Route::get('/customer',[AdminController::class, 'customer']);
+Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
 
-Route::get('/reservation',[AdminController::class, 'reservation']);
+Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
-Route::get('/table',[AdminController::class, 'table']);
+Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
+
+Route::get('/admin/table',[AdminController::class, 'table'])->name('admin.table');
+
+/*----------------*\
+  #MENU
+\*---------------*/
+
 
 Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
 
 
-
-Route::get('/booktable', function () {
-    return view('payment_booking.booktable');
-});
+/*-------------------*\
+  #BOOKING
+\*------------------*/
 
 
 
