@@ -22,7 +22,7 @@ class PaymentController extends Controller
         $payment = new Payment;
         $payment->paymethod = $request['p_method'];
         $payment->save();
-        return redirect('/paysuccess'); 
+        return redirect('/pay/successful'); 
     }
     
 }

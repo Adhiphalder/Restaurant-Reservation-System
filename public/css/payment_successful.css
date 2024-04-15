@@ -12,6 +12,7 @@ body{
     background-image: url("../images/payment_successful/vintage-old-rustic-cutlery-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .main{
