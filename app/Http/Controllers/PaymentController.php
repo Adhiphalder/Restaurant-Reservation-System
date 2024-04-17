@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
+use App\Models\Review;
 use Illuminate\Support\Facades\Session;
 
 
@@ -91,6 +92,14 @@ class PaymentController extends Controller
         return redirect('/')->with('success', 'Payment successful.');
 
 
+    }
+
+    public function review(Request $request){
+        
+        $review = new Review;
+        $review->review_text = $request['review'];
+        $review->save();
+        return redirect('/');
     }
     
 }

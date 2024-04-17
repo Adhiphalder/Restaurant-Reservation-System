@@ -48,7 +48,15 @@
                 <p>Your payment for 2 guest at 08.04.2024 on 17.00 is successfully done.</p>
                 <p class="main_part_sec">Your Payment id #0000000</p>
             </div>
-            <button>OK</button>
+
+            <form method="POST" action="{{url('/')}}/pay/successful">
+                @csrf
+                <div>
+                    <label for="review"><p class="review_p">Review</p></label>
+                    <textarea name="review" id="review" class="review" cols="72" rows="17" placeholder="Share you experience with us." required></textarea>
+                </div>
+                <button class="button">OK</button>
+            </form>
         </div>
     </div>
 
