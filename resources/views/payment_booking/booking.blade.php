@@ -28,7 +28,6 @@
                             <button type="submit">Logout</button>
                         </form>
                         
-                        <!-- Add a button or link to trigger the logout form -->
                         <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                     </div>

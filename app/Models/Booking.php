@@ -12,4 +12,10 @@ class Booking extends Model
     protected $table = "bookings";
     protected $primaryKey = "booking_id";
     protected $fillable = ['customer_id', 'date', 'time', 'guest_no', 'seat_no'];
+
+    // Define relationship with payments
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

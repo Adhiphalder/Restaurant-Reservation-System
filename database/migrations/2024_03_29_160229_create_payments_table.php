@@ -17,10 +17,11 @@ return new class extends Migration
             $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
             $table->unsignedBigInteger('booking_id')->nullable();
             $table->foreign('booking_id')->references('booking_id')->on('bookings')->onDelete('cascade');
-            $table->integer('ammount')->default(200);
+            $table->integer('amount')->default(200);
             $table->enum('paymethod',["upi","card"])->nullable();
             $table->timestamp('current_time');
             $table->timestamps();
+
         });
     }
 

@@ -45,8 +45,11 @@
             <img src="/images/payment_successful/done.png" alt="" class="main_part_img">
             <h2>Thank You</h2>
             <div class="main_part_para">
-                <p>Your payment for 2 guest at 08.04.2024 on 17.00 is successfully done.</p>
-                <p class="main_part_sec">Your Payment id #0000000</p>
+                {{-- <p>Your payment for (guest_no) guest at (date) on (time) is successfully done.</p> --}}
+                {{-- <p class="main_part_sec">Your Payment id #(payment_id)</p> --}}
+
+                <p>Your payment for {{ session('guest_no') }} guest at {{ session('date') }} on {{ session('time') }} is successfully done.</p>
+                <p class="main_part_sec">Your Payment id #{{ session('payment_id') }}</p>
             </div>
             <button>OK</button>
         </div>

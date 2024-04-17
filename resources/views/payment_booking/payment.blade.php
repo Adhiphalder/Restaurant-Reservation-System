@@ -77,6 +77,13 @@
                             </div>
                         </div> --}}
 
+                        @if(session('customer'))
+                    <h4>Customer ID : {{ session('customer')->customer_id }}</h4> <br>
+                    @endif
+
+                    @if(session('booking_id'))
+                        <h4>Booking ID : {{ session('booking_id') }}</h4> <br>
+                    @endif
 
                         <div class="left_first_top_book">
                             @if(session('customer'))
