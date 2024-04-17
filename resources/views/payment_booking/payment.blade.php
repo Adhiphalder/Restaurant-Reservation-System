@@ -78,7 +78,7 @@
                         </div> --}}
 
 
-                    <div class="left_first_top_book">
+                        <div class="left_first_top_book">
                             @if(session('customer'))
                                 <div class="left_first_top_book_div">
                                     <div>Name</div>
@@ -128,15 +128,19 @@
                     <div class="left_first_bottom">
                         <h2>Choose your payment options</h2>
                         <div>
-                            <form method="POST" action="{{url('/')}}/payment">
+                            {{-- <form method="POST" action="{{url('/')}}/payment">
                                 @csrf
+
+                                <input type="hidden" name="booking_id" value="{{ Session::get('booking_id') }}">
+
+
                                 <div class="form_first_child">
                                     <input type="radio" name="p_method" id="p_method_upi" value="upi" required>
                                     <label for="p_method_upi">
                                         <span>UPI</span>
                                         <div class="p_method_upi_main">
-                                            <input type="email" name="" id="p_method_upi_space" placeholder="Enter your VPA">
-                                            <label for="submit1"><button class="button">Pay ₹200</button></label>
+                                            <input type="email" name="p_method" id="p_method_upi_space" placeholder="Enter your VPA">
+                                            <label for="submit1"><button type="submit" class="button">Pay ₹200</button></label>
                                         </div>
                                     </label>
                                 </div>
@@ -156,12 +160,45 @@
                                             </div>
                                             <div>
                                                 <input type="submit" name="" id="submit1">
-                                                <label for="submit1"><button class="button">Pay ₹200</button></label>
+                                                <label for="submit1"><button type="submit" class="button">Pay ₹200</button></label>
                                             </div>
                                         </div>
                                     </label>
                                 </div>
 
+                            </form> --}}
+
+                            <form method="POST" action="{{ url('/payment') }}">
+                                @csrf
+                                <input type="hidden" name="booking_id" value="{{ Session::get('booking_id') }}">
+                                <div class="form_first_child">
+                                    <input type="radio" name="p_method" id="p_method_upi" value="upi" required>
+                                    <label for="p_method_upi">
+                                        <span>UPI</span>
+                                        <div class="p_method_upi_main">
+                                            <input type="email" name="upi_vpa" id="p_method_upi_space" placeholder="Enter your VPA">
+                                            <button type="submit" class="button">Pay ₹200</button>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form_sec_child">
+                                    <input type="radio" name="p_method" id="p_method_card" value="card" required>
+                                    <label for="p_method_card">
+                                        <span>Credit / Debit / ATM Card</span>
+                                        <div class="p_method_card_main">
+                                            <div>
+                                                <input type="tel" name="card_number" id="p_method_card_space" placeholder="Enter Card Number" maxlength="16">
+                                            </div>
+                                            <div>
+                                                <input type="text" name="card_exp" id="p_method_card_exp" placeholder="MM/YY">
+                                                <input type="password" name="card_ccv" id="p_method_card_ccv" maxlength="4" placeholder="CCV">
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="button">Pay ₹200</button>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
                             </form>
                         </div>
                     </div>

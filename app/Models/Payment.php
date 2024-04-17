@@ -12,4 +12,6 @@ class Payment extends Model
 
     protected $table = "payments";
     protected $primaryKey = "payment_id";
+
+    protected $fillable = ['booking_id', 'paymethod'];
 }
