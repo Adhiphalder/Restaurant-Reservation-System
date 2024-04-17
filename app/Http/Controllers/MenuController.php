@@ -34,5 +34,11 @@ class MenuController extends Controller
         $addmenu->menu_description = $request['menu_des'];
         $addmenu->photo = $filePath;
         $addmenu->save();
+        return redirect('/admin/menu');
+    }
+
+
+    public function menuview(){
+        return view('payment_booking.menu');
     }
 }

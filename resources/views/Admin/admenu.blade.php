@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo"><img src="images/FoodHub.png"></a>
+            <a href="#" class="logo"><img src="/images/FoodHub.png"></a>
             <input type="text" placeholder="Search..." id="searchInput">
 
             <div class="menu">

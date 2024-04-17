@@ -81,7 +81,7 @@ Route::get('/admin/table',[AdminController::class, 'table'])->name('admin.table'
 \*---------------*/
 
 
-Route::get('/menu',[CustomerController::class,'menu'])->name('menu');
+Route::get('/menu',[MenuController::class,'menuview']);
 
 Route::get('/addmenu',[MenuController::class,'view']);
 
