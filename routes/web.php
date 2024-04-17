@@ -72,7 +72,7 @@ Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybo
 \*----------------*/
 
 
-Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
+// Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
 
 Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
@@ -88,6 +88,8 @@ Route::get('/admin/table',[AdminController::class, 'table'])->name('admin.table'
 Route::get('/menu',[MenuController::class,'menuview']);
 
 Route::get('/addmenu',[MenuController::class,'view']);
+
+Route::get('/admin/menu',[MenuController::class, 'viewmenu']);
 
 Route::post('/addmenu',[MenuController::class,'show']);
 
@@ -112,7 +114,7 @@ Route::get('/payment',[PaymentController::class,'view'])->name('payment');
 Route::post('/payment',[PaymentController::class,'payment']);
 
 
-Route::get('/pay/successful',[PaymentController::class,'pay_successful'])-name('pay_successful');
+Route::get('/pay/successful',[PaymentController::class,'pay_successful'])->name('pay_successful');
 
 
 

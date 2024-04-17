@@ -29,7 +29,7 @@
                     <span>Veg or Non-veg : </span>
                     <input type="radio" name="veg_or_non" class="veg_or_non" id="veg" value="veg">
                     <label for="veg">Veg</label>
-                    <input type="radio" name="veg_or_non" class="veg_or_non" id="non-veg" value="non-veg">
+                    <input type="radio" name="veg_or_non" class="veg_or_non" id="non-veg" value="non_veg">
                     <label for="non-veg">Non-veg</label>
                     <br>
                 </div>

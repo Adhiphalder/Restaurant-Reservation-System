@@ -37,6 +37,12 @@ class MenuController extends Controller
         return redirect('/admin/menu');
     }
 
+    public function viewmenu(){
+        $addmenus = Menu::all();
+        $data = compact('addmenus');
+        return view('Admin.admenu')->with($data);
+    }
+
 
     public function menuview(){
         return view('payment_booking.menu');

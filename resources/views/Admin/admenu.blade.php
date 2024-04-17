@@ -91,7 +91,7 @@
             .button-container {
                 display: flex;
                 justify-content: center; 
-                align-items: center; 
+                align-addmenus: center; 
             }
 
             tbody button {
@@ -132,20 +132,53 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Food ID</th>
                             <th>Food Name</th>
-                            <th>Food Image</th>
+                            <th>Food Description</th>
+                            <th>Food Type</th>
                             <th>Veg or Nonveg</th>
+                            <th>Type of Non Veg</th>
+                            <th>Food Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-    
+                        @foreach ($addmenus as $addmenu)
+
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$addmenu->menu_name}}</td>
+                                <td>{{$addmenu->menu_description}}</td>
+                                <td>
+                                    @if ($addmenu->menu_type== "stater")
+                                        Staters
+                                    @elseif ($addmenu->menu_type== "main_course")
+                                        Main Course
+                                    @else
+                                        Dessert
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($addmenu->veg_or_non_veg== "veg")
+                                        Veg
+                                    @elseif($addmenu->veg_or_non_veg== "non_veg")
+                                        Non Veg
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($addmenu->type_of_non_veg== "chicken")
+                                        Chicken
+                                    @elseif($addmenu->type_of_non_veg== "motton")
+                                        Mutton
+                                    @else
+                                        Other
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($addmenu->photo)
+                                        <img src="{{asset('storage/'.$addmenu->photo)}}" alt="Customer Photo" style="max-width: 100px">                                
+                                    @else
+                                        No Photo Avaliable
+                                    @endif
+                                </td>
                                 <td class="button-container">
                                     <button class="edit">Edit</button>
                                     <button class="button">
@@ -164,6 +197,8 @@
                                     </button>
                                 </td>
                             </tr>
+
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id('menu_id');
             $table->enum('menu_type',["stater","main_course","dessert"])->nullable();
-            $table->enum('veg_or_non_veg',["veg","non-veg"])->nullable();
+            $table->enum('veg_or_non_veg',["veg","non_veg"])->nullable();
             $table->enum('type_of_non_veg',["chicken","motton"])->nullable();
             $table->string('menu_name');
             $table->string('menu_description');
