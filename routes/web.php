@@ -23,6 +23,10 @@ use App\Models\Booking;
 
 
 
+use App\Models\Review;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -104,8 +108,16 @@ Route::get('/booktable',[BookingController::class,'table_view']);
   #PAYMENT
 \*------------------*/
 
-Route::get('/payment',[PaymentController::class,'view']);
+Route::get('/payment',[PaymentController::class,'view'])->name('payment');
 Route::post('/payment',[PaymentController::class,'payment']);
 
 
-Route::get('/pay/successful',[PaymentController::class,'pay_successful']);
+Route::get('/pay/successful',[PaymentController::class,'pay_successful'])-name('pay_successful');
+
+
+
+/*-------------------*\
+  #REVIEW
+\*------------------*/
+
+Route::post('/pay/successful',[PaymentController::class,'review']);

@@ -291,11 +291,11 @@ body{
 
 .main_part{
     margin: auto;
-    width: 750px;
-    height: 450px;
+    width: 1150px;
+    height: 750px;
     background-color: rgb(21 21 21 / 81%);
     border-radius: 15px;
-    display: flex;
+    display: flex;  
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -305,13 +305,14 @@ body{
 
 .main_part_img{
     width: 105px;
-    background-color: white;
+    background-color:#e4c590;
     border-radius: 75px;
 }
 
 .main_part h2{
     font-size: 35px;
     font-weight: 500;
+    color: #e4c590;
 }
 
 .main_part_para{
@@ -322,8 +323,28 @@ body{
     padding-top: 11px;
 }
 
-.main_part button{
-    width: 250px;
+.review{
+  background: none;
+  border: 1.5px solid #e4c590;
+  border-radius: 7px;
+  margin-top: 23px;
+}
+
+.review::placeholder{
+  font-size: 18px;
+  padding-top: 13px;
+  padding-left: 17px;
+}
+
+.review_p{
+  font-size: 27px;
+  font-weight: 500;
+  color: #e4c590;
+}
+
+
+.button{
+    width: 350px;
     height: 50px;
     background: none;
     border: none;
@@ -333,9 +354,10 @@ body{
     border-radius: 3px;
     font-size: 20px;
     font-weight: 500;
+    margin-top: 27px;
 }
 
-.main_part button:hover {
+.button:hover {
     background-color: #e4c590;
     color: black;
 }
