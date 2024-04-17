@@ -91,7 +91,7 @@
             .button-container {
                 display: flex;
                 justify-content: center; 
-                align-addmenus: center; 
+                align-items: center; 
             }
 
             tbody button {
