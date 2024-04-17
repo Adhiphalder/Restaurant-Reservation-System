@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function admenu()
-    {
-        return view('Admin.admenu');
-    }
+    // public function admenu()
+    // {
+    //     return view('Admin.admenu');
+    // }
     
     // public function customer()
     // {

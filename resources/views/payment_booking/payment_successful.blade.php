@@ -51,7 +51,15 @@
                 <p>Your payment for {{ session('guest_no') }} guest at {{ session('date') }} on {{ session('time') }} is successfully done.</p>
                 <p class="main_part_sec">Your Payment id #{{ session('payment_id') }}</p>
             </div>
-            <button>OK</button>
+
+            <form method="POST" action="{{url('/')}}/pay/successful">
+                @csrf
+                <div>
+                    <label for="review"><p class="review_p">Review</p></label>
+                    <textarea name="review" id="review" class="review" cols="72" rows="17" placeholder="Share you experience with us." required></textarea>
+                </div>
+                <button class="button">OK</button>
+            </form>
         </div>
     </div>
 

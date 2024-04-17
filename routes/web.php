@@ -24,6 +24,10 @@ use App\Models\Booking;
 use App\Models\Payment;
 
 
+use App\Models\Review;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +73,7 @@ Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybo
 \*----------------*/
 
 
-Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
+// Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
 
 Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
@@ -85,6 +89,8 @@ Route::get('/admin/table',[AdminController::class, 'table'])->name('admin.table'
 Route::get('/menu',[MenuController::class,'menuview']);
 
 Route::get('/addmenu',[MenuController::class,'view']);
+
+Route::get('/admin/menu',[MenuController::class, 'viewmenu']);
 
 Route::post('/addmenu',[MenuController::class,'show']);
 
@@ -105,8 +111,16 @@ Route::get('/booktable',[BookingController::class,'table_view']);
   #PAYMENT
 \*------------------*/
 
-Route::get('/payment',[PaymentController::class,'view']);
+Route::get('/payment',[PaymentController::class,'view'])->name('payment');
 Route::post('/payment',[PaymentController::class,'payment']);
 
 
-Route::get('/pay/successful',[PaymentController::class,'pay_successful']);
+Route::get('/pay/successful',[PaymentController::class,'pay_successful'])->name('pay_successful');
+
+
+
+/*-------------------*\
+  #REVIEW
+\*------------------*/
+
+Route::post('/pay/successful',[PaymentController::class,'review']);

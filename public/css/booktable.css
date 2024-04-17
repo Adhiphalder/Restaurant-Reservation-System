@@ -307,6 +307,7 @@ body{
     height: 100%;
     display: flex;
     align-items: center;
+    margin-left: 66px;
 }
 
 label{
@@ -343,6 +344,7 @@ label{
     border-radius: 3px;
     font-size: 15px;
     margin-top: 25px;
+    cursor: pointer;
 }
 
 .btn:hover {

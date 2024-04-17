@@ -107,6 +107,7 @@ body{
     font-weight: 500;
     margin: auto;
     text-align: center;
+    cursor: pointer;
 }
 
 .btn:hover{

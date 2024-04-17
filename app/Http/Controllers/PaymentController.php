@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
+
 use App\Models\Booking;
+use App\Models\Review;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -44,6 +46,14 @@ class PaymentController extends Controller
     logger()->info('Payment created with booking ID: ' . $payment->booking_id);
     
     return view('payment_booking.payment_successful');
+    }
+
+    public function review(Request $request){
+        
+        $review = new Review;
+        $review->review_text = $request['review'];
+        $review->save();
+        return redirect('/');
     }
     
 }
