@@ -43,7 +43,7 @@
 
         <div class="main_part">
             <img src="/images/payment_successful/done.png" alt="" class="main_part_img">
-            <h2>Thank You</h2>
+            <h2>Payment Successful</h2>
             <div class="main_part_para">
                 {{-- <p>Your payment for (guest_no) guest at (date) on (time) is successfully done.</p> --}}
                 {{-- <p class="main_part_sec">Your Payment id #(payment_id)</p> --}}
@@ -56,7 +56,7 @@
                 @csrf
                 <div>
                     <label for="review"><p class="review_p">Review</p></label>
-                    <textarea name="review" id="review" class="review" cols="72" rows="17" placeholder="Share you experience with us." required></textarea>
+                    <textarea name="review" id="review" class="review" cols="72" rows="12" placeholder="Share you experience with us." required></textarea>
                 </div>
                 <button class="button">OK</button>
             </form>
