@@ -182,7 +182,7 @@
 
 .menu{
   position: absolute;
-  top: 40px;
+  top: 24px;
   right: 65px;
 }
 
@@ -472,16 +472,19 @@ a .uil {
     background-image: url("../images/profile/back1.jpg");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .card{
-  margin-top: 30px;
-  max-width: 450px;
+  margin-top: 75px;
+  max-width: 600px;
+  overflow: hidden;
   color: #FFFF;
   text-align: center;
-  padding: 50px 35px;
+  padding: 25px 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: #0000;
   border-radius: 16px;
@@ -489,7 +492,7 @@ a .uil {
   backdrop-filter: blur(5px);
 }
 .card img{
-  width: 140px;
+  width: 125px;
   border-radius: 50%;
 }
 .card h2{
@@ -506,7 +509,7 @@ a .uil {
   font-family: 'Ojuju';
   font-size: 18px;
   margin: 10px auto;
-  max-width: 330px;
+  max-width: 600px;
 }
 
 
@@ -520,7 +523,7 @@ a .uil {
   .card.shadow-animate {
     box-shadow: 0px 0px 10px 0px #E4C590;
     animation: shadows 2.5s infinite;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
   .card.shadow-animate a:hover{
     background-color: #ffeba7;
@@ -555,19 +558,20 @@ a .uil {
     color: black;
     padding: 10px 30px;
     border-radius: 30px;
-    margin: 30px 0 10px;
+    margin: 17px 0 10px;
 }
 
 .logo img{
   position: absolute;
   left: 18px;
-  top: 25px;
+  top: 16px;
   height: 60px;
   width: 100%px;
   display: flex;
 }
 
 .copyright {
+  margin: auto;
   color: var(--quick-silver);
   line-height: var(--lineHeight-3);
 }
