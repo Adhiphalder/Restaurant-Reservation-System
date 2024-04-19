@@ -60,12 +60,12 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 margin: 5px auto;
                 text-align: center;
+                margin-top: 20px;    
             }
 
             table {
                 border-collapse: collapse;
                 width: 100%;
-                margin-top: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 border-radius: 8px;
                 overflow: hidden;
