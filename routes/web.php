@@ -24,7 +24,6 @@ use App\Models\Booking;
 
 use App\Models\Payment;
 
-
 use App\Models\Review;
 
 
@@ -68,8 +67,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
-
-
 
 
 /*---------------*\
