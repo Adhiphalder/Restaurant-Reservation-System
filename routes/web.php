@@ -69,6 +69,9 @@ Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
 
+
+
+
 /*---------------*\
   #ADMIN
 \*----------------*/
