@@ -60,17 +60,21 @@
                         <table style="width:100%">
                                 <div> <hr> <br>
                                     <tr>
+                                        <th>Booking Date</th>
+                                        <th>Booking Time</th>
+                                        <th>Guest No</th>
                                         <th>Date</th>
-                                        <th>Time</th>
-                                        <th>Guest No.</th>
                                         <th>Action</th>
                                     </tr>
                                 </div>
 
-                                <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                               {{-- @foreach ($booking as $booking) --}}
+                               <tr>
+                                <td>{{ \Carbon\Carbon::parse(session('date'))->format('d-m-yy') }}</td>
+                                <td>{{ session('time') }}</td>
+                                <td>{{ session('guest_no') }}</td>                                
+                                {{-- <td>{{ \Carbon\Carbon::now()->format('d-m-y') }}</td> --}}
+                                <td>{{ session('current_date') }}</td>
                                 <td class="button-container">
                                     <button class="edit">Edit</button>
                                     <button class="button">
@@ -89,7 +93,9 @@
                                         <span>Cancel</span>
                                     </button>
                                 </td>
-                                </tr>
+                            </tr>
+                                   
+                               {{-- @endforeach --}}
 
                           </table>
 

@@ -12,7 +12,7 @@
 <body>
     <nav>
         <div class="nav">
-            <a href="#"><img src="/images/payment/logo.png" alt=""></a>
+            <a href="{{ route('home') }}"><img src="/images/payment/logo.png" alt=""></a>
 
             <div class="menu">
                 <div class="sec-center"> 	

@@ -14,7 +14,7 @@
 
         <nav>
             <div class="nav">
-                <a href=""><img src="/images/payment_successful/logo.png" alt=""></a>
+                <a href="{{ route('home') }}"><img src="/images/payment_successful/logo.png" alt=""></a>
 
 
                 <div class="menu">

@@ -10,6 +10,7 @@ use App\Models\Review;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Carbon;
 
 
 class PaymentController extends Controller
@@ -52,6 +53,8 @@ class PaymentController extends Controller
     Session::put('date', $booking->date);
     Session::put('time', $booking->time);
     Session::put('guest_no', $booking->guest_no);
+
+    Session::put('current_date', Carbon::now()->format('d-m-y'));
 
     return view('payment_booking.payment_successful');
     }

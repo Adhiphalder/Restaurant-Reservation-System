@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\CustomerController;
 
 use App\Http\Controllers\AdminController;
@@ -101,9 +102,9 @@ Route::post('/addmenu',[MenuController::class,'show']);
 
 
 
-Route::get('/booking',[BookingController::class,'view']);
+Route::get('/booking',[BookingController::class,'view'])->name('booking');
 
-Route::post('/booking',[BookingController::class,'booking']);
+Route::post('/booking',[BookingController::class,'booking'])->name('booking');
 
 Route::get('/booktable',[BookingController::class,'table_view']);
 
@@ -111,13 +112,12 @@ Route::get('/booktable',[BookingController::class,'table_view']);
   #PAYMENT
 \*------------------*/
 
+
 Route::get('/payment',[PaymentController::class,'view'])->name('payment');
+
 Route::post('/payment',[PaymentController::class,'payment']);
 
-
 Route::get('/pay/successful',[PaymentController::class,'pay_successful'])->name('pay_successful');
-
-
 
 /*-------------------*\
   #REVIEW
