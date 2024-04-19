@@ -429,11 +429,6 @@ a .uil {
   #CARD
 \*-----------------------------------*/
 
-div.sticky_bookings{
-  position: sticky;
-  top: 0;
-}
-
 .logo {
     position: fixed;
     top: 1px;
