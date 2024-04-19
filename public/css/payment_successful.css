@@ -292,7 +292,8 @@ body{
 
 .main_part{
     margin: auto;
-    width: 950px;
+    margin-top: 15px;
+    width: 850px;
     height: auto;
     background-color: rgb(21 21 21 / 81%);
     border-radius: 15px;
@@ -301,21 +302,22 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 21px;
 }
 
 .main_part_img{
-    width: 95px;
+    width: 70px;
     background-color: white;
     border-radius: 75px;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 7px;
 }
 
 .main_part h2{
   font-family: "Platypi";
-    font-size: 50px;
+    font-size: 37px;
     font-weight: 500;
     color: #50d250;
+    margin-bottom: 7px;
 }
 
 .main_part_para{
@@ -330,27 +332,28 @@ body{
   background: none;
   border: 1.5px solid #e4c590;
   border-radius: 7px;
-  margin-top: 23px;
-  width: 547px;
-  height: 178px;
-}
-
-.review::placeholder{
-  font-size: 18px;
+  margin-top: 10px;
+  width: 476px;
+  height: 142px;
   padding-top: 13px;
   padding-left: 17px;
 }
 
+.review::placeholder{
+  font-size: 16px;
+}
+
 .review_p{
-  font-size: 35px;
+  margin-top: 9px;
+  font-size: 28px;
   font-weight: 500;
   color: #e4c590;
 }
 
 
 .button{
-    width: 350px;
-    height: 50px;
+    width: 300px;
+    height: 45px;
     margin-bottom: 21px;
     background: none;
     border: none;
@@ -360,7 +363,7 @@ body{
     border-radius: 3px;
     font-size: 20px;
     font-weight: 500;
-    margin-top: 27px;
+    margin-top: 15px;
     cursor: pointer;
 }
 

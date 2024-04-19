@@ -67,7 +67,7 @@
                                     </tr>
                                 </div>
 
-                                <tr>
+                            <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -90,7 +90,6 @@
                                     </button>
                                 </td>
                                 </tr>
-
                           </table>
 
                         <div class="pagination">
@@ -104,11 +103,11 @@
                                 <li class="next"><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
                             </ul>
                         </div>
-                        <p1 class="copyright">
-                            &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
-                            target="_blank" class="link">Sanket Adhikary</a>
-                        </p1>
                     </div>
+                    <p class="copyright">
+                        &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
+                        target="_blank" class="link">Sanket Adhikary</a>
+                    </p>
                 </div>
             </div>
 
