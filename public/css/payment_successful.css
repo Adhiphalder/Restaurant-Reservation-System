@@ -291,8 +291,8 @@ body{
 
 .main_part{
     margin: auto;
-    width: 1150px;
-    height: 750px;
+    width: 950px;
+    height: auto;
     background-color: rgb(21 21 21 / 81%);
     border-radius: 15px;
     display: flex;  
@@ -304,15 +304,16 @@ body{
 }
 
 .main_part_img{
-    width: 105px;
-    background-color:#e4c590;
+    width: 95px;
+    background-color: white;
     border-radius: 75px;
+    margin-top: 25px;
 }
 
 .main_part h2{
     font-size: 35px;
     font-weight: 500;
-    color: #e4c590;
+    color: #50d250;
 }
 
 .main_part_para{
@@ -328,6 +329,8 @@ body{
   border: 1.5px solid #e4c590;
   border-radius: 7px;
   margin-top: 23px;
+  width: 547px;
+  height: 178px;
 }
 
 .review::placeholder{
@@ -346,6 +349,7 @@ body{
 .button{
     width: 350px;
     height: 50px;
+    margin-bottom: 21px;
     background: none;
     border: none;
     border: .7px solid #e4c590;
