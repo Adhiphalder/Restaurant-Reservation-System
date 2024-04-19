@@ -470,16 +470,20 @@ a .uil {
 .container{
     width: 100%;
     height: 100vh;
-    background-image: url("../images/profile/book_back.jpg");
+    background-image: url("../images/profile/2.jpg");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .card{
   margin-top: 80px;
-  width: 1200px;
+  width: 1150px;
+  max-height: 500px; 
+  overflow:auto;
   color: #FFFF;
   text-align: center;
   padding: 50px 35px;
@@ -518,7 +522,7 @@ a .uil {
   .card.shadow-animate {
   box-shadow: 0px 0px 10px 0px #E4C590;
   animation: shadows 2.5s infinite;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
   }
   
   @keyframes shadows {
@@ -936,6 +940,9 @@ tbody button.edit:hover {
 .copyright {
   color: var(--quick-silver);
   line-height: var(--lineHeight-3);
+  text-align: center;
+  margin-top: 95px;
+  color: white;
 }
 
 .copyright .link {
