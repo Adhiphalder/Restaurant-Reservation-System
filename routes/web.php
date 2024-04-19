@@ -80,7 +80,11 @@ Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.
 
 Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
 
-Route::get('/admin/table',[AdminController::class, 'table'])->name('admin.table');
+Route::get('/admin/addtable',[AdminController::class,'viewaddtable']);
+
+Route::post('/admin/addtable',[AdminController::class,'addtable']);
+
+Route::get('/admin/table',[AdminController::class, 'viewtable'])->name('admin.table');
 
 /*----------------*\
   #MENU

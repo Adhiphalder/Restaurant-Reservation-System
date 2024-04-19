@@ -354,6 +354,10 @@ body {
     margin-bottom: 23px;
 }
 
+input[type=radio] {
+  accent-color: #e4c590;
+}
+
 #p_method_card_space {
     background: none;
     border: none;
