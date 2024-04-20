@@ -53,7 +53,7 @@ class LoginController extends Controller
         if ($customer && Hash::check($request->input('password'), $customer->password)) {
 
             $request->session()->put('customer', $customer);
-            $request->session()->put('customer_id', $customer->id);
+            $request->session()->put('customer_id', $customer->customer_id);
             return redirect('/');
         } else {
 
@@ -70,7 +70,6 @@ class LoginController extends Controller
 
     $request->session()->forget('customer_id');
 
-    // Logout user
     Auth::logout();
     $request->session()->invalidate();
     $request->session()->regenerateToken();
