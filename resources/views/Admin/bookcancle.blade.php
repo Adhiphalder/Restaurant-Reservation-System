@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset('css/reservation.css')}}">
+        <link rel="stylesheet" href="{{asset('css/bookcancle.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Foodhub</title>
 
@@ -42,13 +42,14 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <a href="/admin/customer"><li>Customers</li></a>
+
+                <a><li>Customers</li></a>
                 <a href="/admin/menu"><li>Menus</li></a>
                 <a href="/admin/table"><li>Tables</li></a>
+                <a href="/admin/reservation"><li>Reservations</li></a>
                 <div class="active">
-                    <a href="/admin/reservation"><li>Reservations</li></a>
+                    <a href="/admin/bookcancle"><li>Booking Cancellation</li></a>
                 </div>
-                <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
             </ul>
             </div>
         </nav>
@@ -72,6 +73,10 @@
                 border-radius: 8px;
                 overflow: hidden;
                 
+            }
+
+            thead tr{
+                background-color: #436B95;
             }
 
             th, td {
@@ -131,23 +136,26 @@
         </style>
 
         <div class="main-body">
-            <h4>RESERVATION</h4>
+            <h4>BOOKING CANCELLATION</h4>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>Booking ID</th>
                             <th>Customer ID</th>
-                            <th>Table No</th>
-                            <th>Time Slot</th>
-                            <th> Contact No</th>
-                            <th> Booking On</th>
+                            <th>Table ID</th>
+                            <th>Bookig Date</th>
+                            <th>Time</th>
+                            <th> Guest No.</th>
+                            <th>Seat No.</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-    
+                    <tbody>    
                             <tr>
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

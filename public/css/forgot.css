@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+:root{
+    --smoky-black-1: hsla(40, 12%, 5%, 1);
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url("../images/forgot/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.logo_img_div{
+    margin-top: 55px;
+}
+
+.logo_img{
+    width: 160px;
+}
+
+.body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work{
+    width: 550px;
+    height: 581px;
+    background: var(--smoky-black-1) url("../images/forgot/footer-form-bg.png");
+    background-position: center top;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: space-between;
+}
+
+.work_img_one , .work_img_two{
+    width: 12px;
+    height: 100%;
+}
+
+.work_two{
+    width: 93%;
+    height: 100%;
+    text-align: center;
+    background: var(--smoky-black-1) url("images/footer-form-bg.png");
+    background-position: center top;
+    background-repeat: repeat;
+    /* background-color: rgb(21 21 21 / 93%); */
+}
+
+.heading_div{
+    margin-top: 35px;
+}
+
+.heading{
+    font-size: 36px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    color: #e4c590;
+}
+
+.form_div{
+    margin-top: 48px;
+}
+
+.imput_ele{
+    background: rgb(21 21 21 / 93%);
+    border: none;
+    width: 300px;
+    height: 33px;
+    border: 1.81px solid rgb(102, 101, 101);
+    padding-left: 7px;
+    border-radius: 4px;
+    margin-bottom: 17px;
+}
+
+.terms_div{
+    font-size: 12px;
+    margin-top: 62px;
+}
+
+.terms_div :nth-child(2){
+    text-decoration: none;
+}
+
+.terms_div :nth-child(2) p{
+    color: rgb(102, 224, 255);
+}
+
+.imput_ele::placeholder{
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+}
+
+.btn{
+    background: #e4c590;
+    border: none;
+    border: .7px solid #e4c590;
+    color: black;
+    height: 35px;
+    width: 300px;
+    font-weight: 600;
+    /* padding: 2px 2px; */
+    font-size: 17px;
+    transition: 0.7s ease-out;
+    border-radius: 3px;
+    margin-top: 5px;
+    cursor: pointer;
+}

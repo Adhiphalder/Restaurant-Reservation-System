@@ -50,7 +50,7 @@
         </nav>
         <div class="main">
             <div class="left">
-                <img src="/images/booktable/3.jpeg" alt="">
+                <img src="/images/booktable/3.jpeg" alt="" class="left_image">
             </div>
             <div class="right">
                 <div class="form">
@@ -66,9 +66,8 @@
                             </select>
                         </div>
         
-                        <div>
-                            <label for="submit"><button class="btn">Proceed to Checkout</button></label>
-                            <input type="submit" name="" id="submit">
+                        <div class="sub_btn">
+                            <button class="btn">Proceed to Checkout</button>
                         </div>
                     </form>
                 </div>

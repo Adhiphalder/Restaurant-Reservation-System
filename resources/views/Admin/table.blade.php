@@ -42,12 +42,13 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <a href="#"><li>Customers</li></a>
-                <a href="#"><li>Menus</li></a>
+                <a href="/admin/customer"><li>Customers</li></a>
+                <a href="/admin/menu"><li>Menus</li></a>
                 <div class="active">
-                    <a href="#"><li>Tables</li></a>
+                    <a href="/admin/table"><li>Tables</li></a>
                 </div>
-                <a href="#"><li>Reservations</li></a>
+                <a href="/admin/reservation"><li>Reservations</li></a>
+                <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
             </ul>
             </div>
         </nav>

@@ -78,4 +78,9 @@ class LoginController extends Controller
 
     }
 
+
+    public function viewforgot(){
+        return view('forgot');
+    }
+
 }
