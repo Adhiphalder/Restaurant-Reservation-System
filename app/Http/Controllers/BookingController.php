@@ -52,7 +52,7 @@ class BookingController extends Controller
 
     logger()->info('Booking ID stored in session: ' . Session::get('booking_id'));
 
-    return redirect()->route('home')->with('success', 'Booking created successfully');
+    return redirect()->route('booktable')->with('success', 'Booking created successfully');
     }
 
     public function table_view(){

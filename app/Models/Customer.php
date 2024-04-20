@@ -12,9 +12,4 @@ class Customer extends Model
     protected $table = "customers";
     protected $primaryKey = "customer_id";
 
-     // Define relationship with payments
-     public function payments()
-     {
-         return $this->hasMany(Payment::class);
-     }
 }
