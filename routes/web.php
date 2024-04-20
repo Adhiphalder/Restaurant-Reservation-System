@@ -69,6 +69,7 @@ Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
 
+
 /*---------------*\
   #ADMIN
 \*----------------*/
@@ -85,6 +86,8 @@ Route::get('/admin/addtable',[AdminController::class,'viewaddtable']);
 Route::post('/admin/addtable',[AdminController::class,'addtable']);
 
 Route::get('/admin/table',[AdminController::class, 'viewtable'])->name('admin.table');
+
+Route::get('/admin/bookcancle',[AdminController::class,'viewbookcancle']);
 
 /*----------------*\
   #MENU

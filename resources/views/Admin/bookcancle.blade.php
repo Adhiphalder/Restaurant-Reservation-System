@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset('css/table.css')}}">
+        <link rel="stylesheet" href="{{asset('css/bookcancle.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Foodhub</title>
 
@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <a href="#" class="logo"><img src="/images/FoodHub.png"></a>
+            <a href="/" class="logo"><img src="{{asset('images/FoodHub.png')}}"></a>
             <input type="text" placeholder="Search..." id="searchInput">
 
             <div class="menu">
@@ -42,35 +42,41 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <a href="/admin/customer"><li>Customers</li></a>
+
+                <a><li>Customers</li></a>
                 <a href="/admin/menu"><li>Menus</li></a>
-                <div class="active">
-                    <a href="/admin/table"><li>Tables</li></a>
-                </div>
+                <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
-                <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
+                <div class="active">
+                    <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
+                </div>
             </ul>
             </div>
         </nav>
 
         <style>
             .table-container {
-                width: 80%;
+                width: 90%;
                 max-height: 400px;
                 overflow: auto;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 margin: 5px auto;
                 text-align: center;
-                margin-top: 20px;    
+                overflow: auto;
             }
 
             table {
                 border-collapse: collapse;
                 width: 100%;
+                margin-top: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 border-radius: 8px;
                 overflow: hidden;
                 
+            }
+
+            thead tr{
+                background-color: #436B95;
             }
 
             th, td {
@@ -130,43 +136,50 @@
         </style>
 
         <div class="main-body">
-            <h4>TABLE</h4>
+            <h4>BOOKING CANClEATION</h4>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
+                            <th>Booking ID</th>
+                            <th>Customer ID</th>
                             <th>Table ID</th>
-                            <th>Table No</th>
-                            <th>Seat No</th>
+                            <th>Bookig Date</th>
+                            <th>Time</th>
+                            <th> Guest No.</th>
+                            <th>Seat No.</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-
-                        @foreach ($elements as $item)                            
-                        <tr>
-                            <td>{{ $item->table_id }}</td>
-                            <td>{{ $item->table_no }}</td>
-                            <td>{{ $item->table_seat_no }}</td>
-                            <td class="button-container">
-                                <button class="edit">Edit</button>
-                                <button class="button">
-                                    <div class="trash">
-                                        <div class="top">
-                                            <div class="paper"></div>
+                    <tbody>    
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="button-container">
+                                    <button class="edit">Edit</button>
+                                    <button class="button">
+                                        <div class="trash">
+                                            <div class="top">
+                                                <div class="paper"></div>
+                                            </div>
+                                            <div class="box"></div>
+                                            <div class="check">
+                                                <svg viewBox="0 0 8 6">
+                                                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                                </svg>
+                                            </div>
                                         </div>
-                                        <div class="box"></div>
-                                        <div class="check">
-                                            <svg viewBox="0 0 8 6">
-                                                <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <span>Delete</span>
-                                </button>
-                            </td>
-                        </tr>
-                        @endforeach
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
                     </tbody>
                 </table>
             </div>

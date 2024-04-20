@@ -46,8 +46,9 @@
                 <a href="/admin/menu"><li>Menus</li></a>
                 <a href="/admin/table"><li>Tables</li></a>
                 <div class="active">
-                    <a href="#"><li>Reservations</li></a>
+                    <a href="/admin/reservation"><li>Reservations</li></a>
                 </div>
+                <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
             </ul>
             </div>
         </nav>
