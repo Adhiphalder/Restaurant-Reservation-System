@@ -48,7 +48,7 @@
                 <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
                 <div class="active">
-                    <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
+                    <a href="/admin/bookcancle"><li>Booking Cancellation</li></a>
                 </div>
             </ul>
             </div>
@@ -136,7 +136,7 @@
         </style>
 
         <div class="main-body">
-            <h4>BOOKING CANClEATION</h4>
+            <h4>BOOKING CANCELLATION</h4>
             <div class="table-container">
                 <table>
                     <thead>

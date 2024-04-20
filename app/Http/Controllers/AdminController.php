@@ -57,4 +57,8 @@ class AdminController extends Controller
     public function viewbookcancle(){
         return view('Admin.bookcancle');
     }
+
+    public function adminlogin(){
+        return view('Admin.adminlogin');
+    }
 }

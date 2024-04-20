@@ -47,7 +47,7 @@ body{
 }
 .sec-center {
   position: relative;
-  max-width: 100%;
+  /* max-width: 100%; */
   text-align: center;
   z-index: 200;
 }
@@ -343,6 +343,9 @@ body{
 
 
 .main{
+    position: absolute;
+    top: 95px;
+    left: 170px;
     background-color: #161718e0;
     display: flex;
     border-radius: 19px;
@@ -359,11 +362,12 @@ body{
     padding-bottom: 13px;
 }
 
-.left img{
-    max-width: 500px;
-    max-height: 100%;
-    margin-left: 19px;
-    
+
+.left_image{
+  max-width: 500px;
+  max-height: 100%;
+  margin-left: 19px;
+  border-radius: 10px;
 }
 
 
@@ -393,8 +397,10 @@ body{
     align-items: center;
 }
 
-#submit{
-    display: none;
+.sub_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .btn{
@@ -403,7 +409,7 @@ body{
     border: .7px solid #e4c590;
     color: #e4c590;
     height: 39px;
-    width: 200px;
+    width: 210px;
     transition: 0.7s ease-out;
     border-radius: 3px;
     font-size: 15px;

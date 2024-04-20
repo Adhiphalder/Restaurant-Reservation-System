@@ -56,8 +56,12 @@
         <style>
             .table-container {
                 width: 90%;
+                max-height: 400px;
+                overflow: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 margin: 5px auto;
                 text-align: center;
+                overflow: auto;
             }
 
             table {

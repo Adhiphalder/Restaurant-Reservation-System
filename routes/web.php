@@ -58,6 +58,8 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/forgot',[LoginController::class,'viewforgot']);
+
 /*---------------------------------------------*\
   #PROFILE & MYBOOKINGS
 \*---------------------------------------------*/
@@ -75,6 +77,8 @@ Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybo
 
 
 // Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
+
+Route::get('admin/login',[AdminController::class, 'adminlogin']);
 
 Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
