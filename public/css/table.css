@@ -460,10 +460,35 @@ i{
   flex-direction: column; /* Center the content vertically */
   text-align: center; /* Center the text horizontally */
 }
+
+.main_body_heading{
+  display: flex;
+  align-items: center;
+}
+
+.main_body_heading a{
+  position: relative;
+  left: 375px;
+  top: 15px;
+}
+
+.add_menu_btn{
+  width: 120px;
+  height: 34px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #1D458A;
+  color: whitesmoke;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
 .main-body h4 {
   font-size: 40px;
   color: #BEC0D6;
   margin-top: 30px;
+  margin-left: 117px;
 }
 
 .main-body hr {

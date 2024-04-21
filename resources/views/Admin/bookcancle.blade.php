@@ -43,7 +43,7 @@
             <span></span>
             <ul id="menu">
 
-                <a><li>Customers</li></a>
+                <a href="/admin/customer"><li>Customers</li></a>
                 <a href="/admin/menu"><li>Menus</li></a>
                 <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
@@ -61,14 +61,17 @@
                 overflow: auto;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 margin: 5px auto;
+                margin-top: 20px;
                 text-align: center;
-                overflow: auto;
+            }
+
+            .table-container::-webkit-scrollbar {
+                display: none;
             }
 
             table {
                 border-collapse: collapse;
                 width: 100%;
-                margin-top: 20px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 border-radius: 8px;
                 overflow: hidden;
