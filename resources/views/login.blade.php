@@ -134,8 +134,9 @@
                     <input type="password" name="password" placeholder="Password" required="">  
                     <button type="submit" >Login</button>
                   </form>
-
-
+                  <div style="margin-top: 23px">
+                    <a href="/forgot"><button>Forgot Password?</button></a>
+                  </div>
                 </div>
             </div>
         </div>

@@ -48,7 +48,7 @@
                     <a href="/admin/table"><li>Tables</li></a>
                 </div>
                 <a href="/admin/reservation"><li>Reservations</li></a>
-                <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
+                <a href="/admin/bookcancle"><li>Booking Cancellation</li></a>
             </ul>
             </div>
         </nav>
@@ -62,6 +62,10 @@
                 margin: 5px auto;
                 text-align: center;
                 margin-top: 20px;    
+            }
+
+            .table-container::-webkit-scrollbar {
+                display: none;
             }
 
             table {
@@ -130,7 +134,10 @@
         </style>
 
         <div class="main-body">
-            <h4>TABLE</h4>
+            <div class="main_body_heading">
+                <h4>TABLE</h4>
+                <a href="/admin/addtable"><button class="add_menu_btn">Add Table</button></a>
+            </div>
             <div class="table-container">
                 <table>
                     <thead>

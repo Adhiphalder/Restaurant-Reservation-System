@@ -107,32 +107,33 @@
                         &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
                         target="_blank" class="link">Sanket Adhikary</a>
                     </p>
+                
+                @else
+                <div class="glow-item">
+                <div class="card shadow-animate" data-tilt>
+                    {{-- <h2>Booking History</h2> <br> <br> --}}
+                    <h2>My Bookings</h2> <br> <br>
 
-                    @else
-                    <div class="card shadow-animate" data-tilt>
-                        {{-- <h2>Booking History</h2> <br> <br> --}}
-                        <h2>My Bookings</h2> <br> <br>
+                    <table style="width:100%">
+                            <div> <hr> <br>
+                                <tr>
+                                    {{-- <th>Booking Date</th>
+                                    <th>Booking Slot</th>
+                                    <th>Guest No</th>
+                                    <th>Date</th>
+                                    <th>Action</th> --}}
+                                    <p >You Have No Bookings Yet</p>
+                                </tr>
+                            </div>
 
-                        <table style="width:100%">
-                                <div> <hr> <br>
-                                    <tr>
-                                        {{-- <th>Booking Date</th>
-                                        <th>Booking Slot</th>
-                                        <th>Guest No</th>
-                                        <th>Date</th>
-                                        <th>Action</th> --}}
-                                        <p >You Have No Bookings Yet</p>
-                                    </tr>
-                                </div>
-
-                          </table>
-                    </div>
-                    @endif
+                        </table>
+                </div>
+                <p class="copyright">
+                    &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
+                    target="_blank" class="link">Sanket Adhikary</a>
+                </p>
+                @endif
                     
-                    {{-- <p class="copyright">
-                        &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
-                        target="_blank" class="link">Sanket Adhikary</a>
-                    </p> --}}
 
                 </div>
             </div>
