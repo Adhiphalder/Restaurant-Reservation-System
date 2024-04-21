@@ -48,6 +48,7 @@
                 <a href="/admin/menu"><li>Menus</li></a>
                 <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
+                <a href="/admin/bookcancle"><li>Booking Cancleation</li></a>
             </ul>
             </div>
         </nav>
@@ -55,8 +56,12 @@
         <style>
             .table-container {
                 width: 90%;
+                max-height: 400px;
+                overflow: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 margin: 5px auto;
                 text-align: center;
+                overflow: auto;
             }
 
             table {

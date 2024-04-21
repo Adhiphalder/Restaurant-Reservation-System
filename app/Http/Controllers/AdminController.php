@@ -54,8 +54,11 @@ class AdminController extends Controller
         return view('Admin.table')->with($data);
     }
 
-    // public function table()
-    // {
-    //     return view('Admin.table');
-    // }
+    public function viewbookcancle(){
+        return view('Admin.bookcancle');
+    }
+
+    public function adminlogin(){
+        return view('Admin.adminlogin');
+    }
 }
