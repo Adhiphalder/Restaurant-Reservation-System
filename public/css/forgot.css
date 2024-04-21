@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     color: white;
+    font-family: "DM Sans", sans-serif;
 }
 
 
@@ -80,7 +81,7 @@ body{
 }
 
 .imput_ele{
-    background: rgb(21 21 21 / 93%);
+    background: #1b1c1d;
     border: none;
     width: 300px;
     height: 33px;
@@ -104,8 +105,9 @@ body{
 }
 
 .imput_ele::placeholder{
-    font-family: "DM Sans", sans-serif;
     font-size: 15px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
 }
 
 .btn{
