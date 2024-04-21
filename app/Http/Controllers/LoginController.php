@@ -25,7 +25,7 @@ class LoginController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:customers',
             'password' => 'required',
-            'contact' => 'required',
+            'contact' => 'required|numeric|digits:10',
             'address' => 'required'
         ]); 
      

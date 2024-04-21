@@ -501,8 +501,10 @@ a .uil {
   font-family: 'Rubik Microbe';
 }
 .card p{
-  font-family: 'Ojuju';
-  font-size: 18px;
+  /* font-family: 'Ojuju'; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-size: 18px; */
+  font-size: 20px;
   margin: 10px auto;
   max-width: 330px;
 }
@@ -949,6 +951,7 @@ tbody button.edit:hover {
 *:before, *:after {
   box-sizing: inherit;
 }
+
 
 .copyright {
   color: var(--quick-silver);

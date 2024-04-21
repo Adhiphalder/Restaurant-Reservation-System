@@ -76,9 +76,9 @@
                 <div class="signup">
                   <form action="{{ route('signup') }}" method="post">
                     @csrf
-                    <label  aria-hidden="true">Login</label>
+                    <label  aria-hidden="true">Welcome Admin</label>
 
-                    <input type="text" name="id" placeholder="Admin Id" value="{{old("name")}}">
+                    <input type="text" name="id" placeholder="Admin ID" value="{{old("name")}}">
                     <span class="text-danger">
                       @error('name')
                           {{$message}}
@@ -114,7 +114,7 @@
                     </span>
                     <button type="submit">Login</button>
                   </form>
-                  <p>By Signing in or creating an account you are agreeing to our <span><a href="#"> Terms & Conditions</a></span> </p>
+                  {{-- <p>By Signing in or creating an account you are agreeing to our <span><a href="#"> Terms & Conditions</a></span> </p> --}}
                 </div>
             </div>
         </div>

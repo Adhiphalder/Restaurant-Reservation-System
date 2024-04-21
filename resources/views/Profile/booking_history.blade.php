@@ -53,6 +53,8 @@
                         </div>
                     </div>
                 </div>
+
+                @if(count($customerBookings) > 0)
                 <div class="glow-item">
                     <div class="card shadow-animate" data-tilt>
                         {{-- <h2>Booking History</h2> <br> <br> --}}
@@ -68,32 +70,6 @@
                                         <th>Action</th>
                                     </tr>
                                 </div>
-                                
-                                {{-- <tr>
-                                    <td>{{ \Carbon\Carbon::parse(session('date'))->format('d-m-Y') }}</td>
-                                    <td>{{ session('time') }}</td>
-                                    <td>{{ session('guest_no') }}</td>
-                                    <td>current date</td>
-
-                                    <td class="button-container">
-                                        <button class="edit">Edit</button>
-                                        <button class="button">
-                                            <div class="trash">
-                                                <div class="top">
-                                                    <div class="paper"></div>
-                                                </div>
-                                                <div class="box"></div>
-                                                <div class="check">
-                                                    <svg viewBox="0 0 8 6">
-                                                        <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <span>Cancel</span>
-                                        </button>
-                                    </td>
-                                </tr> --}}
-
 
                                 @foreach ($customerBookings as $booking)
                                 <tr>
@@ -122,25 +98,39 @@
                                 </tr>
                                 @endforeach
 
-
                           </table>
-
-                        {{-- <div class="pagination">
-                            <ul>
-                                <li class="previous"><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
-                                <li class="page"><a href="#">1</a></li>
-                                <li class="page"><a href="#">2</a></li>
-                                <li class="page"><a href="#">3</a></li>
-                                <li class="page"><a href="#">4</a></li>
-                                <li class="page"><a href="#">5</a></li>
-                                <li class="next"><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-                            </ul>
-                        </div> --}}
                     </div>
                     <p class="copyright">
                         &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
                         target="_blank" class="link">Sanket Adhikary</a>
                     </p>
+
+                    @else
+                    <div class="card shadow-animate" data-tilt>
+                        {{-- <h2>Booking History</h2> <br> <br> --}}
+                        <h2>My Bookings</h2> <br> <br>
+
+                        <table style="width:100%">
+                                <div> <hr> <br>
+                                    <tr>
+                                        {{-- <th>Booking Date</th>
+                                        <th>Booking Slot</th>
+                                        <th>Guest No</th>
+                                        <th>Date</th>
+                                        <th>Action</th> --}}
+                                        <p >You Have No Bookings Yet</p>
+                                    </tr>
+                                </div>
+
+                          </table>
+                    </div>
+                    @endif
+                    
+                    {{-- <p class="copyright">
+                        &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
+                        target="_blank" class="link">Sanket Adhikary</a>
+                    </p> --}}
+
                 </div>
             </div>
 

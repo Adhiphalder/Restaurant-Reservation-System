@@ -93,7 +93,7 @@
                       @enderror
                     </span>
                     
-                    <input type="tel" name="contact" placeholder="Contact no"  value="{{old("contact")}}">
+                    <input type="tel" name="contact" placeholder="Contact no" maxlength="10"  value="{{old("contact")}}">
                     <span class="text-danger">
                       @error('contact')
                           {{$message}}
