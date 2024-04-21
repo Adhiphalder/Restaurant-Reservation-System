@@ -22,12 +22,14 @@
                     <div class="section-dropdown"> 
         
                         <div class="profile-img"></div> <br>
-                        <a href="#"><span>ADHIP</span></a><hr>
+                        {{-- <a href="#"><span>ADHIP</span></a><hr> --}}
+                        <a href="#"><span>{{ $firstName }}</span></a><hr>
         
         
                         <a href="#">Profile</a>
                         <div class="section-dropdown-sub"></div>
-                        <a href="#">Sign Out</a>
+                        {{-- <a href="#">Sign Out</a> --}}
+                        <a href="{{ route('admin.logout') }}">Sign Out</a>
         
                     </div>
                 </div>

@@ -80,19 +80,24 @@ Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybo
 
 // Route::get('/admin/menu',[AdminController::class, 'admenu'])->name('admin.menu');
 
-Route::get('admin/login',[AdminController::class, 'adminlogin']);
+Route::get('admin/login',[AdminController::class, 'showLoginForm'])->name('admin.login');
+
+Route::post('admin/login', [AdminController::class, 'login']);
+
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
 Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
 
-Route::get('/admin/addtable',[AdminController::class,'viewaddtable']);
+Route::get('/admin/addtable',[AdminController::class,'viewaddtable'])->name('admin.addtable');
 
-Route::post('/admin/addtable',[AdminController::class,'addtable']);
+Route::post('/admin/addtable',[AdminController::class,'addtable'])->name('admin.addtable');
 
 Route::get('/admin/table',[AdminController::class, 'viewtable'])->name('admin.table');
 
-Route::get('/admin/bookcancle',[AdminController::class,'viewbookcancle']);
+Route::get('/admin/bookcancle',[AdminController::class,'viewbookcancle'])->name('admin.bookcancel');
+
 
 /*----------------*\
   #MENU

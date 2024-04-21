@@ -13,4 +13,9 @@ class Booking extends Model
     protected $primaryKey = "booking_id";
     protected $fillable = ['customer_id', 'date', 'time', 'guest_no', 'seat_no'];
 
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+
 }

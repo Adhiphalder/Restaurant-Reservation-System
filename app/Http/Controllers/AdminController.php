@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Table;
 use App\Models\Admin;
+use App\Models\Booking;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -21,18 +23,66 @@ class AdminController extends Controller
     //     return view('Admin.customer');
     // }
 
-    public function reservation()
-    {
-        return view('Admin.reservation');
+
+    public function showLoginForm(){
+        return view('Admin.adminlogin');
     }
-    
-    public function customer()
+
+    public function login(Request $request){
+
+        // $credentials = $request->only('admin_id', 'password');
+
+        // $admin = Admin::where('admin_id', $credentials['admin_id'])->first();   
+
+        // if ($admin && Hash::check($credentials['password'], $admin->password)) {
+        //     // Authentication successful
+        //     $request->session()->put('admin', $admin);
+
+        //     return redirect()->intended('/');
+        // }
+
+        // return redirect()->back()->withInput($request->only('admin_id'));
+
+
+
+        $credentials = $request->only('admin_id', 'password');
+
+        $admin = Admin::where('admin_id', $credentials['admin_id'])->first();   
+
+        if ($admin && $admin->password === $credentials['password']) {
+            $request->session()->put('admin', $admin);
+
+            return redirect()->route('admin.customer');
+        }
+
+        return redirect()->back()->withInput($request->only('admin_id'));
+    }
+
+    public function logout(Request $request)
     {
-        $customers = Customer::all();
+        $request->session()->forget('admin');
+    return redirect('/'); 
+    }
+
+    public function customer(Request $request)
+    {
+        // $customers = Customer::all();
         
-        return view('Admin.customer', ['customers' => $customers]);
+        // return view('Admin.customer', ['customers' => $customers]);
+        
 
 
+        if ($request->session()->has('admin')) {
+            $admin = $request->session()->get('admin');
+            $adminName = $admin->name;
+
+            $firstName = ucfirst(explode(' ', $adminName)[0]);
+
+            $customers = Customer::all();
+            return view('Admin.customer', ['customers' => $customers, 'firstName' => $firstName]);
+        } else {
+            return redirect('/admin/login'); 
+        }
     }
 
     public function viewaddtable(){
@@ -54,11 +104,33 @@ class AdminController extends Controller
         return view('Admin.table')->with($data);
     }
 
+    public function reservation(Request $request)
+    {
+        // return view('Admin.reservation');
+
+        // $bookings = Booking::with('customer')->get(); 
+
+        // return view('Admin.reservation', ['bookings' => $bookings]);
+
+
+        if ($request->session()->has('admin')) {
+            $admin = $request->session()->get('admin');
+            $adminName = $admin->name;
+    
+            $firstName = ucfirst(explode(' ', $adminName)[0]);
+    
+            $bookings = Booking::with('customer')->get(); 
+    
+            return view('Admin.reservation', ['bookings' => $bookings, 'firstName' => $firstName]);
+        } else {
+            return redirect('/admin/login'); 
+        }
+
+    }
+    
     public function viewbookcancle(){
         return view('Admin.bookcancle');
     }
 
-    public function adminlogin(){
-        return view('Admin.adminlogin');
-    }
+
 }

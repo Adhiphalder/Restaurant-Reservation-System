@@ -74,11 +74,11 @@
               <input type="checkbox" id="chk" aria-hidden="true">
           
                 <div class="signup">
-                  <form action="{{ route('signup') }}" method="post">
+                  <form action="{{ route('admin.login') }}" method="post">
                     @csrf
                     <label  aria-hidden="true">Welcome Admin</label>
 
-                    <input type="text" name="id" placeholder="Admin ID" value="{{old("name")}}">
+                    <input id="admin_id" type="text" name="admin_id" placeholder="Admin ID" value="{{ old('admin_id') }}" required autofocus>
                     <span class="text-danger">
                       @error('name')
                           {{$message}}

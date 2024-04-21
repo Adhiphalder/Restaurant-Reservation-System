@@ -73,10 +73,13 @@
 
                                 @foreach ($customerBookings as $booking)
                                 <tr>
-                                    <td>{{ $booking->date }}</td>
+                                    {{-- <td>{{ $booking->date }}</td> --}}
+                                    <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
                                     <td>{{ $booking->time }}</td>
                                     <td>{{ $booking->guest_no }}</td>
-                                    <td>{{ $booking->created_at }}</td>
+                                    {{-- <td>{{ $booking->created_at }}</td> --}}
+                                    <td>{{ \Carbon\Carbon::parse($booking->created_at)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($booking->created_at)->format('h:i A') }}</td>
+
 
                                     <td class="button-container">
                                         <button class="edit">Edit</button>
