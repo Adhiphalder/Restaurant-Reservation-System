@@ -20,5 +20,6 @@ class BookhisController extends Controller
         } else {
             return redirect()->back()->with('error', 'Please log in to view your booking history.');
         }
+
     }
 }

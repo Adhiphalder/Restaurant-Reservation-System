@@ -188,7 +188,9 @@
           </a>
         </div>
 
+        
       </nav>
+      {{-- <p>Customer ID : {{ session('customer')->customer_id }} </p> --}}
        @if(session('customer'))
           <form action="{{ route('logout') }}" method="post">
               @csrf

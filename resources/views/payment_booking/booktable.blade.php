@@ -74,14 +74,5 @@
                 </div>
             </div>
         </div>
-
-        <script src="{{asset('js/booktable.js')}}"></script>
-
-        <script>
-            document.getElementById('confirmReservationBtn').addEventListener('click', function() {
-             // Handle form submission here
-             // You can use JavaScript to process the form data or send it to the server via AJAX
-         });
-        </script>
     </body>
     </html>

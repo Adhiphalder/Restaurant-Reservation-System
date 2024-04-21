@@ -87,11 +87,6 @@
   --letterSpacing-5: 3px;
 
   /**
-   * SPACING
-   */
-
-
-  /**
    * SHADOW
    */
 
@@ -542,6 +537,24 @@ a .uil {
     box-shadow: 0px 0px 10px 0px #E4C590;
   }
  }
+
+ /*-----------------------------------*\
+  #CUSTOM SCROLLBAR
+\*-----------------------------------*/
+
+body.loaded { overflow: overlay; }
+
+body.nav-active { overflow: hidden; }
+
+::-webkit-scrollbar { display: none; }
+
+::-webkit-scrollbar-track { background-color: transparent; }
+
+::-webkit-scrollbar-thumb { background-color: var(--gold-crayola); 
+border-radius: 10px;
+
+}
+
 /*-----------------------------------*\
   #TABLE
 \*-----------------------------------*/
