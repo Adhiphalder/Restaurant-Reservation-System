@@ -93,9 +93,9 @@ class BookingController extends Controller
     //     return redirect()->back()->with('success', 'Booking cancellation denied');
     // }
 
-    // public function table_view(){
-    //     return view('payment_booking.booktable');
-    // }
+    public function table_view(){
+        return view('payment_booking.booktable');
+    }
 
     public function cancelBooking($id)
     {
