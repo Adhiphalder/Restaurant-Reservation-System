@@ -74,7 +74,7 @@ Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
 
-// Route::get('/bookhis/detele/{id}',[AdminController])
+// Route::post('/booking/cancel/{id}', [BookhisController::class, 'cancelBooking'])->name('cancel.booking');
 
 
 /*---------------*\
@@ -128,6 +128,8 @@ Route::get('/booking',[BookingController::class,'view'])->name('booking');
 Route::post('/booking',[BookingController::class,'booking'])->name('booking');
 
 Route::get('/booktable',[BookingController::class,'table_view'])->name('booktable');
+
+Route::post('/booking/cancel/{id}', [BookingController::class, 'cancelBooking'])->name('cancel.booking');
 
 
 

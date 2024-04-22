@@ -96,4 +96,13 @@ class BookingController extends Controller
     // public function table_view(){
     //     return view('payment_booking.booktable');
     // }
+
+    public function cancelBooking($id)
+    {
+        // $booking = Booking::find($id);
+        Booking::find($id)->delete();
+        // $booking->delete(); 
+
+        return redirect()->back()->with('success', 'Booking canceled successfully');
+    }
 }

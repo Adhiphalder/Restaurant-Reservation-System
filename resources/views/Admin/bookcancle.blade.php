@@ -220,15 +220,9 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                {{-- <td>{{ $booking->id }}</td> --}}
-                                <!-- Display other booking details here -->
+                                <td></td>
                                 <td class="button-container">
-                                    {{-- <form action="{{ route('approve.cancellation', $booking->booking_id) }}" method="POST">
-                                        @csrf --}}
                                         <button type="submit" class="edit">Approve</button>
-                                    {{-- </form>
-                                    <form action="{{ route('deny.cancellation', $booking->booking_id) }}" method="POST">
-                                        @csrf --}}
                                         <button type="submit" class="button">
                                             <div class="trash">
                                                 <div class="top">
@@ -243,7 +237,6 @@
                                             </div>
                                             <span>Deny</span>
                                         </button>
-                                    </form>
                                 </td>
                             </tr>
                         {{-- @endforeach --}}

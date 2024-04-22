@@ -243,9 +243,5 @@ class AdminController extends Controller
         
     }
 
-    public function delete(){
-        
-    }
-
 
 }
