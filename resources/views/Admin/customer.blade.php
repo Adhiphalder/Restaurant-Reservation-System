@@ -137,7 +137,10 @@
 
         <div class="main-body">
             <h4>CUSTOMER</h4>
-            <div class="table-container">
+
+            @if($customers->isEmpty())
+            <p>No Record Found</p>
+            {{-- <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -146,14 +149,12 @@
                             <th> Contact No</th>
                             <th> Email</th>
                             <th>Address</th>
-                            {{-- <th> Password</th> --}}
                             <th>Action</th>
                         </tr>
                     </thead>
-                    {{-- <tbody>
+                    <tbody>
     
                             <tr>
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -177,7 +178,25 @@
                                     </button>
                                 </td>
                             </tr>
-                    </tbody> --}}
+                    </tbody>
+                </table>
+            </div> --}}
+
+
+            @else
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Name</th>
+                            <th> Contact No</th>
+                            <th> Email</th>
+                            <th>Address</th>
+                            {{-- <th> Password</th> --}}
+                            <th>Action</th>
+                        </tr>
+                    </thead>
 
                     <tbody>
                         @foreach($customers as $customer)
@@ -210,6 +229,8 @@
                     </tbody>
                 </table>
             </div>
+            @endif
+
         </div>
 
         

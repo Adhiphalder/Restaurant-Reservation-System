@@ -497,6 +497,12 @@ i{
   border-color: #BEC0D6; 
 }
 
+.main-body p{
+  margin-top: 165px;
+  font-size: 20px;
+  color: tomato;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /*-----------------------------------*\
   #DELETE BUTTON
 \*-----------------------------------*/

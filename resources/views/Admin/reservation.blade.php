@@ -137,6 +137,10 @@
 
         <div class="main-body">
             <h4>RESERVATION</h4>
+            @if($bookings->isEmpty())
+            <p>No Records Found</p>
+
+            @else
             <div class="table-container">
                 <table>
                     <thead>
@@ -151,36 +155,6 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-
-                    {{-- <tbody>
-    
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="button-container">
-                                    <button class="edit">Edit</button>
-                                    <button class="button">
-                                        <div class="trash">
-                                            <div class="top">
-                                                <div class="paper"></div>
-                                            </div>
-                                            <div class="box"></div>
-                                            <div class="check">
-                                                <svg viewBox="0 0 8 6">
-                                                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <span>Delete</span>
-                                    </button>
-                                </td>
-                            </tr>
-                    </tbody> --}}
 
                     <tbody>
                         @foreach($bookings as $booking)
@@ -215,6 +189,7 @@
                         @endforeach
                 </tbody>
                 </table>
+                @endif
             </div>
         </div>
 

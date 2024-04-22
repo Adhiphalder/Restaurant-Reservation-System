@@ -9,7 +9,7 @@
 <body>
     <div class="body">
         <p class="heading">ADD MENU</p>
-        <form method="POST" action="{{url('/')}}/addmenu" enctype="multipart/form-data">
+        <form method="POST" action="{{url('/')}}/admin/menu" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <div class="menu_type">

@@ -237,6 +237,7 @@
                           <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
                           <div class="section-dropdown-sub"></div>
                           <a href="{{ route('signup') }}">Login <i class="uil uil-arrow-right"></i></a>
+                          <a href="{{ route('admin.login') }}">Admin Login <i class="uil uil-arrow-right"></i></a>
 
                       </div>
                 </div>

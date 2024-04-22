@@ -22,12 +22,15 @@
                     <div class="section-dropdown"> 
         
                         <div class="profile-img"></div> <br>
-                        <a href="#"><span>ADHIP</span></a><hr>
+                        {{-- <a href="#"><span>ADHIP</span></a><hr> --}}
+                        <a href="#"><span>{{ $firstName }}</span></a><hr>
         
         
                         <a href="#">Profile</a>
                         <div class="section-dropdown-sub"></div>
-                        <a href="#">Sign Out</a>
+                        {{-- <a href="#">Sign Out</a> --}}
+                        <a href="{{ route('admin.logout') }}">Sign Out</a>
+
         
                     </div>
                 </div>
@@ -140,7 +143,11 @@
 
         <div class="main-body">
             <h4>BOOKING CANCELLATION</h4>
-            <div class="table-container">
+
+            {{-- @if($bookings->isEmpty())
+            <p>No Record Found</p> --}}
+
+            {{-- <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -185,7 +192,58 @@
                             </tr>
                     </tbody>
                 </table>
+            </div> --}}
+
+            {{-- @else --}}
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer ID</th>
+                            <th>Table ID</th>
+                            <th>Bookig Date</th>
+                            <th>Time</th>
+                            <th> Guest No.</th>
+                            <th>Seat No.</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>    
+                        {{-- @foreach ($bookings as $booking) --}}
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="button-container">
+                                        <button type="submit" class="edit">Approve</button>
+                                        <button type="submit" class="button">
+                                            <div class="trash">
+                                                <div class="top">
+                                                    <div class="paper"></div>
+                                                </div>
+                                                <div class="box"></div>
+                                                <div class="check">
+                                                    <svg viewBox="0 0 8 6">
+                                                        <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <span>Deny</span>
+                                        </button>
+                                </td>
+                            </tr>
+                        {{-- @endforeach --}}
+                    </tbody>
+                </table>
             </div>
+            {{-- @endif --}}
         </div>
 
         

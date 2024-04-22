@@ -22,12 +22,15 @@
                     <div class="section-dropdown"> 
         
                         <div class="profile-img"></div> <br>
-                        <a href="#"><span>ADHIP</span></a><hr>
+                        {{-- <a href="#"><span>ADHIP</span></a><hr> --}}
+                        <a href="#"><span>{{ $firstName }}</span></a><hr>
+
         
         
                         <a href="#">Profile</a>
                         <div class="section-dropdown-sub"></div>
-                        <a href="#">Sign Out</a>
+                        {{-- <a href="#">Sign Out</a> --}}
+                        <a href="{{ route('admin.logout') }}">Sign Out</a>
         
                     </div>
                 </div>
@@ -138,6 +141,50 @@
                 <h4>TABLE</h4>
                 <a href="/admin/addtable"><button class="add_menu_btn">Add Table</button></a>
             </div>
+
+            @if($elements->isEmpty())
+            <p>No Record Found</p>
+            {{-- <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Table ID</th>
+                            <th>Table No</th>
+                            <th>Seat No</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($elements as $item)                            
+                        <tr>
+                            <td>{{ $item->table_id }}</td>
+                            <td>{{ $item->table_no }}</td>
+                            <td>{{ $item->table_seat_no }}</td>
+                            <td class="button-container">
+                                <button class="edit">Edit</button>
+                                <button class="button">
+                                    <div class="trash">
+                                        <div class="top">
+                                            <div class="paper"></div>
+                                        </div>
+                                        <div class="box"></div>
+                                        <div class="check">
+                                            <svg viewBox="0 0 8 6">
+                                                <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span>Delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div> --}}
+
+            @else
             <div class="table-container">
                 <table>
                     <thead>
@@ -177,6 +224,7 @@
                     </tbody>
                 </table>
             </div>
+            @endif
         </div>
 
         
