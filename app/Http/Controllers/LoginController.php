@@ -85,4 +85,21 @@ class LoginController extends Controller
         return view('forgot');
     }
 
+    public function resetPassword(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email|exists:customers,email',
+        'password' => 'required' 
+    ]);
+
+    // Find the user by email
+    $user = Customer::where('email', $request->email)->first();
+
+    // Update user's password
+    $user->password = Hash::make($request->password);
+    $user->save();
+
+    return redirect()->route('signup')->with('success', 'Password reset successfully. Please log in with your new password.');
+}
+
 }

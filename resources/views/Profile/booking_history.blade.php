@@ -83,7 +83,7 @@
 
                                     <td class="button-container">
                                         <button class="edit">Edit</button>
-                                        <button class="button">
+                                        <button type="submit" class="button">
                                             <div class="trash">
                                                 <div class="top">
                                                     <div class="paper"></div>
@@ -98,7 +98,29 @@
                                             <span>Cancel</span>
                                         </button>
                                     </td>
-                                </tr>
+
+                                    {{-- <td class="button-container">
+                                        <button class="edit">Edit</button>
+                                        <form action="{{ route('cancel.booking', ['id' => $booking->booking_id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="button">
+                                                <div class="trash">
+                                                    <div class="top">
+                                                        <div class="paper"></div>
+                                                    </div>
+                                                    <div class="box"></div>
+                                                    <div class="check">
+                                                        <svg viewBox="0 0 8 6">
+                                                            <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <span>Cancel</span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr> --}}
                                 @endforeach
 
                           </table>

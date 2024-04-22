@@ -22,12 +22,14 @@
                     <div class="section-dropdown"> 
         
                         <div class="profile-img"></div> <br>
-                        <a href="#"><span>ADHIP</span></a><hr>
+                        {{-- <a href="#"><span>ADHIP</span></a><hr> --}}
+                        <a href="#"><span>{{ explode(' ', $firstName)[0] }}</span></a><hr>
         
         
                         <a href="#">Profile</a>
                         <div class="section-dropdown-sub"></div>
-                        <a href="#">Sign Out</a>
+                        {{-- <a href="#">Sign Out</a> --}}
+                        <a href="{{ route('admin.logout') }}">Sign Out</a>
         
                     </div>
                 </div>
@@ -137,9 +139,14 @@
         <div class="main-body">
             <div class="main_body_heading">
                 <h4>MENUS</h4>
-                <a href="/addmenu"><button class="add_menu_btn">Add Menu</button></a>
+                <a href="/admin/addmenu"><button class="add_menu_btn">Add Menu</button></a>
             </div>
-            <div class="table-container">
+
+            {{-- @if($addmenus->isEmpty()) --}}
+            @if($addmenu->isEmpty())
+            <p>No Record Found</p>
+
+            {{-- <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -208,11 +215,86 @@
                                     </button>
                                 </td>
                             </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div> --}}
 
+            @else
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Food Name</th>
+                            <th>Food Description</th>
+                            <th>Food Type</th>
+                            <th>Veg or Nonveg</th>
+                            <th>Type of Non Veg</th>
+                            <th>Food Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($addmenu as $menu)
+
+                            <tr>
+                                <td>{{$menu->menu_name}}</td>
+                                <td>{{$menu->menu_description}}</td>
+                                <td>
+                                    @if ($menu->menu_type== "stater")
+                                        Staters
+                                    @elseif ($menu->menu_type== "main_course")
+                                        Main Course
+                                    @else
+                                        Dessert
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($menu->veg_or_non_veg== "veg")
+                                        Veg
+                                    @elseif($menu->veg_or_non_veg== "non_veg")
+                                        Non Veg
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($menu->type_of_non_veg== "chicken")
+                                        Chicken
+                                    @elseif($menu->type_of_non_veg== "motton")
+                                        Mutton
+                                    @else
+                                        Other
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($menu->photo)
+                                        <img src="{{asset('storage/'.$menu->photo)}}" alt="Customer Photo" style="max-width: 100px">                                
+                                    @else
+                                        No Photo Avaliable
+                                    @endif
+                                </td>
+                                <td class="button-container">
+                                    <button class="edit">Edit</button>
+                                    <button class="button">
+                                        <div class="trash">
+                                            <div class="top">
+                                                <div class="paper"></div>
+                                            </div>
+                                            <div class="box"></div>
+                                            <div class="check">
+                                                <svg viewBox="0 0 8 6">
+                                                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
+            @endif
         </div>
 
         

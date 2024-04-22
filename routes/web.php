@@ -62,6 +62,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/forgot',[LoginController::class,'viewforgot']);
 
+Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('reset.password');
+
 /*---------------------------------------------*\
   #PROFILE & MYBOOKINGS
 \*---------------------------------------------*/
@@ -71,6 +73,8 @@ Route::get('/forgot',[LoginController::class,'viewforgot']);
 Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
+
+Route::get('/bookhis/detele/{id}',[AdminController])
 
 
 /*---------------*\
@@ -88,9 +92,15 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.log
 
 Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
-Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
+Route::get('admin/addmenu',[AdminController::class,'view']);
+
+Route::post('admin/menu',[AdminController::class,'show'])->name('admin.menu');
+
+Route::get('/admin/menu',[AdminController::class, 'viewmenu'])->name('admin.menu');
 
 Route::get('/admin/addtable',[AdminController::class,'viewaddtable'])->name('admin.addtable');
+
+Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
 
 Route::post('/admin/addtable',[AdminController::class,'addtable'])->name('admin.addtable');
 
@@ -104,13 +114,7 @@ Route::get('/admin/bookcancle',[AdminController::class,'viewbookcancle'])->name(
 \*---------------*/
 
 
-Route::get('/menu',[MenuController::class,'menuview']);
-
-Route::get('/addmenu',[MenuController::class,'view']);
-
-Route::get('/admin/menu',[MenuController::class, 'viewmenu']);
-
-Route::post('/addmenu',[MenuController::class,'show']);
+Route::get('/menu',[AdminController::class,'menuview']);
 
 
 /*-------------------*\
@@ -124,6 +128,8 @@ Route::get('/booking',[BookingController::class,'view'])->name('booking');
 Route::post('/booking',[BookingController::class,'booking'])->name('booking');
 
 Route::get('/booktable',[BookingController::class,'table_view'])->name('booktable');
+
+
 
 /*-------------------*\
   #PAYMENT

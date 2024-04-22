@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  
     <div class="body">
         <div class="work">
             <div class="work_img_one">
@@ -21,7 +22,7 @@
             </div>
             <div class="work_two">
                 <div class="logo_img_div">
-                    <a href=""><img src="images/logo.png" alt="" class="logo_img"></a>
+                    <a href=""><img src="images/login/FoodHub.png" alt="" class="logo_img"></a>
                 </div>
     
                 <div class="heading_div">
@@ -29,17 +30,18 @@
                 </div>
     
                 <div class="form_div">
-                    <form action="" method="POST">
+                    <form action="{{ route('reset.password') }}" method="POST">
+                        @csrf
                         <div>
-                            <input type="email" name="" id="customer_id" class="imput_ele" placeholder="Register Email" required>
+                            <input type="email" name="email" id="email" class="imput_ele" placeholder="Register Email" required>
                         </div>
     
                         <div>
-                            <input type="password" name="" id="cus_password" class="imput_ele" placeholder="Password">
+                            <input type="password" name="password" id="password" class="imput_ele" placeholder="Password">
                         </div>
     
                         <div>
-                            <button class="btn">Proceed</button>
+                            <button type="submit" class="btn">Reset Password</button>
                         </div>
                     </form>
                 </div>
