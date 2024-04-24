@@ -22,13 +22,5 @@ class BookhisController extends Controller
         }
 
     }
-
-    // public function cancelBooking($id)
-    // {
-    //     $booking = Booking::findOrFail($id);
-    //     $booking->delete(); 
-
-    //     return redirect()->back()->with('success', 'Booking canceled successfully');
-    // }
     
 }
