@@ -147,3 +147,11 @@ Route::get('/pay/successful',[PaymentController::class,'pay_successful'])->name(
 \*------------------*/
 
 Route::post('/pay/successful',[PaymentController::class,'review']);
+
+/*-------------------*\
+  #POPUP
+\*------------------*/
+
+Route::get('/popup', function () {
+  return view('popup');
+});

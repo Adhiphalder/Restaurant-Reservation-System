@@ -10,6 +10,12 @@
     <link rel="icon" href="images/favicon.svg">
 </head>
 <body>
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Foodhub</p>
+      </div>
+
     <nav>
         <div class="nav">
             <a href="{{ route('home') }}"><img src="/images/payment/logo.png" alt=""></a>
@@ -96,5 +102,7 @@
         </div>
     </div>
     <script src="{{ url('/js/booking.js') }}"></script>
+
+    <script src="{{asset('js/preloader.js')}}"></script>
 </body>
 </html>

@@ -10,6 +10,12 @@
 </head>
 <body>
 
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Foodhub</p>
+      </div>
+
+    
     <div class="main">
 
         <nav>
@@ -63,6 +69,7 @@
             </form>
         </div>
     </div>
-
+    
+    <script src="{{asset('js/preloader.js')}}"></script>
 </body>
 </html>

@@ -64,6 +64,17 @@ class BookingController extends Controller
     return redirect()->route('booktable')->with('success', 'Booking created successfully');
     }
 
+    public function table_view(){
+        if (!Session::has('customer')) {
+            return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
+        }
+    
+        if (!Session::has('booking_id')) {
+            return redirect()->route('booking')->with('error', 'You need to make a booking first.');
+        }
+        return view('payment_booking.booktable');
+    }
+
     public function cancelBooking($id)
     {
         // $booking = Booking::find($id);

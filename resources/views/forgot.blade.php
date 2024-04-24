@@ -10,6 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/css/forgot.css') }}">
+    {{-- <link rel="stylesheet" href="{{ url('/css/popup.css') }}"> --}}
+
     <title>Document</title>
 </head>
 
@@ -45,7 +47,6 @@
                         </div>
                     </form>
                 </div>
-
                 <div class="terms_div">
                     <p>By Signing in or creating an account you are agreeing to our </p>
                     <a href=""><p>Terms & Conditions</p></a>
@@ -57,6 +58,16 @@
             </div>
         </div>
     </div>
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Foodhub</p>
+    </div>
+
+
+    <script src="{{asset('js/preloader.js')}}"></script>
+
+
 </body>
 
 </html>

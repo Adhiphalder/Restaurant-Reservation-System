@@ -16,11 +16,28 @@ use Illuminate\Support\Carbon;
 class PaymentController extends Controller
 {
     public function pay_successful(){
+
+        if (!Session::has('customer')) {
+            return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
+        }
+    
+        if (!Session::has('booking_id')) {
+            return redirect()->route('booking')->with('error', 'You need to make a booking first.');
+        }
         return view('payment_booking.payment_successful');
     }
 
 
     public function view(){
+        
+        if (!Session::has('customer')) {
+            return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
+        }
+    
+        if (!Session::has('booking_id')) {
+            return redirect()->route('booking')->with('error', 'You need to make a booking first.');
+        }
+    
         return view('payment_booking.payment');
     }
 
