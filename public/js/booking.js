@@ -2,7 +2,7 @@ function toggleExtraSeats() {
     var select = document.getElementById("guest_no");
     var extraSeatDiv = document.querySelector(".extra_seat");
 
-    if (select.value == "none" || select.value <= "eight") {
+    if (select.value == "none" || select.value == "eight" || select.value == "seven" || select.value == "six"|| select.value == "five"|| select.value == "four"|| select.value == "three"||select.value == "two"||select.value == "one") {
         extraSeatDiv.style.display = "none";
     } else {
         extraSeatDiv.style.display = "block";
