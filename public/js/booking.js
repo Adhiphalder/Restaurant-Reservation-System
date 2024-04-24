@@ -1,36 +1,21 @@
-let mainrepimg = document.querySelector(".left")
+function toggleExtraSeats() {
+    var select = document.getElementById("guest_no");
+    var extraSeatDiv = document.querySelector(".extra_seat");
 
-
-
-async function getImg(){
-    let a = await fetch("http://127.0.0.1:5501/images2/")
-    let b = await a.text()
-    console.log(b);
-    
-    let c = document.createElement("div")
-    c.innerHTML = b
-    let d = c.getElementsByTagName("a")
-    let arr =[]
-    for (let index = 0; index < d.length; index++) {
-        const element = d[index];
-        if(element.href.endsWith(".jpg")){
-            arr.push(element.href)
-        }
-    }
-    return arr
-}
-
-
-async function main() {
-    let imgArr = await getImg()
-
-    for (let index = 0; index < imgArr.length; index++) {
-        const element = imgArr[index];
-        console.log(element);
-        let img = document.createElement("img")
-        img.src = `${element}`;
-        mainrepimg.innerHTML = img;
+    if (select.value == "none" || select.value <= "eight") {
+        extraSeatDiv.style.display = "none";
+    } else {
+        extraSeatDiv.style.display = "block";
     }
 }
 
-main()
+
+
+document.getElementById("extraCheckbox").addEventListener("change", function() {
+    var selectedValue = document.getElementById("guest_no").value;
+    if (this.checked && (selectedValue === "nine" || selectedValue === "ten" || selectedValue === "eleven" || selectedValue === "twelve" || selectedValue === "thirdteen" || selectedValue === "fourteen" || selectedValue === "fiftheen" || selectedValue === "sixteen")) {
+        document.querySelector(".extra_gnum").style.display = "block";
+    } else {
+        document.querySelector(".extra_gnum").style.display = "none";
+    }
+});
