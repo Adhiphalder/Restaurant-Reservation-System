@@ -198,7 +198,7 @@
                                     <label for="p_method_upi">
                                         <span>UPI</span>
                                         <div class="p_method_upi_main">
-                                            <input type="email" name="upi_vpa" id="p_method_upi_space" placeholder="Enter your VPA">
+                                            <input type="email" name="upi_vpa" id="p_method_upi_space" placeholder="Enter your VPA" required>
                                             <button type="submit" class="button">Pay ₹200</button>
                                         </div>
                                     </label>
@@ -209,11 +209,11 @@
                                         <span>Credit / Debit / ATM Card</span>
                                         <div class="p_method_card_main">
                                             <div>
-                                                <input type="tel" name="card_number" id="p_method_card_space" placeholder="Enter Card Number" maxlength="16">
+                                                <input type="tel" name="card_number" id="p_method_card_space" placeholder="Enter Card Number" maxlength="16" required>
                                             </div>
                                             <div>
-                                                <input type="text" name="card_exp" id="p_method_card_exp" placeholder="MM/YY">
-                                                <input type="password" name="card_ccv" id="p_method_card_ccv" maxlength="4" placeholder="CCV">
+                                                <input type="text" name="card_exp" id="p_method_card_exp" placeholder="MM/YY" maxlength="5" required>
+                                                <input type="password" name="card_ccv" id="p_method_card_ccv" maxlength="4" placeholder="CCV" required>
                                             </div>
                                             <div>
                                                 <button type="submit" class="button">Pay ₹200</button>
