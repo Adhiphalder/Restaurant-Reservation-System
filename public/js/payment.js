@@ -25,3 +25,18 @@ click2.addEventListener("click" , ()=>{
     content2.style.display = "block"
     content1.style.display = "none"
 })
+
+
+  document.getElementById("p_method_card_exp").addEventListener("input", function() {
+    let input = this.value;
+    if (!/^\d{2}\/\d{2}$/.test(input)) {
+      this.setCustomValidity("Please enter a valid MM/YY date format");
+    } else {
+      let [month, year] = input.split('/');
+      if (parseInt(month) < 1 || parseInt(month) > 12) {
+        this.setCustomValidity("Month must be between 01 and 12");
+      } else {
+        this.setCustomValidity("");
+      }
+    }
+  });
