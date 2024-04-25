@@ -27,6 +27,37 @@ click2.addEventListener("click" , ()=>{
 })
 
 
+document.addEventListener("DOMContentLoaded", function() {
+
+  var upiRadio = document.getElementById("p_method_upi");
+  var cardRadio = document.getElementById("p_method_card");
+
+
+  var upiInput = document.getElementById("p_method_upi_space");
+
+  var cardNumberInput = document.getElementById("p_method_card_space");
+  var cardExpInput = document.getElementById("p_method_card_exp");
+  var cardCcvInput = document.getElementById("p_method_card_ccv");
+
+  function setCardFieldsRequired(required) {
+      cardNumberInput.required = required;
+      cardExpInput.required = required;
+      cardCcvInput.required = required;
+  }
+
+  upiRadio.addEventListener("click", function() {
+      upiInput.required = true;
+      setCardFieldsRequired(false);
+  });
+
+  cardRadio.addEventListener("click", function() {
+      upiInput.required = false;
+      setCardFieldsRequired(true);
+  });
+  
+});
+
+
   document.getElementById("p_method_card_exp").addEventListener("input", function() {
     let input = this.value;
     if (!/^\d{2}\/\d{2}$/.test(input)) {
