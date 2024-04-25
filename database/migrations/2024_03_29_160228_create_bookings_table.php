@@ -19,8 +19,9 @@ return new class extends Migration
             $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
             $table->date('date');
             $table->enum('time',["first","second","third","fourth","fifth","sixth","seventh","eightth","ninth","tenth","eleventh","twelvelth"])->nullable();
-            $table->integer('guest_no');
-            $table->enum('seat_no',["twoseater","fourseater","sixseater"])->nullable();
+            $table->enum('guest_no',["one","two", "three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirdteen","fourteen","fiftheen","sixteen"])->nullable();
+            $table->enum('seat_no',["twoseater","fourseater","sixseater","eightseater"])->nullable();
+            $table->enum('add_seat_no',["twoseater","fourseater","sixseater","eightseater"])->nullable();
             $table->timestamps();
         });
     }

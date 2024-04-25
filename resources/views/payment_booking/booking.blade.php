@@ -20,21 +20,22 @@
         <div class="nav">
             <a href="{{ route('home') }}"><img src="/images/payment/logo.png" alt=""></a>
 
-            <div class="menu">
+            <div class="menu1">
                 <div class="sec-center"> 	
-                    <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
-                    <label class="for-dropdown" for="dropdown"> <i class="fa-solid fa-bars"></i> </label> 
-                    <div class="section-dropdown"> 
-                        <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
-                        <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
-                        <div class="section-dropdown-sub"></div>
-                        {{-- <a href="">Logout <i class="uil uil-arrow-right"></i></a> --}}
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                            <button type="submit">Logout</button>
-                        </form>
-                        
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <input class="dropdown1" type="checkbox" id="dropdown1" name="dropdown1"/>
+                    <label class="for-dropdown1" for="dropdown1"> <i class="fa-solid fa-bars"></i>   </label>
+                    <div class="section-dropdown1"> 
+                        <a href="{{ route('mybookings') }}">My Bookings <i class="uil uil-arrow-right"></i></a>
+                        <input class="dropdown1-sub" type="checkbox" id="dropdown1-sub" name="dropdown1-sub"/>
+                        <div class="section-dropdown1-sub"></div>
+                        <a href="profile">Profille <i class="uil uil-arrow-right"></i></a>
+                        {{-- <a href="logout">Logout <i class="uil uil-arrow-right"></i></a> --}}
+                        <form action="{{ route('logout') }}" method="post">
+                          @csrf
+                            
+                          {{-- <a href=""><button type="submit">Logout <i class="uil uil-arrow-right"></i></button></a> --}}
+                          <button type="submit" class="logout-btn">Logout <i class="uil uil-arrow-right"></i></button>
+                      </form>
 
                     </div>
                 </div>
@@ -80,19 +81,63 @@
 
                     <div class="form_div">
                         <label for="guest_no">Guest No.</label>
-                        <input type="number" name="guest_no" id="guest_no" placeholder="Guest No." required>
+                        <select name="guest_no" id="guest_no" onchange="toggleExtraSeats()" required>
+                            <option value="none">Select Guest No.</option>
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+                            <option value="five">5</option>
+                            <option value="six">6</option>
+                            <option value="seven">7</option>
+                            <option value="eight">8</option>
+                            <option class="abv_eight" value="nine">9</option>
+                            <option class="abv_eight" value="ten">10</option>
+                            <option class="abv_eight" value="eleven">11</option>
+                            <option class="abv_eight" value="twelve">12</option>
+                            <option class="abv_eight" value="thirdteen">13</option>
+                            <option class="abv_eight" value="fourteen">14</option>
+                            <option class="abv_eight" value="fiftheen">15</option>
+                            <option class="abv_eight" value="sixteen">16</option>
+                        </select>
                     </div>
 
-                    <div class="form_div">
+                    <div class="form_div" id="form_div">
                         <label for="gnum">Seat No.</label>
                         <select name="gnum" id="gnum" required>
                             <option value="none">Select seats</option>
                             <option value="twoseater">2 seater</option>
                             <option value="fourseater">4 seater</option>
                             <option value="sixseater">6 seater</option>
+                            <option value="eightseater">8 seater</option>
                         </select>
                     </div>
 
+                    <div class="extra_seat">
+                        <div class="form_div">
+                            <label for="">Want a Extra Table ?</label>
+                            <div  class="form_div"> 
+                                <input type="checkbox" id="extraCheckbox">
+                                <label class="extra_Checkbox" for="extraCheckbox">Click Here</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="extra_gnum">                            
+                        <div class="form_div">
+                            <label for="exgnum">Additional Seat No.</label>
+                            <select name="exgnum" id="exgnum">
+                                <option value="none">Select seats</option>
+                                <option value="twoseater">2 seater</option>
+                                <option value="fourseater">4 seater</option>
+                                <option value="sixseater">6 seater</option>
+                                <option value="eightseater">8 seater</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    
                     <div class="form_div_sub">
                         <input type="submit" id="submit">
                         <label for="submit"><button class="submitbtn">Proceed</button></label>

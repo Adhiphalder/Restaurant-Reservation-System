@@ -30,7 +30,7 @@ class BookingController extends Controller
     $request->validate([
         'date' => 'required|date',
         'time' => 'required',
-        'guest_no' => 'required|integer|min:1',
+        'guest_no' => 'required',
         'gnum' => 'required',
     ]);
 
@@ -48,6 +48,7 @@ class BookingController extends Controller
     $booking->time = $request->input('time');
     $booking->guest_no = $request->input('guest_no');
     $booking->seat_no = $request->input('gnum');
+    $booking->add_seat_no = $request->input('exgnum');
     $booking->save();
 
     Session::put('booking_id', $booking->booking_id);
@@ -56,6 +57,7 @@ class BookingController extends Controller
     Session::put('booking_time', $request->input('time'));
     Session::put('guest_no', $request->input('guest_no'));
     Session::put('seat_no', $request->input('gnum'));
+    Session::put('add_seat_no', $request->input('exgnum'));
 
     logger()->info('Booking ID stored in session: ' . Session::get('booking_id'));
 

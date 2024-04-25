@@ -23,22 +23,22 @@
                 <a href="{{ route('home') }}"><img src="/images/payment_successful/logo.png" alt=""></a>
 
 
-                <div class="menu">
+                <div class="menu1">
                     <div class="sec-center"> 	
-                        <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
-                        <label class="for-dropdown" for="dropdown"> <i class="fa-solid fa-bars"></i> </label> 
-                        <div class="section-dropdown"> 
-                            <a href="{{url('bookhis')}}">My Bookings <i class="uil uil-arrow-right"></i></a>
-                            <input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
-                            <div class="section-dropdown-sub"></div>
-                            {{-- <a href="">Logout <i class="uil uil-arrow-right"></i></a> --}}
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                                <button type="submit">Logout</button>
-                            </form>
-                            
-                            <!-- Add a button or link to trigger the logout form -->
-                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <input class="dropdown1" type="checkbox" id="dropdown1" name="dropdown1"/>
+                        <label class="for-dropdown1" for="dropdown1"> <i class="fa-solid fa-bars"></i>   </label>
+                        <div class="section-dropdown1"> 
+                            <a href="{{ route('mybookings') }}">My Bookings <i class="uil uil-arrow-right"></i></a>
+                            <input class="dropdown1-sub" type="checkbox" id="dropdown1-sub" name="dropdown1-sub"/>
+                            <div class="section-dropdown1-sub"></div>
+                            <a href="profile">Profille <i class="uil uil-arrow-right"></i></a>
+                            {{-- <a href="logout">Logout <i class="uil uil-arrow-right"></i></a> --}}
+                            <form action="{{ route('logout') }}" method="post">
+                              @csrf
+    
+                              {{-- <a href=""><button type="submit">Logout <i class="uil uil-arrow-right"></i></button></a> --}}
+                              <button type="submit" class="logout-btn">Logout <i class="uil uil-arrow-right"></i></button>
+                          </form>
     
                         </div>
                     </div>
