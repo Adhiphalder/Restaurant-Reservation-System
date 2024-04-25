@@ -546,13 +546,21 @@ body{
     margin-right: 19px;
 }
 
-#table_no {
+.table_no_div{
+  margin-top: 17px;
+}
+
+.table_no {
     width: 250px;
     height: 33px;
     font-size: 14px;
     border-radius: 3px;
     background-color: #161718f5;
     padding-left: 5px;
+}
+
+#table_no_two{
+  margin-top: 15px;
 }
 
 .form_opt{

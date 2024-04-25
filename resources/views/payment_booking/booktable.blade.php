@@ -64,13 +64,23 @@
                     <form >
                         <div class="form_opt">
                             <label for="table_no">Choose your Table</label>
-                            <select name="table_no" id="table_no" required>
-                                <option value="none">Select an option</option>
-                                <option value="table_no_one">Table No. 1</option>
-                                <option value="table_no_two">Table No. 2</option>
-                                <option value="table_no_three">Table No. 3</option>
-                                <option value="table_no_four">Table No. 4</option>
-                            </select>
+                            <div class="table_no_div">
+                                <select name="table_no" class="table_no" id="table_no" required>
+                                    <option value="none">Select an option</option>
+                                    <option value="table_no_one">Table No. 1</option>
+                                    <option value="table_no_two">Table No. 2</option>
+                                    <option value="table_no_three">Table No. 3</option>
+                                    <option value="table_no_four">Table No. 4</option>
+                                </select>
+
+                                <select name="table_no" class="table_no" id="table_no_two" required>
+                                    <option value="none">Select an option</option>
+                                    <option value="table_no_one">Table No. 1</option>
+                                    <option value="table_no_two">Table No. 2</option>
+                                    <option value="table_no_three">Table No. 3</option>
+                                    <option value="table_no_four">Table No. 4</option>
+                                </select>
+                            </div>
                         </div>
         
                         <div class="sub_btn">
