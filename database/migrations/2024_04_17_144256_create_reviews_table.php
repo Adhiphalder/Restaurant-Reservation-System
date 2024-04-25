@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('review_id');
             $table->unsignedBigInteger('customer_id')->nullable();
             $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
-            $table->string('review_text');
+            $table->string('review_text')->nullable();
             $table->timestamps();
         });
     }

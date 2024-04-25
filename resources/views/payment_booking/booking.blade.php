@@ -14,7 +14,7 @@
     <div class="preload" data-preaload>
         <div class="circle"></div>
         <p class="text">Foodhub</p>
-      </div>
+    </div>
 
     <nav>
         <div class="nav">
@@ -31,11 +31,11 @@
                         <a href="profile">Profille <i class="uil uil-arrow-right"></i></a>
                         {{-- <a href="logout">Logout <i class="uil uil-arrow-right"></i></a> --}}
                         <form action="{{ route('logout') }}" method="post">
-                          @csrf
+                        @csrf
                             
-                          {{-- <a href=""><button type="submit">Logout <i class="uil uil-arrow-right"></i></button></a> --}}
-                          <button type="submit" class="logout-btn">Logout <i class="uil uil-arrow-right"></i></button>
-                      </form>
+                        {{-- <a href=""><button type="submit">Logout <i class="uil uil-arrow-right"></i></button></a> --}}
+                        <button type="submit" class="logout-btn">Logout <i class="uil uil-arrow-right"></i></button>
+                    </form>
 
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     <div class="form_div" id="form_div">
                         <label for="gnum">Table Options</label>
                         <select name="gnum" id="gnum" required>
-                            <option value="none">Select seats</option>
+                            <option value="null">Select seats</option>
                             <option value="twoseater">2 seater</option>
                             <option value="fourseater">4 seater</option>
                             <option value="sixseater">6 seater</option>
@@ -127,7 +127,7 @@
                         <div class="form_div">
                             <label for="exgnum">Additional Table Options</label>
                             <select name="exgnum" id="exgnum">
-                                <option value="none">Select seats</option>
+                                <option value="null">Select seats</option>
                                 <option value="twoseater">2 seater</option>
                                 <option value="fourseater">4 seater</option>
                                 <option value="sixseater">6 seater</option>

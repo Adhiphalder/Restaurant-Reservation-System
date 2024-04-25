@@ -24,9 +24,6 @@
                         <div class="profile-img"></div> <br>
                         {{-- <a href="#"><span>ADHIP</span></a><hr> --}}
                         <a href="#"><span>{{ $firstName }}</span></a><hr>
-
-        
-        
                         <a href="#">Profile</a>
                         <div class="section-dropdown-sub"></div>
                         {{-- <a href="#">Sign Out</a> --}}
@@ -134,6 +131,21 @@
                 border: none;
             }
 
+            .badge {
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+            }
+
+            .active {
+                background-color: #28a745;
+            }
+
+            .inactive {
+                background-color: #dc3545;
+            }
+
         </style>
 
         <div class="main-body">
@@ -192,6 +204,7 @@
                             <th>Table ID</th>
                             <th>Table No</th>
                             <th>Seat No</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -202,6 +215,14 @@
                             <td>{{ $item->table_id }}</td>
                             <td>{{ $item->table_no }}</td>
                             <td>{{ $item->table_seat_no }}</td>
+                            {{-- <td>{{ $item->table_book_status ? 'Active' : 'Inactive' }}</td> --}}
+                            <td>
+                                @if($item->table_book_status)
+                                    <span class="badge active">Empty</span>
+                                @else
+                                    <span class="badge inactive">Reserved</span>
+                                @endif
+                            </td>
                             <td class="button-container">
                                 <button class="edit">Edit</button>
                                 <button class="button">

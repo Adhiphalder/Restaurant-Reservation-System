@@ -24,6 +24,15 @@ class PaymentController extends Controller
         if (!Session::has('booking_id')) {
             return redirect()->route('booking')->with('error', 'You need to make a booking first.');
         }
+
+        // if (!Session::has('table_id')) {
+        //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
+        // }
+
+        if (!Session::has('payment_id')) {
+            return redirect()->route('payment')->with('error', 'You need to complete the payment first.');
+        }
+        
         return view('payment_booking.payment_successful');
     }
 
@@ -37,11 +46,16 @@ class PaymentController extends Controller
         if (!Session::has('booking_id')) {
             return redirect()->route('booking')->with('error', 'You need to make a booking first.');
         }
+
+        // if (!Session::has('table_id')) {
+        //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
+        // }
     
         return view('payment_booking.payment');
     }
 
     public function payment(Request $request){
+
 
     $customerId = Session::get('customer.customer_id');
     $bookingId = Session::get('booking_id');
@@ -53,7 +67,14 @@ class PaymentController extends Controller
         $payment->customer_id = $customerId;
         $payment->booking_id = $bookingId; 
         $payment->amount = 200; 
-        $payment->paymethod = $request->input('p_method');
+
+        $paymentMethod = $request->input('p_method');
+
+        if ($paymentMethod !== 'upi' && $paymentMethod !== 'card') {
+            return redirect()->back()->with('error', 'Invalid payment method selected.');
+        }
+
+        $payment->paymethod = $paymentMethod; 
         $payment->current_time = now(); 
 
         $payment->save();
