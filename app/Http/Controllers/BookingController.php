@@ -48,16 +48,22 @@ class BookingController extends Controller
     $booking->time = $request->input('time');
     $booking->guest_no = $request->input('guest_no');
     $booking->seat_no = $request->input('gnum');
-    $booking->add_seat_no = $request->input('exgnum');
+
+    $exgnum = $request->input('exgnum');
+    if ($exgnum !== "null") {
+        $booking->add_seat_no = $exgnum;
+    } else {
+        $booking->add_seat_no = null;
+    }
+
     $booking->save();
 
     Session::put('booking_id', $booking->booking_id);
-
     Session::put('booking_date', $request->input('date'));
     Session::put('booking_time', $request->input('time'));
     Session::put('guest_no', $request->input('guest_no'));
     Session::put('seat_no', $request->input('gnum'));
-    Session::put('add_seat_no', $request->input('exgnum'));
+    Session::put('add_seat_no', $exgnum);
 
     logger()->info('Booking ID stored in session: ' . Session::get('booking_id'));
 

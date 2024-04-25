@@ -56,6 +56,7 @@ class PaymentController extends Controller
 
     public function payment(Request $request){
 
+
     $customerId = Session::get('customer.customer_id');
     $bookingId = Session::get('booking_id');
 
@@ -66,7 +67,14 @@ class PaymentController extends Controller
         $payment->customer_id = $customerId;
         $payment->booking_id = $bookingId; 
         $payment->amount = 200; 
-        $payment->paymethod = $request->input('p_method');
+
+        $paymentMethod = $request->input('p_method');
+
+        if ($paymentMethod !== 'upi' && $paymentMethod !== 'card') {
+            return redirect()->back()->with('error', 'Invalid payment method selected.');
+        }
+
+        $payment->paymethod = $paymentMethod; 
         $payment->current_time = now(); 
 
         $payment->save();

@@ -40,3 +40,14 @@ click2.addEventListener("click" , ()=>{
       }
     }
   });
+
+
+  function formatExpirationDate(event) {
+    let input = event.target;
+    let value = input.value;
+
+    // Check if input length is 2 and the last character is a number
+    if (value.length === 2 && !isNaN(parseInt(value.charAt(1)))) {
+        input.value = value + '/';
+    }
+}
