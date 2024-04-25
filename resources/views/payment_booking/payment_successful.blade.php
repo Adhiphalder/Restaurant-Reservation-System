@@ -54,7 +54,7 @@
                 {{-- <p>Your payment for (guest_no) guest at (date) on (time) is successfully done.</p> --}}
                 {{-- <p class="main_part_sec">Your Payment id #(payment_id)</p> --}}
 
-                <p>Your payment for "{{ session('guest_no') }}" guests at "{{ \Carbon\Carbon::parse(session('date'))->format('d-m-yy') }}" on the time slot of "{{ session('time') }}" is successfully done.</p>
+                <p>Your payment for "{{ session('guest_no') }}" guests at "{{ \Carbon\Carbon::parse(session('date'))->format('d-m-Y') }}" on the time slot of "{{ session('time') }}" is successfully done.</p>
                 <p class="main_part_sec">Your Payment id #0000000{{ session('payment_id') }}</p>
             </div>
 
@@ -62,7 +62,7 @@
                 @csrf
                 <div>
                     <label for="review"><p class="review_p">Review</p></label>
-                    <textarea name="review" id="review" class="review" cols="72" rows="12" placeholder="Share you experience with us." required></textarea>
+                    <textarea name="review" id="review" class="review" cols="72" rows="12" placeholder="Share you experience with us."></textarea>
 
                 </div>
                 <button class="button">OK</button>

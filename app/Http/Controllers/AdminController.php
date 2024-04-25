@@ -26,7 +26,6 @@ class AdminController extends Controller
         $admin = Admin::where('admin_id', $credentials['admin_id'])->first();   
 
         if ($admin && Hash::check($credentials['password'], $admin->password)) {
-            // Authentication successful
             $request->session()->put('admin', $admin);
 
             return redirect()->route('admin.customer');
@@ -188,27 +187,11 @@ class AdminController extends Controller
     
     public function viewbookcancle(Request $request){
 
-        // if ($request->session()->has('admin')) {
-        //     $admin = $request->session()->get('admin');
-        //     $adminName = $admin->name;
-        //     $firstName = ucfirst(explode(' ', $adminName)[0]);
-    
-        //     // Retrieve all bookings including soft deleted ones
-        //     $customerBookings = Booking::withTrashed()->get();
-    
-        //     return view('Admin.bookcancle', ['customerBookings' => $customerBookings, 'firstName' => $firstName]);
-        // } else {
-        //     return redirect('/admin/login');
-        // }
-
-
-
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
             $adminName = $admin->name;
             $firstName = ucfirst(explode(' ', $adminName)[0]);
     
-            // Retrieve only soft deleted bookings
             $softDeletedBookings = Booking::onlyTrashed()->get();
     
             return view('Admin.bookcancle', ['softDeletedBookings' => $softDeletedBookings, 'firstName' => $firstName]);
@@ -220,18 +203,14 @@ class AdminController extends Controller
 
     public function denycancelBooking($id)
     {
-        // $booking = Booking::find($id);
         Booking::withTrashed()->find($id)->restore();
-        // $booking->delete(); 
 
         return redirect()->back()->with('success', 'Booking canceled successfully');
     }
 
     public function approvecancelBooking($id)
     {
-        // $booking = Booking::find($id);
         Booking::withTrashed()->find($id)->forceDelete();
-        // $booking->delete(); 
 
         return redirect()->back()->with('success', 'Booking canceled successfully');
     }

@@ -148,6 +148,7 @@
                             <th>Booking ID</th>
                             <th>Customer ID</th>
                             <th>Table ID</th>
+                            <th>Additional Table ID</th>
                             <th>Time Slot</th>
                             <th> Contact No</th>
                             <th> Booking Date</th>
@@ -162,6 +163,7 @@
                                 <td>{{ $booking->booking_id }}</td>
                                 <td>{{ $booking->customer_id }}</td>
                                 <td>{{ $booking->table_id }}</td>
+                                <td>{{ $booking->add_table_id }}</td>
                                 <td>{{ $booking->time }}</td> 
                                 <td>{{ $booking->customer->contact}}</td>
                                 <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
