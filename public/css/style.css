@@ -1653,6 +1653,40 @@ body.nav-active { overflow: hidden; }
   #TESTIMONIALS
 \*-----------------------------------*/
 
+.inner{
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+}
+
+
+.container_wrapper{
+  display: flex;
+  align-items: center;
+  animation: slideToLeft 10s ease infinite 1.2s;
+}
+
+
+ @keyframes slideToLeft {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  15%,
+  45% {
+    transform: translateX(-100%);
+  }
+  50%,
+  80% {
+    transform: translateX(-200%);
+  }
+  85%,
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+
 .testi {
   padding-block-end: 340px;
   position: static;
@@ -2383,7 +2417,8 @@ textarea.input-field {
    */
 
   .testi-text {
-    max-width: 910px;
+    width: 100vw;
+    padding: 30px;
     margin-inline: auto;
   }
 
