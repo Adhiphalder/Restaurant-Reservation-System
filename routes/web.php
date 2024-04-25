@@ -106,6 +106,10 @@ Route::get('/admin/table',[AdminController::class, 'viewtable'])->name('admin.ta
 
 Route::get('/admin/bookcancle',[AdminController::class,'viewbookcancle'])->name('admin.bookcancel');
 
+Route::post('/deny/booking/cancel/{id}', [AdminController::class, 'denycancelBooking'])->name('deny.cancel.booking');
+
+Route::post('/approve/booking/cancel/{id}', [AdminController::class, 'approvecancelBooking'])->name('approve.cancel.booking');
+
 
 /*----------------*\
   #MENU

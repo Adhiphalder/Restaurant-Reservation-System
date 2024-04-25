@@ -158,34 +158,32 @@
 
                     <tbody>
                         @foreach($bookings as $booking)
-                        <tr>
-                            <td>{{ $booking->booking_id }}</td>
-                            <td>{{ $booking->customer_id }}</td>
-                            <td>{{ $booking->table_id }}</td>
-                            <td>{{ $booking->time }}</td> 
-                            <td>{{ $booking->customer->contact}}</td>
-                            {{-- <td>{{ $booking->date }}</td>
-                            <td>{{ $booking->created_at }}</td> --}}
-                            <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
-                            <td>{{ \Carbon\Carbon::parse($booking->created_at)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($booking->created_at)->format('h:i A') }}</td>
-                            <td class="button-container">
-                                <button class="edit">Edit</button>
-                                <button class="button">
-                                    <div class="trash">
-                                        <div class="top">
-                                            <div class="paper"></div>
+                            <tr>
+                                <td>{{ $booking->booking_id }}</td>
+                                <td>{{ $booking->customer_id }}</td>
+                                <td>{{ $booking->table_id }}</td>
+                                <td>{{ $booking->time }}</td> 
+                                <td>{{ $booking->customer->contact}}</td>
+                                <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($booking->created_at)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($booking->created_at)->format('h:i A') }}</td>
+                                <td class="button-container">
+                                    <button class="edit">Edit</button>
+                                    <button class="button">
+                                        <div class="trash">
+                                            <div class="top">
+                                                <div class="paper"></div>
+                                            </div>
+                                            <div class="box"></div>
+                                            <div class="check">
+                                                <svg viewBox="0 0 8 6">
+                                                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                                                </svg>
+                                            </div>
                                         </div>
-                                        <div class="box"></div>
-                                        <div class="check">
-                                            <svg viewBox="0 0 8 6">
-                                                <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <span>Delete</span>
-                                </button>
-                            </td>
-                        </tr>
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
                         @endforeach
                 </tbody>
                 </table>

@@ -132,11 +132,21 @@
                 background-color: #14336D;
             }
 
-            /* Delete button style */
             tbody button.delete {
                 background-color: #FF5252;
                 color: white;
                 border: none;
+            }
+
+            tbody button.dlt{
+                background-color: #FF5252;
+                color: white;
+                border: none;
+                font-weight: bold;
+            }
+
+            tbody button.dlt:hover{
+                background-color: #e92f2f;
             }
 
         </style>
@@ -144,8 +154,8 @@
         <div class="main-body">
             <h4>BOOKING CANCELLATION</h4>
 
-            {{-- @if($bookings->isEmpty())
-            <p>No Record Found</p> --}}
+
+            @if(count($softDeletedBookings) > 0)
 
             {{-- <div class="table-container">
                 <table>
@@ -202,28 +212,38 @@
                             <th>Booking ID</th>
                             <th>Customer ID</th>
                             <th>Table ID</th>
-                            <th>Bookig Date</th>
-                            <th>Time</th>
-                            <th> Guest No.</th>
-                            <th>Seat No.</th>
-                            <th>Date</th>
+                            <th>Time Slot</th>
+                            <th> Contact No</th>
+                            <th> Booking Date</th>
+                            <th> Booking On</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>    
-                        {{-- @foreach ($bookings as $booking) --}}
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="button-container">
-                                        <button type="submit" class="edit">Approve</button>
-                                        <button type="submit" class="button">
+
+                    <tbody>
+
+                        @foreach ($softDeletedBookings as $booking)
+                        <tr>
+                            <td>{{ $booking->booking_id }}</td>
+                            <td>{{ $booking->customer_id }}</td>
+                            <td>table 220</td>
+                            <td>{{ $booking->time }}</td>
+                            <td>{{ $booking->customer->contact}}</td>
+                            <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($booking->created_at)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($booking->created_at)->format('h:i A') }}</td>
+
+                            <td class="button-container">
+                                <form action="{{ route('approve.cancel.booking', ['id' => $booking->booking_id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="edit">Approve</button>
+                                </form>
+
+                                <form action="{{ route('deny.cancel.booking', ['id' => $booking->booking_id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dlt">Deny</button>
+                                </form>
+
+                                        {{-- <button type="submit" class="button">
                                             <div class="trash">
                                                 <div class="top">
                                                     <div class="paper"></div>
@@ -235,15 +255,17 @@
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <span>Deny</span>
-                                        </button>
-                                </td>
-                            </tr>
-                        {{-- @endforeach --}}
-                    </tbody>
+                                            <span>Cancel</span>
+                                        </button> --}}
+                            </td>
+                    @endforeach
+
+                </tbody>
                 </table>
             </div>
-            {{-- @endif --}}
+            @else
+            <p>No Record Found</p>
+            @endif
         </div>
 
         

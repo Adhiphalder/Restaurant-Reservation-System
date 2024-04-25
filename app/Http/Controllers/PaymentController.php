@@ -24,6 +24,15 @@ class PaymentController extends Controller
         if (!Session::has('booking_id')) {
             return redirect()->route('booking')->with('error', 'You need to make a booking first.');
         }
+
+        // if (!Session::has('table_id')) {
+        //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
+        // }
+
+        if (!Session::has('payment_id')) {
+            return redirect()->route('payment')->with('error', 'You need to complete the payment first.');
+        }
+        
         return view('payment_booking.payment_successful');
     }
 
@@ -37,6 +46,10 @@ class PaymentController extends Controller
         if (!Session::has('booking_id')) {
             return redirect()->route('booking')->with('error', 'You need to make a booking first.');
         }
+
+        // if (!Session::has('table_id')) {
+        //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
+        // }
     
         return view('payment_booking.payment');
     }

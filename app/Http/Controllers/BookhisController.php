@@ -18,7 +18,7 @@ class BookhisController extends Controller
 
             return view('Profile.booking_history', ['customerBookings' => $customerBookings]);
         } else {
-            return redirect()->back()->with('error', 'Please log in to view your booking history.');
+            return redirect()->route('signup')->with('error', 'You need to make a booking first.');
         }
 
     }

@@ -696,12 +696,14 @@ tbody button.edit {
   background-color: #E4c590;
   color: black;
   border: none;
-  font-weight: bold;
+  font-weight: 550;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 tbody button.edit:hover {
   background-color: #dab87e;
 }
+
 
 
 
@@ -966,3 +968,5 @@ tbody button.edit:hover {
   color: var(--gold-crayola);
   text-decoration: underline;
 }
+
+

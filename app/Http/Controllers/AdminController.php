@@ -14,16 +14,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    // public function admenu()
-    // {
-    //     return view('Admin.admenu');
-    // }
-    
-    // public function customer()
-    // {
-    //     return view('Admin.customer');
-    // }
-
 
     public function showLoginForm(){
         return view('Admin.adminlogin');
@@ -67,10 +57,6 @@ class AdminController extends Controller
 
     public function customer(Request $request)
     {
-        // $customers = Customer::all();
-        
-        // return view('Admin.customer', ['customers' => $customers]);
-        
 
 
         if ($request->session()->has('admin')) {
@@ -88,7 +74,6 @@ class AdminController extends Controller
 
     public function view(Request $request){
         
-        // return view('Admin.admenuform');
 
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
@@ -103,13 +88,11 @@ class AdminController extends Controller
     public function show(Request $request){
 
         if ($request->hasFile('photo')) {
-            # code...
 
             $photo = $request->file('photo');
             $fileName = time() .'_'.$photo->getClientOriginalName();
             $filePath = $photo->storeAs('photos',$fileName,'public');
         }else {
-            # code...
             $filePath = null;
         }
 
@@ -126,9 +109,6 @@ class AdminController extends Controller
     }
 
     public function viewmenu(Request $request){
-        // $addmenus = Menu::all();
-        // $data = compact('addmenus');
-        // return view('Admin.admenu')->with($data);
 
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
@@ -149,7 +129,6 @@ class AdminController extends Controller
     }
 
     public function viewaddtable(Request $request){
-        // return view('Admin.addtable');
 
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
@@ -164,9 +143,6 @@ class AdminController extends Controller
     }
 
     public function viewtable(Request $request){
-        // $elements = Table::all();
-        // $data = compact('elements');
-        // return view('Admin.table')->with($data);
 
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
@@ -193,12 +169,6 @@ class AdminController extends Controller
 
     public function reservation(Request $request)
     {
-        // return view('Admin.reservation');
-
-        // $bookings = Booking::with('customer')->get(); 
-
-        // return view('Admin.reservation', ['bookings' => $bookings]);
-
 
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
@@ -213,34 +183,57 @@ class AdminController extends Controller
             return redirect('/admin/login'); 
         }
 
+
     }
     
     public function viewbookcancle(Request $request){
-        // return view('Admin.bookcancle');
 
         // if ($request->session()->has('admin')) {
         //     $admin = $request->session()->get('admin');
         //     $adminName = $admin->name;
         //     $firstName = ucfirst(explode(' ', $adminName)[0]);
     
-        //     // Pass $firstName variable to the view
-        //     return view('Admin.bookcancle', ['firstName' => $firstName]);
+        //     // Retrieve all bookings including soft deleted ones
+        //     $customerBookings = Booking::withTrashed()->get();
+    
+        //     return view('Admin.bookcancle', ['customerBookings' => $customerBookings, 'firstName' => $firstName]);
         // } else {
         //     return redirect('/admin/login');
         // }
+
+
 
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
             $adminName = $admin->name;
             $firstName = ucfirst(explode(' ', $adminName)[0]);
     
-            $bookings = Booking::all();
+            // Retrieve only soft deleted bookings
+            $softDeletedBookings = Booking::onlyTrashed()->get();
     
-            return view('Admin.bookcancle', ['bookings' => $bookings, 'firstName' => $firstName]);
+            return view('Admin.bookcancle', ['softDeletedBookings' => $softDeletedBookings, 'firstName' => $firstName]);
         } else {
             return redirect('/admin/login');
         }
         
+    }
+
+    public function denycancelBooking($id)
+    {
+        // $booking = Booking::find($id);
+        Booking::withTrashed()->find($id)->restore();
+        // $booking->delete(); 
+
+        return redirect()->back()->with('success', 'Booking canceled successfully');
+    }
+
+    public function approvecancelBooking($id)
+    {
+        // $booking = Booking::find($id);
+        Booking::withTrashed()->find($id)->forceDelete();
+        // $booking->delete(); 
+
+        return redirect()->back()->with('success', 'Booking canceled successfully');
     }
 
 

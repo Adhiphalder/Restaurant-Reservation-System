@@ -117,7 +117,7 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="images/FoodHub.png" width="160" height="50" alt="FoodHub - Home">
+        <img src="/images/FoodHub.png" width="160" height="50" alt="FoodHub - Home">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -127,7 +127,7 @@
         </button>
 
         <a href="#" class="logo">
-          <img src="images/logo.svg" width="160" height="50" alt="FoodHub - Home">
+          <img src="/images/FoodHub.png" width="160" height="50" alt="FoodHub - Home">
         </a>
 
         <ul class="navbar-list">
