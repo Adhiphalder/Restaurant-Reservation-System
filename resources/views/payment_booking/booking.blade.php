@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="form_div" id="form_div">
-                        <label for="gnum">Seat No.</label>
+                        <label for="gnum">Table Options</label>
                         <select name="gnum" id="gnum" required>
                             <option value="none">Select seats</option>
                             <option value="twoseater">2 seater</option>
@@ -125,7 +125,7 @@
 
                     <div class="extra_gnum">                            
                         <div class="form_div">
-                            <label for="exgnum">Additional Seat No.</label>
+                            <label for="exgnum">Additional Table Options</label>
                             <select name="exgnum" id="exgnum">
                                 <option value="none">Select seats</option>
                                 <option value="twoseater">2 seater</option>
