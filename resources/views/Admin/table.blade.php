@@ -218,9 +218,9 @@
                             {{-- <td>{{ $item->table_book_status ? 'Active' : 'Inactive' }}</td> --}}
                             <td>
                                 @if($item->table_book_status)
-                                    <span class="badge active">Active</span>
+                                    <span class="badge active">Empty</span>
                                 @else
-                                    <span class="badge inactive">Inactive</span>
+                                    <span class="badge inactive">Reserved</span>
                                 @endif
                             </td>
                             <td class="button-container">
