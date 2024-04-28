@@ -622,6 +622,27 @@ input{
   display: none;
 }
 
+.form_div_table{
+  display: none;
+}
+
+.table_no {
+  width: 256px;
+  height: 33px;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #161718f5;
+  padding-left: 5px;
+}
+
+#table_no_two_select{
+  margin-top: 12px;
+  display: none;
+}
+
+.table_no_div{
+  max-width: 256px;
+}
 
 select{
     color-scheme: dark;
