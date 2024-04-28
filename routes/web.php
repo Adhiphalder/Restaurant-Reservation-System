@@ -43,7 +43,10 @@ use App\Models\Admin;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+
+    $reviews = Review::with('customer')->get(); 
+    return view('welcome', compact('reviews'));
 })->name('home');
 
 /*---------------------------------*\

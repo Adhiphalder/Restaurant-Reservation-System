@@ -62,7 +62,7 @@
                 @csrf
                 <div>
                     <label for="review"><p class="review_p">Review</p></label>
-                    <textarea name="review" id="review" class="review" cols="72" rows="12" placeholder="Share you experience with us."></textarea>
+                    <textarea name="review" id="review" class="review" cols="72" rows="12" placeholder="Share you experience with us...."></textarea>
 
                 </div>
                 <button class="button">OK</button>

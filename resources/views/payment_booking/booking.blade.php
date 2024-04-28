@@ -81,7 +81,7 @@
 
                     <div class="form_div">
                         <label for="guest_no">Guest No.</label>
-                        <select name="guest_no" id="guest_no" onchange="toggleExtraSeats()" required>
+                        <select name="guest_no"     id="guest_no"  onchange="toggleExtraSeats()" required>
                             <option value="none">Select Guest No.</option>
                             <option value="one">1</option>
                             <option value="two">2</option>
@@ -117,14 +117,14 @@
                         <div class="form_div">
                             <label for="">Want a Extra Table ?</label>
                             <div  class="form_div"> 
-                                <input type="checkbox" id="extraCheckbox">
+                                <input type="checkbox" id="extraCheckbox" onchange="toggleExtraSeats()">
                                 <label class="extra_Checkbox" for="extraCheckbox">Click Here</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="extra_gnum">                            
-                        <div class="form_div">
+                    <div class="extra_gnum" id="extra_gnum" style="display: none;">                            
+                        <div class="form_div" id="form_div">
                             <label for="exgnum">Additional Table Options</label>
                             <select name="exgnum" id="exgnum">
                                 <option value="null">Select seats</option>
@@ -140,12 +140,27 @@
                     
                     <div class="form_div_sub">
                         <input type="submit" id="submit">
-                        <label for="submit"><button class="submitbtn">Proceed</button></label>
+                        {{-- <label for="submit"><button class="submitbtn">Proceed</button></label> --}}
+                        <label for="submit"><button class="button">Proceed</button></label>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleExtraSeats() {
+            var guestNo = parseInt(document.getElementById("guest_no_two").value);
+            var tableSelect = document.getElementById("form_div");
+            
+            if (guestNo >= 9) {
+                tableSelect.style.display = "block";
+            } else {
+                tableSelect.style.display = "none";
+            }
+        }
+    </script>
+
     <script src="{{ url('/js/booking.js') }}"></script>
 
     <script src="{{asset('js/preloader.js')}}"></script>

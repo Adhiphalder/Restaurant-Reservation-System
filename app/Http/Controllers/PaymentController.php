@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Payment;
-
+use App\Models\Customer;    
 use App\Models\Booking;
 use App\Models\Review;
 use Illuminate\Support\Facades\Session;
@@ -52,6 +52,7 @@ class PaymentController extends Controller
         // }
     
         return view('payment_booking.payment');
+
     }
 
     public function payment(Request $request){
@@ -99,10 +100,23 @@ class PaymentController extends Controller
 
     public function review(Request $request){
         
-        $review = new Review;
-        $review->review_text = $request['review'];
-        $review->save();
-        return redirect('/');
+        // $review = new Review;
+        // $review->review_text = $request['review'];
+        // $review->save();
+        // return redirect('/');
+
+
+
+    $customerId = Session::get('customer.customer_id');
+
+    // Create a new Review instance
+    $review = new Review;
+    $review->customer_id = $customerId;
+    $review->review_text = $request->input('review'); 
+
+    $review->save();
+
+    return redirect()->route('home')->with('success', 'Review submitted successfully.');
     }
     
 }
