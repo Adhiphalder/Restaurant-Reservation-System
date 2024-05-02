@@ -93,10 +93,8 @@ class LoginController extends Controller
         'password' => 'required' 
     ]);
 
-    // Find the user by email
     $user = Customer::where('email', $request->email)->first();
 
-    // Update user's password
     $user->password = Hash::make($request->password);
     $user->save();
 
