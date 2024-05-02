@@ -278,8 +278,6 @@ body{
 }
 .dropdown1:not(:checked) + label .fa-solid {
 
-    /* margin-left: 4px; */
-    /* margin-top: 5px; */
   font-size: 22px;
   color: #e4c590;
   transition: transform 200ms linear;
@@ -287,8 +285,6 @@ body{
 
 .dropdown1:checked + label .fa-solid  {
 
-    /* margin-left: 4px; */
-    /* margin-top: 5px; */
   color: #e4c590;
   transform: rotate(180deg);
   font-size: 22px;
@@ -304,7 +300,6 @@ body{
   width: 170px;
   border-radius: 4px;
   display: block;
-  /* box-shadow: 0 14px 35px 0 rgba(9,9,12,0.4); */
   z-index: 2;
   opacity: 0;
   pointer-events: none;
@@ -663,15 +658,63 @@ select{
     justify-content: center;
 }
 
-.extra_Checkbox{
+/* .extra_Checkbox{
   padding: 4px 12px 5px 12px;
-  /* background-color: black; */
   background: none;
   color: #e4c590;
   border: 0.7px solid #e4c590;
   border-radius: 4px;
   font-weight: 500;
+  cursor: pointer;
 }
+
+.extra_Checkbox:hover{
+  background-color: #e4c590;
+  color: #111111;
+} */
+
+.extra_Checkbox {
+  cursor: pointer;
+  position: relative;
+  padding: 4px 12px 5px 12px;
+  color: #e4c590;
+  border: 1px solid #e4c590;
+  /* border-radius: 34px; */
+  border-radius: 4px;
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  overflow: hidden;
+}
+
+.extra_Checkbox::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #e4c590;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.extra_Checkbox:hover::before {
+  scale: 3;
+}
+
+.extra_Checkbox:hover {
+  color: #212121;
+  scale: 1.1;
+}
+
+.extra_Checkbox:active {
+  scale: 1;
+}
+
+
 
 /* .submitbtn {
     background: none;

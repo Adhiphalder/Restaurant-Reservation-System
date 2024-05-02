@@ -210,7 +210,7 @@
                     </thead>
                     <tbody>
 
-                        @foreach ($elements as $item)                            
+                        @foreach ($elements as $item)              
                         <tr>
                             <td>{{ $item->table_id }}</td>
                             <td>{{ $item->table_no }}</td>

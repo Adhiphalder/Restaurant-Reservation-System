@@ -568,6 +568,14 @@ body{
     align-items: center;
 }
 
+.form_opt p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 125px ;
+}
+
 .sub_btn{
   width: 100%;
   display: flex;
@@ -594,7 +602,9 @@ body{
 } */
 
 .button {
-  margin-top: 25px;
+  /* margin-top: 25px; */
+  position: relative;
+  top: 75px;
   display: inline-block;
   height: 39px;
   width: 210px;

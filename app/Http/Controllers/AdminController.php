@@ -159,6 +159,7 @@ class AdminController extends Controller
 
     public function addtable(Request $request){
 
+
         $element = new Table;
         $element->table_no = $request->input('table_no');
         $element->table_seat_no = $request->input('table_seat_no');

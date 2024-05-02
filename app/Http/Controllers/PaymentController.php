@@ -25,9 +25,9 @@ class PaymentController extends Controller
             return redirect()->route('booking')->with('error', 'You need to make a booking first.');
         }
 
-        // if (!Session::has('table_id')) {
-        //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
-        // }
+        if (!Session::has('table_id')) {
+            return redirect()->route('booktable')->with('error', 'You need to select a table first.');
+        }
 
         if (!Session::has('payment_id')) {
             return redirect()->route('payment')->with('error', 'You need to complete the payment first.');
@@ -39,13 +39,13 @@ class PaymentController extends Controller
 
     public function view(){
         
-        if (!Session::has('customer')) {
-            return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
-        }
+        // if (!Session::has('customer')) {
+        //     return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
+        // }
     
-        if (!Session::has('booking_id')) {
-            return redirect()->route('booking')->with('error', 'You need to make a booking first.');
-        }
+        // if (!Session::has('booking_id')) {
+        //     return redirect()->route('booking')->with('error', 'You need to make a booking first.');
+        // }
 
         // if (!Session::has('table_id')) {
         //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
@@ -83,9 +83,9 @@ class PaymentController extends Controller
         Session::put('payment_id', $payment->payment_id);
 
         logger()->info('Payment created with booking ID: ' . $payment->booking_id);
-    } else {
-        $payment = Payment::findOrFail($paymentId);
-    }
+        } else {
+            $payment = Payment::findOrFail($paymentId);
+        }
 
     $booking = Booking::findOrFail($bookingId);
 
@@ -99,17 +99,9 @@ class PaymentController extends Controller
     }
 
     public function review(Request $request){
-        
-        // $review = new Review;
-        // $review->review_text = $request['review'];
-        // $review->save();
-        // return redirect('/');
-
-
 
     $customerId = Session::get('customer.customer_id');
 
-    // Create a new Review instance
     $review = new Review;
     $review->customer_id = $customerId;
     $review->review_text = $request->input('review'); 
