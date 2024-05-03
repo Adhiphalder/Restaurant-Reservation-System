@@ -205,9 +205,10 @@
                     <label class="for-dropdown1" for="dropdown1"> <span>{{ session('customer')->name }}</span></label> 
                     <div class="section-dropdown1"> 
                         <a href="{{ route('mybookings') }}">My Bookings <i class="uil uil-arrow-right"></i></a>
+                        <a href="{{ route('mypayments') }}">My Payments <i class="uil uil-arrow-right"></i></a>
                         <input class="dropdown1-sub" type="checkbox" id="dropdown1-sub" name="dropdown1-sub"/>
                         <div class="section-dropdown1-sub"></div>
-                        <a href="profile">Profille <i class="uil uil-arrow-right"></i></a>
+                        <a href="profile">My Profille <i class="uil uil-arrow-right"></i></a>
                         {{-- <a href="logout">Logout <i class="uil uil-arrow-right"></i></a> --}}
                         <form action="{{ route('logout') }}" method="post">
                           @csrf
@@ -791,7 +792,7 @@
 
           <div class="container_wrapper">
 
-            <div class="container_test">
+            {{-- <div class="container_test">
     
               <div class="quote">”</div>
     
@@ -811,6 +812,30 @@
                   class="img">
     
                 <p class="label-2 profile-name">Sam Raimi</p>
+              </div>
+    
+            </div>
+  
+            <div class="container_test">
+    
+              <div class="quote">”</div>
+    
+              <p class="headline-2 testi-text">
+                I wanted to thank you for inviting me down for that amazing dinner the other night. The food was
+                extraordinary. (review)
+              </p>
+    
+              <div class="wrapper">
+                <div class="separator"></div>
+                <div class="separator"></div>
+                <div class="separator"></div>
+              </div>
+    
+              <div class="profile">
+                <img src="images/testi-avatar.jpg" width="100" height="100" loading="lazy" alt="Sam Raimi"
+                  class="img">
+    
+                <p class="label-2 profile-name">Sam Raimi (profilename)</p>
               </div>
     
             </div>
@@ -885,31 +910,30 @@
                 <p class="label-2 profile-name">Sam Raimi</p>
               </div>
     
-            </div>
-  
+            </div> --}}
+
+            @foreach($reviews as $review)
             <div class="container_test">
-    
-              <div class="quote">”</div>
-    
-              <p class="headline-2 testi-text">
-                I wanted to thank you for inviting me down for that amazing dinner the other night. The food was
-                extraordinary.
-              </p>
-    
-              <div class="wrapper">
-                <div class="separator"></div>
-                <div class="separator"></div>
-                <div class="separator"></div>
-              </div>
-    
-              <div class="profile">
-                <img src="images/testi-avatar.jpg" width="100" height="100" loading="lazy" alt="Sam Raimi"
-                  class="img">
-    
-                <p class="label-2 profile-name">Sam Raimi</p>
-              </div>
-    
+                <div class="quote">”</div>
+                <p class="headline-2 testi-text">{{ $review->review_text }}</p>
+                <div class="wrapper">
+                    <div class="separator"></div>
+                    <div class="separator"></div>
+                    <div class="separator"></div>
+                </div>
+                @if($review->customer)
+                    <div class="profile">
+                      <img src="images/testi-avatar.jpg" width="100" height="100" loading="lazy" alt="Sam Raimi"
+                      class="img">
+                        <p class="label-2 profile-name">{{ $review->customer->name }}</p>
+                    </div>
+                @else
+                    <div class="profile">
+                        <p class="label-2 profile-name">Anonymous</p>
+                    </div>
+                @endif
             </div>
+        @endforeach
             
           </div>
 

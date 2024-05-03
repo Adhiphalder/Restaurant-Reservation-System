@@ -1,3 +1,4 @@
+
 function toggleExtraSeats() {
     var select = document.getElementById("guest_no");
     var extraSeatDiv = document.querySelector(".extra_seat");

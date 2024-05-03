@@ -12,11 +12,15 @@ use App\Http\Controllers\LoginController;
 
 use App\Http\Controllers\BookhisController;
 
+use App\Http\Controllers\PayhisController;
+
 use App\Http\Controllers\BookingController;
 
 use App\Http\Controllers\MenuController;
 
 use App\Models\Customer;
+
+use App\Models\Table;
 
 use App\Models\Bookhistory;
 
@@ -43,7 +47,10 @@ use App\Models\Admin;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+
+    $reviews = Review::with('customer')->get(); 
+    return view('welcome', compact('reviews'));
 })->name('home');
 
 /*---------------------------------*\
@@ -73,6 +80,8 @@ Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name(
 Route::get('/profile',[CustomerController::class, 'profile'])->name('profile');
 
 Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybookings');
+
+Route::get('/paymenthis',[PayhisController::class, 'payment_history'])->name('mypayments');
 
 
 /*---------------*\
@@ -131,8 +140,11 @@ Route::post('/booking',[BookingController::class,'booking'])->name('booking');
 
 Route::get('/booktable',[BookingController::class,'table_view'])->name('booktable');
 
-Route::post('/booking/cancel/{id}', [BookingController::class, 'cancelBooking'])->name('cancel.booking');
+// Route::post('/booktable',[BookingController::class,'storetable'])->name('booktable.store');
 
+Route::post('booktable/store', [BookingController::class, 'storetable'])->name('booktable.store');
+
+Route::post('/booking/cancel/{id}', [BookingController::class, 'cancelBooking'])->name('cancel.booking');
 
 
 /*-------------------*\

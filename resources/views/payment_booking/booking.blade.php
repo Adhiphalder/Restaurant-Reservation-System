@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Foodhub</title>
     <link rel="stylesheet" href="{{ url('/css/booking.css') }}">
-    <link rel="icon" href="images/favicon.svg">
+    <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
+
 </head>
 <body>
 
@@ -26,9 +27,10 @@
                     <label class="for-dropdown1" for="dropdown1"> <i class="fa-solid fa-bars"></i>   </label>
                     <div class="section-dropdown1"> 
                         <a href="{{ route('mybookings') }}">My Bookings <i class="uil uil-arrow-right"></i></a>
+                        <a href="{{ route('mypayments') }}">My Payments <i class="uil uil-arrow-right"></i></a>
                         <input class="dropdown1-sub" type="checkbox" id="dropdown1-sub" name="dropdown1-sub"/>
                         <div class="section-dropdown1-sub"></div>
-                        <a href="profile">Profille <i class="uil uil-arrow-right"></i></a>
+                        <a href="profile">My Profille <i class="uil uil-arrow-right"></i></a>
                         {{-- <a href="logout">Logout <i class="uil uil-arrow-right"></i></a> --}}
                         <form action="{{ route('logout') }}" method="post">
                         @csrf
@@ -50,11 +52,11 @@
             <div class="form">
                 <form method="POST" action="{{url('/')}}/booking">
                     @csrf
-    
-
+                    
                     {{-- @if(session('customer'))
                     <h4>Customer ID : {{ session('customer')->customer_id }}</h4> <br>
                     @endif --}}
+
                     <div class="form_div">
                         <label for="date">Booking Date</label>
                         <input type="date" name="date" id="date" class="input" required>
@@ -81,86 +83,34 @@
 
                     <div class="form_div">
                         <label for="guest_no">Guest No.</label>
-                        <select name="guest_no" id="guest_no" onchange="toggleExtraSeats()" required>
+                        <select name="guest_no"     id="guest_no"  onchange="toggleExtraSeats()" required>
                             <option value="none">Select Guest No.</option>
-                            <option value="one">1</option>
-                            <option value="two">2</option>
-                            <option value="three">3</option>
-                            <option value="four">4</option>
-                            <option value="five">5</option>
-                            <option value="six">6</option>
-                            <option value="seven">7</option>
-                            <option value="eight">8</option>
-                            <option class="abv_eight" value="nine">9</option>
-                            <option class="abv_eight" value="ten">10</option>
-                            <option class="abv_eight" value="eleven">11</option>
-                            <option class="abv_eight" value="twelve">12</option>
-                            <option class="abv_eight" value="thirdteen">13</option>
-                            <option class="abv_eight" value="fourteen">14</option>
-                            <option class="abv_eight" value="fiftheen">15</option>
-                            <option class="abv_eight" value="sixteen">16</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
                         </select>
                     </div>
 
                     <div class="form_div" id="form_div">
-                        <label for="gnum">Table Options</label>
+                        <label for="gnum">Seat Options</label>
                         <select name="gnum" id="gnum" required>
                             <option value="null">Select seats</option>
-                            <option value="twoseater">2 seater</option>
-                            <option value="fourseater">4 seater</option>
-                            <option value="sixseater">6 seater</option>
-                            <option value="eightseater">8 seater</option>
+                            <option value="2">2 seater</option>
+                            <option value="4">4 seater</option>
+                            <option value="6">6 seater</option>
+                            <option value="8">8 seater</option>
                         </select>
-                    </div>
-
-                    <div class="extra_seat">
-                        <div class="form_div">
-                            <label for="">Want a Extra Table ?</label>
-                            <div  class="form_div"> 
-                                <input type="checkbox" id="extraCheckbox">
-                                <label class="extra_Checkbox" for="extraCheckbox">Click Here</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="extra_gnum">                            
-                        <div class="form_div">
-                            <label for="exgnum">Additional Table Options</label>
-                            <select name="exgnum" id="exgnum">
-                                <option value="null">Select seats</option>
-                                <option value="twoseater">2 seater</option>
-                                <option value="fourseater">4 seater</option>
-                                <option value="sixseater">6 seater</option>
-                                <option value="eightseater">8 seater</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form_div_table">
-                        <div class="form_div">
-                            <label for="table_no">Choose your Table</label>
-                            <div class="table_no_div">
-                                <select name="table_no" class="table_no" id="table_no" required>
-                                    <option value="none">Select an option</option>
-                                    <option value="table_no_one">Table No. 1</option>
-                                    <option value="table_no_two">Table No. 2</option>
-                                    <option value="table_no_three">Table No. 3</option>
-                                    <option value="table_no_four">Table No. 4</option>
-                                </select>
-                                <select name="table_no" class="table_no"  id="table_no_two_select" required>
-                                    <option value="none">Select an option</option>
-                                    <option value="table_no_one">Table No. 1</option>
-                                    <option value="table_no_two">Table No. 2</option>
-                                    <option value="table_no_three">Table No. 3</option>
-                                    <option value="table_no_four">Table No. 4</option>
-                                </select>    
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="form_div_sub">
                         <input type="submit" id="submit">
-                        <label for="submit"><button class="submitbtn">Proceed</button></label>
+                        {{-- <label for="submit"><button class="submitbtn">Proceed</button></label> --}}
+                        <label for="submit"><button class="button">Proceed</button></label>
                     </div>
                 </form>
             </div>

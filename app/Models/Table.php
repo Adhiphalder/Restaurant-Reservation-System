@@ -11,4 +11,7 @@ class Table extends Model
 
     protected $table = "tables";
     protected $primaryKey = "table_id";
+
+    // protected $fillable = ['table_id', 'table_no', 'table_seat_no', 'table_book_status'];
+    protected $fillable = ['table_id', 'table_no', 'table_seat_no', 'table_book_status'];
 }

@@ -660,7 +660,7 @@ hr{
 .pagination {
   margin-top: 25px;
   display: flex;
-  justify-content: center; /* Center the pagination */
+  justify-content: center; 
   margin-bottom: 40px;
 }
 
@@ -684,13 +684,13 @@ ul {
   justify-content: center;
   padding: 10px 5px;
   border-radius: 50px;
-  margin: 0; /* Remove default margin */
-  padding-left: 6px; /* Remove default padding */
+  margin: 0; 
+  padding-left: 6px;
 }
 
 li {
   list-style: none;
-  margin: 0 15px; /* Adjust the margin */
+  margin: 0 15px;
 }
 
 .pagination a {
@@ -732,12 +732,13 @@ li {
 }
 
 .button-container {
+  /* max-width: 10px; */
   display: flex;
   justify-content: center; 
   align-items: center; 
 }
 
-tbody button {
+/* tbody button {
   cursor: pointer;
   padding: 13px 20px;
   text-align: center;
@@ -759,8 +760,89 @@ tbody button.edit {
 
 tbody button.edit:hover {
   background-color: #dab87e;
+} */
+
+
+tbody button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: none;
+  position: relative;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px .2px #00000035;
+  box-shadow: 1px 1px 5px .2px #00000035;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  transition-delay: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-between;
+  background-color: #e4c590;
 }
 
+tbody button:hover {
+  width: 150px;
+  transition-delay: .2s;
+}
+
+tbody button:hover > p {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition-delay: .4s;
+  transition-delay: .4s;
+}
+
+tbody button:hover > .icon-wrapper .icon {
+  transform: scale(1.1);
+}
+
+tbody button:hover > .icon-wrapper .icon path {
+  stroke: black;
+}
+
+.button-container p{
+  color: #111111;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 18px;
+  margin-left: 25px;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.icon-wrapper {
+  background-color: rgb(255, 69, 69);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  transform: scale(.9);
+  transition: .2s linear;
+}
+
+.icon path {
+  stroke: #000;
+  stroke-width: 2px;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
 
 
 

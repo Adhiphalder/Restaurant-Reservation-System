@@ -13,16 +13,37 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
 
+            // $table->id('booking_id');
+            // $table->unsignedBigInteger('table_id')->nullable();
+            // $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
+
+            // $table->unsignedBigInteger('add_table_id')->nullable();
+            // $table->foreign('table_id')->references('add_table_id')->on('tables')->onDelete('cascade');
+
+            // $table->unsignedBigInteger('customer_id')->nullable();
+            // $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
+            // $table->date('date');
+            // $table->enum('time',["first","second","third","fourth","fifth","sixth","seventh","eightth","ninth","tenth","eleventh","twelvelth"])->nullable();
+            // $table->enum('guest_no',["one","two", "three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirdteen","fourteen","fiftheen","sixteen"])->nullable();
+            // $table->enum('seat_no',["twoseater","fourseater","sixseater","eightseater"])->nullable();
+            // $table->enum('add_seat_no',["twoseater","fourseater","sixseater","eightseater"])->nullable();
+            // $table->timestamps();
+
+
             $table->id('booking_id');
             $table->unsignedBigInteger('table_id')->nullable();
             $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
+
+            $table->unsignedBigInteger('add_table_id')->nullable();
+            $table->foreign('add_table_id')->references('table_id')->on('tables')->onDelete('cascade'); // Corrected foreign key
+
             $table->unsignedBigInteger('customer_id')->nullable();
             $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
             $table->date('date');
             $table->enum('time',["first","second","third","fourth","fifth","sixth","seventh","eightth","ninth","tenth","eleventh","twelvelth"])->nullable();
-            $table->enum('guest_no',["one","two", "three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirdteen","fourteen","fiftheen","sixteen"])->nullable();
-            $table->enum('seat_no',["twoseater","fourseater","sixseater","eightseater"])->nullable();
-            $table->enum('add_seat_no',["twoseater","fourseater","sixseater","eightseater"])->nullable();
+            $table->tinyInteger('guest_no')->nullable(); // Changed to tinyInteger
+            $table->tinyInteger('seat_no')->nullable(); // Changed to tinyInteger
+            $table->tinyInteger('add_seat_no')->nullable(); // Changed to tinyInteger
             $table->timestamps();
         });
     }
