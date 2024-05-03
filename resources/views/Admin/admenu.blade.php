@@ -231,6 +231,7 @@
                             <th>Veg or Nonveg</th>
                             <th>Type of Non Veg</th>
                             <th>Food Image</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -272,6 +273,7 @@
                                         No Photo Avaliable
                                     @endif
                                 </td>
+                                <td>{{$menu->price}}</td>
                                 <td class="button-container">
                                     <button class="edit">Edit</button>
                                     <button class="button">

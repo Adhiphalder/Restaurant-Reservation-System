@@ -10,7 +10,39 @@
     color: white;
     font-family: 'Lora', serif;
 }
-  
+
+
+body.loaded { overflow: overlay; }
+
+body.nav-active { overflow: hidden; }
+
+::-webkit-scrollbar { width: 5px; }
+
+::-webkit-scrollbar-track { background-color: transparent; }
+
+::-webkit-scrollbar-thumb { background-color: hsl(38, 61%, 73%) }
+ 
+.skipbtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    border: .7px solid #e4c590;
+    color: #e4c590;
+    height: 39px;
+    width: 100px;
+    font-weight: 500;
+    font-size: 17px;
+    transition: 0.7s ease-out;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.skipbtn:hover {
+    background-color: #e4c590;
+    color: black;
+}
  
 .main{
     width: 90vw;
@@ -57,7 +89,7 @@
 
 .menu_inside {
     display: flex;
-    width: 500px;
+    width: 560px;
     border: .7px solid grey;
     border-radius: 7px;
     padding: 17px;
@@ -303,6 +335,7 @@
 .starter_main{
     position: absolute;
     top: 100px;
+    width: 90vw;
 }
 
 .main_course_main{
@@ -310,8 +343,12 @@
     transition: 1.6s ease-in;
     position: absolute;
     top: 100px;
+    width: 90vw;
+
 } 
 
 .desert_main{
     display: none;
+    width: 90vw;
+
 }
