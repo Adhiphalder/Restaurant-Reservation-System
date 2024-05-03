@@ -26,6 +26,9 @@
 
 
         <div class="starter_main">
+            <div>
+                <a href=""><button class="skipbtn">Skip</button></a>                
+            </div>
             <div class="starter">
                 <h2>Non Veg Starters</h2>
                 <div class="menu">
