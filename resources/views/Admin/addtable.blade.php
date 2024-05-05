@@ -25,6 +25,15 @@
                         <input type="number" name="table_seat_no" id="table_seat_no" class="table_seat_no" placeholder="Enter Seat No." required>
                     </div>
 
+                    <div class="right_sec">
+                        <label for="table_status">Table Status</label>
+                        <select name="table_status" id="table_status" class="table_status">
+                            <option value="none">Select Table Status</option>
+                            <option value="emp">Empty</option>
+                            <option value="resv">Reserved</option>
+                        </select>
+                    </div>
+
                     <div class="sub_button">
                         <button class="button">Add Table</button>
                     </div>

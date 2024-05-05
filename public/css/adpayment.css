@@ -477,8 +477,8 @@ i{
   margin: 5px 0; 
   border-color: #BEC0D6; 
 }
-.main-body p{
-  /* margin-top: 165px; */
+.main-body-p{
+  margin-top: 165px;
   font-size: 20px;
   color: tomato;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -532,12 +532,12 @@ tbody button:hover > .icon-wrapper .icon path {
   stroke: black;
 }
 
-.button-container p{
+.button-container-p{
   color: #111111;
   visibility: hidden;
   opacity: 0;
   font-size: 18px;
-  margin-left: 25px;
+  margin-left: 22px;
   -webkit-transition: .2s linear;
   transition: .2s linear;
   font-weight: bold;
