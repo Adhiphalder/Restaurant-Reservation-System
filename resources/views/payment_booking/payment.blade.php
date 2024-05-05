@@ -66,7 +66,13 @@
                             @if(session('booking_date'))
                                 <div class="left_first_top_book_div">
                                     <div>Booking Date</div>
-                                    <div>{{ session('booking_date') }}</div>
+                                    {{-- <div>{{ session('booking_date') }}</div> --}}
+                                    <div>
+                                        @php
+                                            $bookingDate = \Carbon\Carbon::parse(session('booking_date'))->format('d-m-Y');
+                                        @endphp
+                                        {{ $bookingDate }}
+                                    </div>
                                 </div>
                             @endif
                         

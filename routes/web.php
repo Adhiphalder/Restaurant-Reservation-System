@@ -83,7 +83,6 @@ Route::get('/bookhis',[BookhisController::class, 'booking_history'])->name('mybo
 
 Route::get('/paymenthis',[PayhisController::class, 'payment_history'])->name('mypayments');
 
-
 /*---------------*\
   #ADMIN
 \*----------------*/
