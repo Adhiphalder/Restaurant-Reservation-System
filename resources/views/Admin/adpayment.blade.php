@@ -200,7 +200,8 @@
                                 <td>{{ $payment->booking_id }}</td>
                                 <td>{{ $payment->amount }}</td>
                                 <td>{{ $payment->paymethod }}</td>
-                                <td>{{ $payment->current_time }}</td>
+                                {{-- <td>{{ $payment->current_time }}</td> --}}
+                                <td>{{ \Carbon\Carbon::parse($payment->current_time)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($payment->current_time)->format('h:i A') }}</td>
                                 <td class="button-container">
                                     {{-- <button class="edit">Edit</button> --}}
                                     {{-- <button class="button">
