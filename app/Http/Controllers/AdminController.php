@@ -9,6 +9,8 @@ use App\Models\Table;
 use App\Models\Admin;
 use App\Models\Booking;
 use App\Models\Menu;
+use App\Models\Payment;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -214,6 +216,22 @@ class AdminController extends Controller
         Booking::withTrashed()->find($id)->forceDelete();
 
         return redirect()->back()->with('success', 'Booking canceled successfully');
+    }
+
+    public function viewpayment()
+    {
+        // return view ('Admin.adpayment');
+
+        if (!Session::has('admin')) {
+            return redirect()->route('admin.login')->with('error', 'Please log in as admin.');
+        }
+
+        $admin = Session::get('admin');
+        $firstName = ucfirst(explode(' ', $admin->name)[0]);
+
+        $payments = Payment::all();
+
+        return view('Admin.adpayment', ['payments' => $payments, 'firstName' => $firstName]);
     }
 
 

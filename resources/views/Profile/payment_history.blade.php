@@ -78,7 +78,7 @@
                                 </div>
 
                                 <tr>
-                                    <td>{{ $payment->payment_id }}</td>
+                                    <td>000000{{ $payment->payment_id }}</td>
                                     <td>{{ \Carbon\Carbon::parse($payment->booking->date)->format('d-m-Y')  }}</td>
                                     <td>{{ $payment->paymethod }}</td>
                                     <td>{{ \Carbon\Carbon::parse ($payment->created_at)->format('d-m-Y')}} at {{ \Carbon\Carbon::parse($payment->created_at)->format('h:i A') }}</td>

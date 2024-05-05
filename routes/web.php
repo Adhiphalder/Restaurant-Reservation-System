@@ -109,6 +109,8 @@ Route::get('/admin/addtable',[AdminController::class,'viewaddtable'])->name('adm
 
 Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
 
+Route::get('/admin/payment',[AdminController::class, 'viewpayment'])->name('admin.payment');
+
 Route::post('/admin/addtable',[AdminController::class,'addtable'])->name('admin.addtable');
 
 Route::get('/admin/table',[AdminController::class, 'viewtable'])->name('admin.table');

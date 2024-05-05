@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{asset('css/customer.css')}}">
+        <link rel="stylesheet" href="{{asset('css/adpayment.css')}}">
     <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>FoodHub</title>
@@ -45,13 +45,14 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <div class="active">
-                    <a><li>Customers</li></a>
-                </div>
+
+                <a href="/admin/customer"><li>Customers</li></a>
                 <a href="/admin/menu"><li>Menus</li></a>
                 <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
-                <a href="/admin/payment"><li>Payments</li></a>
+                <div class="active">
+                    <a href=""><li>Payments</li></a>
+                </div>
                 <a href="/admin/bookcancle"><li>Booking Cancellation</li></a>
             </ul>
             </div>
@@ -131,9 +132,9 @@
         </style>
 
         <div class="main-body">
-            <h4>CUSTOMER</h4>
+            <h4>PAYMENT</h4>
 
-            @if($customers->isEmpty())
+            @if($payments->isEmpty())
             <p>No Record Found</p>
             {{-- <div class="table-container">
                 <table>
@@ -184,23 +185,22 @@
                     <thead>
                         <tr>
                             <th>Customer ID</th>
-                            <th>Name</th>
-                            <th> Contact No</th>
-                            <th> Email</th>
-                            <th>Address</th>
-                            {{-- <th> Password</th> --}}
+                            <th>Booking ID</th>
+                            <th> Amount</th>
+                            <th> Pay Method</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach($customers as $customer)
+                        @foreach($payments as $payment)
                             <tr>
-                                <td>{{ $customer->customer_id }}</td>
-                                <td>{{ $customer->name }}</td>
-                                <td>{{ $customer->contact }}</td>
-                                <td>{{ $customer->email }}</td>
-                                <td>{{ $customer->address }}</td>
+                                <td>{{ $payment->customer_id }}</td>
+                                <td>{{ $payment->booking_id }}</td>
+                                <td>{{ $payment->amount }}</td>
+                                <td>{{ $payment->paymethod }}</td>
+                                <td>{{ $payment->current_time }}</td>
                                 <td class="button-container">
                                     {{-- <button class="edit">Edit</button> --}}
                                     {{-- <button class="button">
@@ -218,10 +218,13 @@
                                         <span>Delete</span>
                                     </button> --}}
 
-                                    <button class="button" type="button">
-                                        <span class="button__text">DELETE</span>
-                                        <span class="button__icon"><svg class="svg" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg"><title></title><path d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path><line style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" x1="80" x2="432" y1="112" y2="112"></line><path d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path><line style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" x1="256" x2="256" y1="176" y2="400"></line><line style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" x1="184" x2="192" y1="176" y2="400"></line><line style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" x1="328" x2="320" y1="176" y2="400"></line></svg></span>
-                                      </button>
+                                    <button type="submit" class="delete"><p>Delete</p>
+                                        <span class="icon-wrapper">
+                                            <svg class="icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                          </span>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach

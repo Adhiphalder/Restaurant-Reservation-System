@@ -10,6 +10,8 @@ use App\Models\Payment;
 
 use App\Models\Table;
 
+use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Session;
 
 class BookingController extends Controller
@@ -71,8 +73,6 @@ class BookingController extends Controller
     }
     
     return redirect()->route('booktable')->with('success', 'Booking created successfully');
-
-
 
     }
 
