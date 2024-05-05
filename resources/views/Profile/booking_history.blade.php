@@ -83,7 +83,45 @@
                                 @foreach ($customerBookings as $booking)
                                     <tr>
                                         <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
-                                        <td>{{ $booking->time }}</td>
+                                        <td>
+                                            @if ($booking->time=="first")
+                                                10.00 - 12.00
+                                                
+                                            @elseif($booking->time=="second")
+                                                11.00 - 13.00
+                                            
+                                            @elseif($booking->time=="third")
+                                                12.00 - 14.00
+
+                                            @elseif($booking->time=="fourth")
+                                                13.00 - 15.00
+
+                                            @elseif($booking->time=="fifth")
+                                                14.00 - 16.00
+
+                                            @elseif($booking->time=="sixth")
+                                                15.00 - 17.00
+
+                                            @elseif($booking->time=="seventh")
+                                                16.00 - 18.00
+
+                                            @elseif($booking->time=="eightth")
+                                                17.00 - 19.00
+
+                                            @elseif($booking->time=="ninth")
+                                                18.00 - 20.00
+
+                                            @elseif($booking->time=="tenth")
+                                                19.00 - 21.00
+
+                                            @elseif($booking->time=="eleventh")
+                                                20.00 - 22.00
+                                                
+                                            @elseif($booking->time=="twelvelth")
+                                                21.00 - 23.00   
+
+                                            @endif   
+                                        </td>
                                         <td>{{ $booking->guest_no }}</td>
                                         <td>{{ \Carbon\Carbon::parse($booking->created_at)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($booking->created_at)->format('h:i A') }}</td>
 

@@ -56,7 +56,46 @@
                 {{-- <p>Your payment for (guest_no) guest at (date) on (time) is successfully done.</p> --}}
                 {{-- <p class="main_part_sec">Your Payment id #(payment_id)</p> --}}
 
-                <p>Your payment for "{{ session('guest_no') }}" guests at "{{ \Carbon\Carbon::parse(session('date'))->format('d-m-Y') }}" on the time slot of "{{ session('time') }}" is successfully done.</p>
+                <p>Your payment for "{{ session('guest_no') }}" guests at "{{ \Carbon\Carbon::parse(session('date'))->format('d-m-Y') }}" on the time slot of 
+                    "
+                    @if (session('time') == 'first')
+                        10.00 - 12.00
+                    @endif
+                    @if (session('time') == 'second')
+                        11.00 - 13.00
+                    @endif
+                    @if (session('time') == 'third')
+                        12.00 - 14.00
+                    @endif
+                    @if (session('time') == 'fourth')
+                        13.00 - 15.00
+                    @endif
+                    @if (session('time') == 'fifth')
+                        14.00 - 16.00  
+                    @endif
+                    @if (session('time') == 'sixth')
+                        15.00 - 17.00
+                    @endif
+                    @if (session('time') == 'seventh')
+                        16.00 - 18.00
+                    @endif
+                    @if (session('time') == 'eightth')
+                        17.00 - 19.00
+                    @endif
+                    @if (session('time') == 'ninth')
+                        18.00 - 20.00
+                    @endif
+                    @if (session('time') == 'tenth')
+                        19.00 - 21.00
+                    @endif
+                    @if (session('time') == 'eleventh')
+                        20.00 - 22.00
+                    @endif
+                    @if (session('time') == 'twelvelth')
+                        21.00 - 23.00
+                    @endif
+                    "
+                     is successfully done.</p>
                 <p class="main_part_sec">Your Payment id #0000000{{ session('payment_id') }}</p>
             </div>
 

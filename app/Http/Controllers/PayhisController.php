@@ -30,6 +30,6 @@ class PayhisController extends Controller
                            ->with('booking')
                            ->get();
 
-        return view('profile.payment_history', ['payments' => $payments]);
+        return view('Profile.payment_history', ['payments' => $payments]);
     }
 }

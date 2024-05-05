@@ -39,17 +39,17 @@ class PaymentController extends Controller
 
     public function view(){
         
-        // if (!Session::has('customer')) {
-        //     return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
-        // }
+        if (!Session::has('customer')) {
+            return redirect()->route('signup')->with('error', 'Please log in to view bookings.');
+        }
     
-        // if (!Session::has('booking_id')) {
-        //     return redirect()->route('booking')->with('error', 'You need to make a booking first.');
-        // }
+        if (!Session::has('booking_id')) {
+            return redirect()->route('booking')->with('error', 'You need to make a booking first.');
+        }
 
-        // if (!Session::has('table_id')) {
-        //     return redirect()->route('booktable')->with('error', 'You need to select a table first.');
-        // }
+        if (!Session::has('table_id')) {
+            return redirect()->route('booktable')->with('error', 'You need to select a table first.');
+        }
     
         return view('payment_booking.payment');
 
