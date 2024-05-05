@@ -50,6 +50,7 @@
                 </div>
                 <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
+                <a href="/admin/payment"><li>Payments</li></a>
                 <a href="/admin/bookcancle"><li>Booking Cancellation</li></a>
             </ul>
             </div>
