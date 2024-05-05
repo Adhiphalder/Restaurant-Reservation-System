@@ -50,6 +50,7 @@
                 <a href="/admin/menu"><li>Menus</li></a>
                 <a href="/admin/table"><li>Tables</li></a>
                 <a href="/admin/reservation"><li>Reservations</li></a>
+                <a href="/admin/payment"><li>Payments</li></a>
                 <div class="active">
                     <a href="/admin/bookcancle"><li>Booking Cancellation</li></a>
                 </div>
