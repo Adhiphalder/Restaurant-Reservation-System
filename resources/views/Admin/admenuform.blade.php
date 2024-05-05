@@ -66,6 +66,15 @@
                 <input type="file" name="photo" class="form_control" id="photo" value="" placeholder="photo">
               </div>
             </div><br>
+
+            <div class="form-group">
+                <div class="menu_price">
+                    <label for="menu_name">Menu Price : </label>
+                    <input type="number" name="menu_price" class="form_control menu_n_des" id="menu_price" placeholder="Enter Price">
+                </div>
+            </div><br>
+
+            
             
             <div class="form_group_btn">
                 <button type="submit" class="btn">Submit</button>

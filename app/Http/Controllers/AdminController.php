@@ -105,6 +105,7 @@ class AdminController extends Controller
         $addmenu->menu_name = $request['menu_name'];
         $addmenu->menu_description = $request['menu_des'];
         $addmenu->photo = $filePath;
+        $addmenu->price = $request['menu_price'];
         $addmenu->save();
         return redirect('/admin/menu');
     }
