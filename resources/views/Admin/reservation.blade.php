@@ -58,7 +58,7 @@
 
         <style>
             .table-container {
-                width: 93%;
+                width: 95%;
                 max-height: 400px;
                 overflow: auto;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -149,7 +149,7 @@
                             <th>Booking ID</th>
                             <th>Customer ID</th>
                             <th>Table ID</th>
-                            <th>Additional Table ID</th>
+                            {{-- <th>Additional Table ID</th> --}}
                             <th>Time Slot</th>
                             <th> Contact No</th>
                             <th> Booking Date</th>
@@ -164,7 +164,7 @@
                                 <td>{{ $booking->booking_id }}</td>
                                 <td>{{ $booking->customer_id }}</td>
                                 <td>{{ $booking->table_id }}</td>
-                                <td>{{ $booking->add_table_id }}</td>
+                                {{-- <td>{{ $booking->add_table_id }}</td> --}}
                                 <td>{{ $booking->time }}</td> 
                                 <td>{{ $booking->customer->contact}}</td>
                                 <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
