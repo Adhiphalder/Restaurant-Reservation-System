@@ -73,7 +73,44 @@
                             @if(session('booking_time'))
                                 <div class="left_first_top_book_div">
                                     <div>Booking Time Slot</div>
-                                    <div>{{ session('booking_time') }}</div>
+                                    <div>
+                                        @if (session('booking_time') == 'first')
+                                            10.00 - 12.00
+                                        @endif
+                                        @if (session('booking_time') == 'second')
+                                            11.00 - 13.00
+                                        @endif
+                                        @if (session('booking_time') == 'third')
+                                            12.00 - 14.00
+                                        @endif
+                                        @if (session('booking_time') == 'fourth')
+                                            13.00 - 15.00
+                                        @endif
+                                        @if (session('booking_time') == 'fifth')
+                                            14.00 - 16.00  
+                                        @endif
+                                        @if (session('booking_time') == 'sixth')
+                                            15.00 - 17.00
+                                        @endif
+                                        @if (session('booking_time') == 'seventh')
+                                            16.00 - 18.00
+                                        @endif
+                                        @if (session('booking_time') == 'eightth')
+                                            17.00 - 19.00
+                                        @endif
+                                        @if (session('booking_time') == 'ninth')
+                                            18.00 - 20.00
+                                        @endif
+                                        @if (session('booking_time') == 'tenth')
+                                            19.00 - 21.00
+                                        @endif
+                                        @if (session('booking_time') == 'eleventh')
+                                            20.00 - 22.00
+                                        @endif
+                                        @if (session('booking_time') == 'twelvelth')
+                                            21.00 - 23.00
+                                        @endif
+                                    </div>
                                 </div>
                             @endif
                         

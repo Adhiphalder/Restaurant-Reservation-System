@@ -530,7 +530,9 @@ button:hover{
 .login{
 	height: 520px;
   background-image: url('../images/login/footer-bg.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 	border-radius: 60% / 10%;
 	transform: translateY(-150px);
 	transition: .8s ease-in-out;
@@ -551,4 +553,111 @@ button:hover{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.7);
+}  
+
+
+/*-----------------------------------*\
+  #POPUP
+\*-----------------------------------*/
+
+
+*{
+  color: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* .bg {
+    background: url(https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?q=80&w=1388&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+    opacity: 0.7;
+} */
+.terms-box {
+    max-width: 460px;
+    background-color: rgb(83, 83, 83, 0.1);
+    /* color: #fff; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0 20px;
+    height: 400px;
+    overflow-y: auto;
+    font-size: 14px;
+    /* filter: blur(95%); */
+  }
+  .terms-text {
+    padding: 0 20px;
+    height: 400px;
+    overflow-y: auto;
+    font-size: 14;
+    font-weight: 500;
+    color: #111;
+  }
+  .terms-text::-webkit-scrollbar {
+    width: 2px;
+    background-color: #282828;
+  }
+  .terms-text::-webkit-scrollbar-thumb {
+    background-color: #f1f1f1;
+  }
+  .terms-text h2 {
+    text-transform: uppercase;
+  }
+  .terms-text h4 {
+    font-size: 13px;
+    text-align: center;
+    padding: 0 40px;
+  }
+  .terms-box h4 span {
+    color: rgb(245, 68, 68);
+    text-transform: uppercase;
+  }
+  .buttons {
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+  .btn {
+    height: 50px;
+    width: calc(50% - 6px);
+    border: 0;
+    border-radius: 6px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.3s linear;
+    cursor: pointer;
+  }
+  .red-btn {
+    background-color: rgb(245, 68, 68);
+  }
+  .gray-btn {
+    background-color: #282828;
+  }
+  .btn:hover {
+    opacity: 0.6;
+  }
+
+
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
 }
