@@ -22,7 +22,13 @@
     
                     <div class="right_sec">
                         <label for="table_seat_no">Enter Seat No.</label>
-                        <input type="number" name="table_seat_no" id="table_seat_no" class="table_seat_no" placeholder="Enter Seat No." required>
+                        <select type="number" name="table_seat_no" id="table_seat_no" class="table_seat_no" required>
+                            <option value="null">Select seats</option>
+                            <option value="2">2 seater</option>
+                            <option value="4">4 seater</option>
+                            <option value="6">6 seater</option>
+                            <option value="8">8 seater</option>
+                        </select>
                     </div>
 
                     <div class="right_sec">
