@@ -524,7 +524,7 @@ body{
 
 .main_part{
     margin: auto;
-    margin-top: 15px;
+    margin-top: -10px;
     width: 850px;
     height: auto;
     background-color: rgb(21 21 21 / 81%);
@@ -566,7 +566,8 @@ body{
   border-radius: 7px;
   margin-top: 10px;
   width: 476px;
-  height: 142px;
+  /* height: 142px; */
+  height: 95px;
   padding-top: 13px;
   padding-left: 17px;
 }
@@ -608,10 +609,9 @@ body{
 .button {
   /* margin-left: 30px; */
   margin-bottom: 21px;
-
   margin-top: 15px;
   display: inline-block;
-  width: 300px;
+  width: 250px;
   height: 45px;
   border: .7px solid #e4c590;
   border-radius: 4px;
@@ -672,3 +672,140 @@ body{
   background-color: #e4c590;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+
+
+/*-----------------------------------*\
+  #DOWNLOAD BUTTON
+\*-----------------------------------*/
+
+
+.download-btn {
+  height: 45px;
+  width: 195px;
+  cursor: pointer;
+  background: white;
+  border: none;
+  background: #e4c590;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.button-content {
+  transform: translateY(-45px);
+  transition: all 250ms ease-in-out;
+}
+
+.svg-container,
+.text-container {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container .text {
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111111;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity ease-in-out 250ms;
+}
+
+.download-icon {
+  height: 25px;
+  width: 25px;
+  fill: #111111;
+  opacity: 0;
+  transition: opacity ease-in-out 250ms;
+}
+
+/* hover state for the button */
+.download-btn:hover .button-content {
+  transform: translateY(0px);
+}
+
+.download-btn:hover .text {
+  opacity: 0;
+}
+
+.download-btn:hover .download-icon {
+  opacity: 1;
+}
+
+.download-btn:focus .download-icon {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+/* hover state for the button */

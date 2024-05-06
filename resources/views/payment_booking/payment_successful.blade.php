@@ -57,47 +57,68 @@
                 {{-- <p class="main_part_sec">Your Payment id #(payment_id)</p> --}}
 
                 <p>Your payment for "{{ session('guest_no') }}" guests at "{{ \Carbon\Carbon::parse(session('date'))->format('d-m-Y') }}" on the time slot of 
-                    "
+                    
                     @if (session('time') == 'first')
-                        10.00 - 12.00
+                        "10.00 - 12.00"
                     @endif
                     @if (session('time') == 'second')
-                        11.00 - 13.00
+                        "11.00 - 13.00"
                     @endif
                     @if (session('time') == 'third')
-                        12.00 - 14.00
+                        "12.00 - 14.00"
                     @endif
                     @if (session('time') == 'fourth')
-                        13.00 - 15.00
+                        "13.00 - 15.00"
                     @endif
                     @if (session('time') == 'fifth')
-                        14.00 - 16.00  
+                        "14.00 - 16.00 " 
                     @endif
                     @if (session('time') == 'sixth')
-                        15.00 - 17.00
+                        "15.00 - 17.00"
                     @endif
                     @if (session('time') == 'seventh')
-                        16.00 - 18.00
+                        "16.00 - 18.00"
                     @endif
                     @if (session('time') == 'eightth')
-                        17.00 - 19.00
+                        "17.00 - 19.00"
                     @endif
                     @if (session('time') == 'ninth')
-                        18.00 - 20.00
+                        "18.00 - 20.00"
                     @endif
                     @if (session('time') == 'tenth')
-                        19.00 - 21.00
+                        "19.00 - 21.00"
                     @endif
                     @if (session('time') == 'eleventh')
-                        20.00 - 22.00
+                        "20.00 - 22.00"
                     @endif
                     @if (session('time') == 'twelvelth')
-                        21.00 - 23.00
+                        "21.00 - 23.00"
                     @endif
-                    "
+                    
                      is successfully done.</p>
                 <p class="main_part_sec">Your Payment id #0000000{{ session('payment_id') }}</p>
-            </div>
+            </div> <br>
+
+            <button class="download-btn pixel-corners" >
+                <div class="button-content">
+                  <div class="svg-container">
+                    <svg
+                      class="download-icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479 6.908l-4-4h3v-4h2v4h3l-4 4z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="text-container">
+                    <div class="text">Download Invoice</div>
+                  </div>
+                </div>
+              </button> <br>
 
             <form method="POST" action="{{url('/')}}/pay/successful">
                 @csrf
@@ -110,6 +131,7 @@
             </form>
         </div>
     </div>
+
     
     <script src="{{asset('js/preloader.js')}}"></script>
 </body>
