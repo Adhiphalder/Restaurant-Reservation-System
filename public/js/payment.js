@@ -82,3 +82,14 @@ document.addEventListener("DOMContentLoaded", function() {
         input.value = value + '/';
     }
 }
+
+function formatCardNumber(event) {
+  const input = event.target;
+  // Remove non-numeric characters
+  input.value = input.value.replace(/\D/g, '');
+
+  // Ensure max length of 16 characters
+  if (input.value.length > 16) {
+    input.value = input.value.slice(0, 16);
+  }
+}
