@@ -66,7 +66,7 @@
 
         <div class="footer-brand has-before has-after">
 
-          <a href="#" class="logo">
+          <a href="/" class="logo">
             <img src="/images/login/FoodHub.png" width="160" height="50" loading="lazy" alt="FoodHub home">
           </a>
 
