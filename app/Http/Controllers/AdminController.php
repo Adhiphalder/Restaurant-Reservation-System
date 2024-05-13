@@ -13,6 +13,7 @@ use App\Models\Payment;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
@@ -132,13 +133,19 @@ class AdminController extends Controller
 
     public function viewaddtable(Request $request){
 
+
+        $url = url('/admin/addtable'); 
+        $title = "Add Table";
+        
         if ($request->session()->has('admin')) {
             $admin = $request->session()->get('admin');
             $adminName = $admin->name;
     
             $tables = Table::all(); 
     
-            return view('Admin.addtable');
+            $data = compact('url', 'title', 'tables');
+    
+            return view('Admin.addtable')->with($data); 
         } else {
             return redirect('/admin/login'); 
         }
@@ -163,11 +170,21 @@ class AdminController extends Controller
     public function addtable(Request $request){
 
 
+        $validatedData = $request->validate([
+            'table_no' => ['required', 'integer', Rule::unique('tables')],
+            'table_seat_no' => ['required', 'integer', 'in:2,4,6,8'],
+        ]);
+
         $element = new Table;
-        $element->table_no = $request->input('table_no');
+        $element->table_no = $request->input('table_no');        
         $element->table_seat_no = $request->input('table_seat_no');
+
+        $element->table_book_status = $request->input('table_status') == 'emp' ? 1 : 0;
+        
         $element->save();
         return redirect('/admin/table');
+    
+
     }
 
     public function reservation(Request $request)
@@ -233,6 +250,82 @@ class AdminController extends Controller
         $payments = Payment::all();
 
         return view('Admin.adpayment', ['payments' => $payments, 'firstName' => $firstName]);
+    }
+
+    public function deleteCustomer($id)
+    {
+        $customer = Customer::find($id);
+        
+        if ($customer) {
+            $customer->delete();
+            return redirect()->back()->with('success', 'Customer deleted successfully.');
+        }
+        return redirect()->back()->with('error', 'Customer not found.');
+    }
+
+    public function deleteTable($id)
+    {
+        $table = Table::find($id);
+        
+        if ($table) {
+            $table->delete();
+            return redirect()->back()->with('success', 'Table deleted successfully.');
+        }
+        return redirect()->back()->with('error', 'Table not found.');
+    }
+
+    public function deleteBooking($id)
+    {
+        $booking = Booking::find($id);
+        
+        if ($booking) {
+            $booking->delete();
+            return redirect()->back()->with('success', 'Booking deleted successfully');
+        }
+        return redirect()->back()->with('error', 'Booking not found');
+    }
+
+    public function deletePayment($id)
+    {
+        $payment = Payment::find($id);
+        
+        if ($payment) {
+            $payment->delete();
+            return redirect()->back()->with('success', 'Payment deleted successfully');
+        }
+        return redirect()->back()->with('error', 'Payment not found');
+    }
+
+    public function editTable($id)
+    {
+        $table = Table::find($id);
+        if(is_null($table)){
+            return redirect ('/admin/table');
+        }else{
+            $title = "Update Table";
+            $url = url('/admin/table/update') . "/" . $id;
+            $data = compact('table', 'url', 'title'); 
+            return view('admin.addtable')->with($data);
+        }
+    
+    }
+
+    public function updateTable($id, Request $request)
+    {
+
+        $table = Table::find($id);
+
+        if($table) {
+            $table->table_no = $request->input('table_no');        
+            $table->table_seat_no = $request->input('table_seat_no');
+            $table->table_book_status = $request->input('table_status') == 'emp' ? 1 : 0;
+    
+            $table->save();
+    
+            return redirect('admin/table')->with('success', 'Table updated successfully.');
+        }
+    
+        return redirect('admin/table')->with('error', 'Table not found.');
     }
 
 

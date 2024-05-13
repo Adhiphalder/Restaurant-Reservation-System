@@ -73,7 +73,7 @@
                                         <th>Booking Date</th>
                                         <th>Pay Method</th>
                                         <th>Date</th>
-                                        <th>Action</th>
+                                        {{-- <th>Action</th> --}}
                                     </tr>
                                 </div>
 
@@ -83,7 +83,7 @@
                                     <td>{{ $payment->paymethod }}</td>
                                     <td>{{ \Carbon\Carbon::parse ($payment->created_at)->format('d-m-Y')}} at {{ \Carbon\Carbon::parse($payment->created_at)->format('h:i A') }}</td>
 
-                                        <td class="button-container">
+                                        {{-- <td class="button-container">
                                             <form action="" method="POST">
                                                 @csrf
                                                 <button type="submit" class="edit"><p>Delete</p>
@@ -94,7 +94,7 @@
                                                       </span>
                                                 </button>
                                             </form>
-                                        </td>
+                                        </td> --}}
                                 </tr>
                                 @endforeach
                           </table>

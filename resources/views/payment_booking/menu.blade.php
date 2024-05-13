@@ -4,13 +4,26 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodhub</title>
+    <title>FoodHub</title>
     <link rel="stylesheet" href="{{ url('/css/menu_book.css') }}">
-    <link rel="icon" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
 </head>
  
 <body>
-    <script src="https://unpkg.com/scrollreveal"></script>
+
+      <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Foodhub</p>
+  </div>
+
     <div class="main">
 
         <div class="main_top">
@@ -18,16 +31,10 @@
             <span id="main_top2">Main Course</span>
             <span id="main_top3">Desserts</span>
         </div>
- 
-
-
-
-
-
 
         <div class="starter_main">
             <div>
-                <a href="route{{ 'home' }}"><button class="skipbtn">Skip</button></a>                
+                <a href="{{ route('home') }}"><button class="skipbtn">Back</button></a>                
             </div>
             <div class="starter">
                 <h2>Non Veg Starters</h2>
@@ -90,7 +97,8 @@
                                     <p>Chicken Tengri Kebab</p>
                                     <p>A royal dish that needs no introduction from foodhub</p>
                                     <span>₹ 180</span>
-                                    <img src="/img/menu/nonveg.png" alt="">
+                                    <img src="/images/menu/nonveg.png" alt="">
+
                                 </div>
                             </div>
                             <div class="menu_inside">
@@ -176,19 +184,10 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="main_course_main">
+            <div>
+                <a href="{{ route('home') }}"><button class="skipbtn">Back</button></a>                
+            </div>
             <div class="main_course">
                 <div class="biriyani">
                     <h2>Biriyani</h2>
@@ -580,25 +579,11 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="desert_main">
             <h2>Sweets</h2>
             <div class="dessert">
                 <div class="menu_inside">
+
                     <img src="/images/menu/desert1.jpeg" alt="">
                     <div>
                         <p>Rosogolla</p>
@@ -703,6 +688,7 @@
 
 
     <script src="{{ url('/js/menu.js') }}"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>

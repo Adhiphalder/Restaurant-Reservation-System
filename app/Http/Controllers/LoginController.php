@@ -41,6 +41,12 @@ class LoginController extends Controller
         $request->session()->put('customer', $customer);
 
         $request->session()->put('customer_id', $customer->customer_id); 
+
+        $request->session()->put('customer_name', $customer->name);
+
+        $request->session()->put('customer_contact', $customer->contact);
+
+        $request->session()->put('customer_address', $customer->address);
     
         Session::flash('success', 'Sign up successful!');
 

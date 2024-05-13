@@ -124,7 +124,9 @@ body.nav-active { overflow: hidden; }
 }
 
 .menu_inside>div :nth-child(1) {
-    font-size: 18px;
+    font-family: 'Forum', cursive;
+    font-size: 21px;
+    font-weight: 600;
     color: #e4c590;
 }
 
@@ -179,10 +181,6 @@ body.nav-active { overflow: hidden; }
 
     margin-bottom: 15px;
 }
-
-
-
-
 
 
 /* Main Course */

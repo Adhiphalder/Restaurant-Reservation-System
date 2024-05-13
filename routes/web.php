@@ -98,6 +98,8 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.log
 
 Route::get('/admin/customer',[AdminController::class, 'customer'])->name('admin.customer');
 
+Route::post('/admin/customer/delete/{id}', [AdminController::class, 'deleteCustomer'])->name('admin.customer.delete');
+
 Route::get('admin/addmenu',[AdminController::class,'view']);
 
 Route::post('admin/menu',[AdminController::class,'show'])->name('admin.menu');
@@ -106,15 +108,25 @@ Route::get('/admin/menu',[AdminController::class, 'viewmenu'])->name('admin.menu
 
 Route::get('/admin/addtable',[AdminController::class,'viewaddtable'])->name('admin.addtable');
 
-Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
-
-Route::get('/admin/payment',[AdminController::class, 'viewpayment'])->name('admin.payment');
-
 Route::post('/admin/addtable',[AdminController::class,'addtable'])->name('admin.addtable');
+
+Route::get('/admin/reservation',[AdminController::class, 'reservation'])->name('admin.reservation');
 
 Route::get('/admin/table',[AdminController::class, 'viewtable'])->name('admin.table');
 
+Route::post('/admin/table/{id}', [AdminController::class, 'deleteTable'])->name('admin.table.delete');
+
+Route::post('/admin/table/edit/{id}', [AdminController::class, 'editTable'])->name('admin.table.edit');
+
+Route::post('/admin/table/update/{id}', [AdminController::class, 'updateTable'])->name('admin.table.update');
+
 Route::get('/admin/bookcancle',[AdminController::class,'viewbookcancle'])->name('admin.bookcancel');
+
+Route::post('/admin/booking/{id}', [AdminController::class, 'deleteBooking'])->name('admin.booking.delete');
+
+Route::post('/admin/payment/{id}', [AdminController::class, 'deletePayment'])->name('admin.payment.delete');
+
+Route::get('/admin/payment',[AdminController::class, 'viewpayment'])->name('admin.payment');
 
 Route::post('/deny/booking/cancel/{id}', [AdminController::class, 'denycancelBooking'])->name('deny.cancel.booking');
 
@@ -158,6 +170,9 @@ Route::get('/payment',[PaymentController::class,'view'])->name('payment');
 Route::post('/payment',[PaymentController::class,'payment']);
 
 Route::get('/pay/successful',[PaymentController::class,'pay_successful'])->name('pay_successful');
+
+Route::get('/payment/invoice',[PaymentController::class,'invoice'])->name('invoice');
+
 
 /*-------------------*\
   #REVIEW

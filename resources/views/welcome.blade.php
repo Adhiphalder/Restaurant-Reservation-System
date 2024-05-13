@@ -291,7 +291,7 @@
               Come with family & feel the joy of mouthwatering food
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
+            <a href="/menu" class="btn btn-primary slider-reveal">
               <span class="text text-1">View Our Menu</span>
 
               <span class="text text-2" aria-hidden="true">View Our Menu</span>
@@ -316,7 +316,7 @@
               Come with family & feel the joy of mouthwatering food
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
+            <a href="/menu" class="btn btn-primary slider-reveal">
               <span class="text text-1">View Our Menu</span>
 
               <span class="text text-2" aria-hidden="true">View Our Menu</span>
@@ -341,7 +341,7 @@
               Come with family & feel the joy of mouthwatering food
             </p>
 
-            <a href="#" class="btn btn-primary slider-reveal">
+            <a href="/menu" class="btn btn-primary slider-reveal">
               <span class="text text-1">View Our Menu</span>
 
               <span class="text text-2" aria-hidden="true">View Our Menu</span>
@@ -559,7 +559,7 @@
               <span class="span body-1">₹150</span>
             </div>
 
-            <a href="#" class="btn btn-primary">
+            <a href="/menu" class="btn btn-primary">
               <span class="text text-1">View All Menu</span>
 
               <span class="text text-2" aria-hidden="true">View All Menu</span>
@@ -763,7 +763,7 @@
             During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
           </p>
 
-          <a href="#" class="btn btn-primary">
+          <a href="menu" class="btn btn-primary">
             <span class="text text-1">View All Menu</span>
 
             <span class="text text-2" aria-hidden="true">View All Menu</span>

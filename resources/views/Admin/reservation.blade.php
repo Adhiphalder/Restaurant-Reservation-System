@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{asset('css/reservation.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Foodhub</title>
+        <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
+        <title>FoodHub</title>
 
         <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
 
@@ -170,14 +171,18 @@
                                 <td>{{ \Carbon\Carbon::parse($booking->date)->format('d-m-Y') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($booking->created_at)->format('d-m-Y') }} at {{ \Carbon\Carbon::parse($booking->created_at)->format('h:i A') }}</td>
                                 <td class="button-container">
-                                    <button class="edit">Edit</button>
-                                    <button type="submit" class="delete"><p class="button-container-p">Delete</p>
-                                        <span class="icon-wrapper">
-                                            <svg class="icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                              <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                          </span>
-                                    </button>
+                                    {{-- <button class="edit">Edit</button> --}}
+                                    
+                                    <form action="{{ route('admin.booking.delete', $booking->booking_id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="delete"><p class="button-container-p">Delete</p>
+                                            <span class="icon-wrapper">
+                                                <svg class="icon" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M6 7H5M6 7H8M18 7H19M18 7H16M10 11V16M14 11V16M8 7V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V7M8 7H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                              </span>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

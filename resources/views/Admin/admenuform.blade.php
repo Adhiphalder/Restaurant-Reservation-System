@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url('/css/admenuform.css') }}">
-    <title>Foodhub</title>
+    <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
+    <title>FoodHub</title>
 </head>
 <body>
     <div class="body">
