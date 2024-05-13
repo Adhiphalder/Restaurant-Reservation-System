@@ -53,7 +53,7 @@
     - body
   -->
 
-  <footer class="footer section has-bg-image text-center" style="background-image: url('/images/login/footer-bg2 copy.jpg')">
+  <footer class="footer section has-bg-image text-center">
 
         @if(Session::has('success'))
           <div class="alert alert-success" role="alert">
@@ -66,7 +66,7 @@
 
         <div class="footer-brand has-before has-after">
 
-          <a href="#" class="logo">
+          <a href="/" class="logo">
             <img src="/images/login/FoodHub.png" width="160" height="50" loading="lazy" alt="FoodHub home">
           </a>
 
