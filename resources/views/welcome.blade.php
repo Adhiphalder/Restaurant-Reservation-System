@@ -405,7 +405,7 @@
                     <a href="#">Breakfast</a>
                   </h3>
 
-                  <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                  <a href="/menu" class="btn-text hover-underline label-2">View Menu</a>
 
                 </div>
 
@@ -428,7 +428,7 @@
                     <a href="#">Main Course</a>
                   </h3>
 
-                  <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                  <a href="/menu" class="btn-text hover-underline label-2">View Menu</a>
 
                 </div>
 
@@ -451,7 +451,7 @@
                     <a href="#">Drinks</a>
                   </h3>
 
-                  <a href="#" class="btn-text hover-underline label-2">View Menu</a>
+                  <a href="/menu" class="btn-text hover-underline label-2">View Menu</a>
 
                 </div>
 

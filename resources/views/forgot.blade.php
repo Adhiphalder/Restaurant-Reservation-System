@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="{{ url('/css/forgot.css') }}">
     {{-- <link rel="stylesheet" href="{{ url('/css/popup.css') }}"> --}}
 
-    <title>Document</title>
+    <title>FoodHub</title>
+
+  <link rel="shortcut icon" href="{{asset('favicon.svg')}}" type="image/svg+xml">
+
 </head>
 
 <body>
