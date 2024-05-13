@@ -179,7 +179,8 @@
                                         <span>Credit / Debit / ATM Card</span>
                                         <div class="p_method_card_main">
                                             <div>
-                                                <input type="tel" name="card_number" id="p_method_card_space" placeholder="Enter Card Number" maxlength="16" required>
+                                                {{-- <input type="tel" name="card_number" id="p_method_card_space" placeholder="Enter Card Number" maxlength="16" required> --}}
+                                                <input type="tel" name="card_number" id="p_method_card_space" placeholder="Enter Card Number" maxlength="16" required oninput="formatCardNumber(event)">
                                             </div>
                                             <div>
                                                 {{-- <input type="text" name="card_exp" id="p_method_card_exp" placeholder="MM/YY" maxlength="5" required> --}}
