@@ -58,7 +58,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     margin-bottom: 17px;
 }
 
-.table_seat_no , .table_no {
+.table_no {
     background: none;
     border: none;
     border: .7px solid grey;
@@ -66,6 +66,17 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     height: 29px;
     width: 240px;
     padding-left: 7px;
+}
+
+.table_seat_no{
+    background: #161718d9;
+    border: none;
+    border: .7px solid grey;
+    border-radius: 4px;
+    height: 31px;
+    width: 247px;
+    padding-left: 7px;
+    color: rgb(149, 149, 149);
 }
 
 .table_status{

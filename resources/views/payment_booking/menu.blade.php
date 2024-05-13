@@ -19,10 +19,10 @@
     - #PRELOADER
   -->
 
-  <div class="preload" data-preaload>
+  {{-- <div class="preload" data-preaload>
     <div class="circle"></div>
     <p class="text">Foodhub</p>
-  </div>
+  </div> --}}
 
     <div class="main">
 
