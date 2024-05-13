@@ -52,7 +52,7 @@
     - body
   -->
 
-  <footer class="footer section has-bg-image text-center" style="background-image: url('/images/login/footer-bg2 copy.jpg')">
+  <footer class="footer section has-bg-image text-center">
 
         @if(Session::has('success'))
           <div class="alert alert-success" role="alert">

@@ -172,6 +172,10 @@
     line-height: var(--lineHeight-5);
     overflow: hidden;
     height: auto;
+    background-image: url('/images/login/footer-bg2 copy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   body.loaded { overflow: overlay; }
