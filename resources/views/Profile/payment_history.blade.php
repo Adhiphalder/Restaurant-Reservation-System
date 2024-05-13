@@ -99,10 +99,10 @@
                                 @endforeach
                           </table>
                     </div>
-                    <p class="copyright">
+                    {{-- <p class="copyright">
                         &copy; 2024 FoodHub. All Rights Reserved | Crafted by <a href="https://www.facebook.com/sanket.adhikary.7?mibextid=uzlsIk"
-                        target="_blank" class="link">Sanket Adhikary</a>
-                    </p>
+                        target="_blank" class="link">Adhip Halder</a>
+                    </p> --}}
                 
                 @else
                 <div class="glow-item">
